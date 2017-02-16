@@ -1,0 +1,43 @@
+% !TEX root = ..</vorlage.tex
+%=======================================================================
+
+%== Glossaries, Nomenclature, Lists of Symbols and Acronyms
+% http://www.latex-community.org/index.php?option=com_content&view=article&id=263:glossaries-nomenclature-lists-of-symbols-and-acronyms&catid=55:latex-general&Itemid=114
+%== Acronym und Glossary mit gleichen Einträgen
+% http://ewus.de/tipp-1029.html
+%== Making acronym entries link to glossary entries
+% http://www.latex-community.org/forum/viewtopic.php?f=4&t=2976
+
+%===================
+% nur glossarie
+%===================
+
+\newglossaryentry{gls:app}{name={Application},
+text={App},
+description={dt. Anwendung, Schlagwort für eine kleine Anwendung, welches vorrangig im Bereich mobiler, eingebetteter Systeme Verwendung findet.},
+first={App (vom engl. Application)}
+}
+
+%===================
+% glossarie + acronym
+%===================
+\newacronym{ic}{IC\glsadd{gls:ic}}{Integrated Circuit}
+\newglossaryentry{gls:ic}{%
+	name={Integrated Circuit},
+	description={dt. integrierter Schaltkreis; Eine auf einem einzelnen Silizium-Die integrierte Schaltung},
+}
+
+\newacronym{gui}{GUI}{Graphical User Interface}
+\newglossaryentry{gls:gui}{%
+	name={Graphical User Interface},
+	description={dt. Grafische Benutzerschnittstelle; Eine Bedienoberfläche, die dem Benutzer die Interaktion mit einem System über grafische Symbole ermöglicht},
+}
+
+%===================
+% nur acronym
+%===================
+\newacronym{fpga}{FPGA}{Field Programmable Gate Array}
+\newacronym{sw}{SW}{Software}
+\newacronym{hw}{HW}{Hardware}
+
+% vim: ts=2:sw=2:noexpandtab:fileformat=unix

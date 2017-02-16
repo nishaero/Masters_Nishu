@@ -1,0 +1,18 @@
+% !TEX root       = TODO ./00_abstract
+% !TEX program    = pdflatex
+% !TEX encoding   = utf-8
+% !TEX spellcheck = de_DE_frami
+%=======================================================================
+% File          : 00_abstract.tex
+% Author(s)     : Daniel Kriesten
+% Email         : daniel.kriesten@etit.tu-chemnitz.de
+% Creation Date : <Mo 09 Mär 2015 19:57:18 krid>
+%=======================================================================
+
+\begin{abstract}
+\sffamily{}
+\qquad OpenStack is a open source architecture for cloud computing which provides Infrastructure-as-a-service (IaaS) for large, distributed cloud environments. With the trend towards network virtualization (Sofware Defined Networking, Network Function Virtualization, Service Chaining and Function Decomposition) the OpenStack project is pushed forward by both science and industry as it is a promising tool for dynamic management of large-scale cloud infrastructures, based on a modular software concept with open API’s. For that purpose, OpenStack offers a resource/virtual machine administration module called „Compute“ which also provides a scheduler for virtual machine embedding decisions (NOVA). The scheduler is based on simple resource filters/weights and is designed for placement decisions of single virtual machines. With respect to network function virtualization, OpenStack requires a scheduler for complex virtual network topologies (multiple virtual machines and their interconnections) with service guarantees.
+
+\qquad The first task within the master thesis is to set up an OpenStack testbed including the Compute module and the Monitoring Module. After successful implementation of the testbed, the optimality of the virtual machine placement using the NOVA scheduler should be evaluated in detail. It is expected that in case a virtual topology consists of more than one virtual machine, the standard NOVA scheduler will provide only sub-optimum placement decisions as it does not consider interconnections between virtual machines. Subsequently different options for a topology-aware scheduler within OpenStack and its realization in software should be investigated. In the last years, many scientific contributions were focusing on the mathematical modelling of virtual machine placement decisions (Virtual Network Embedding problem). These contributions deal with optimum placement decisions for single virtual machines as well as virtual network topologies with respect to different optimization objectives (e.g. power consumption, QoS, cost minimization, etc.). Based on these results a proposal for a novel, more efficient topology-aware virtual machine scheduler should be made. Finally, the OpenStack NOVA scheduler should be adapted to integrate the new topology-aware scheduler. The benefits of the new scheduler should be investigated by conducting a performance evaluation with respect to solution time (i.e. the time to find feasible and optimal placement decisions) and optimality of the placement decisions compared to standard NOVA scheduling.
+
+\end{abstract}

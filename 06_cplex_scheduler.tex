@@ -1,0 +1,322 @@
+% !TEX root       = ./type_name.tex
+% !TEX program    = pdflatex
+% !TEX encoding   = utf-8
+% !TEX spellcheck = de_DE_frami
+%=======================================================================
+
+\chapter{Implementation of Cplex based Nova Scheduler}\label{ch:implementationofcplex}
+
+After the iterations of debugging the OpenStack Scheduler Python module, the key parameters which contribute in the calculation of the placement decisions of virtual instances are identified.
+The key parameters that would be required in computation of placements decision are:
+\begin{itemize}
+	\item Available RAM capacity on each of the Compute node and
+	\item Available Hard Disk capacity on each of the Compute node
+\end{itemize}
+
+The number of CPU cores are not taken into consideration.
+As the Compute nodes support the hardware acceleration for virtual machines using the KVM mode, the CPU cores can be over utilised.
+The default \verb|cpu_allocation_ratio| is set to 16 which allows the over creation of virtual CPU cores, due to which the available CPU cores do not play a major role in determining the creation of virtual instances.
+
+In this chapter, the formulation of the new cPlex based Mathematical model is explained,
+and also the implemented code is provided with an explanation.
+
+\section{Mathematical Formulation}\label{sec:mathematicalformulation}
+The idea behind the mathematical formulation is to implement the energy efficient scheduler mechanism, where the placement decisions are made to utilise maximum capacity of the Compute node before a new placement decision is requested on the other Compute nodes. This was conceptualised with an idea to extend the algorithm with an ability to perform live migration of the existing virtual machines to re-order the placement decisions.
+
+As the live migration is still a work in progress, the mathematical model is formulated with only the essential parameters into considerations.
+
+Parameters for the mathematical model are defined as follows:
+\\$n_s$ is the host number in the set of nodes.
+\\$N_s$ is the set of all the host nodes.
+\\$n_v$ is the virtual instance number in the requested virtual instances list.
+\\$N_v$ is the set of all the requested virtual instances to be placed.
+\\$x_{n_s}$ is the each individual host node.
+\\$x_{n_s}^{n_v}$ is the unique combination of requested virtual instance from the set of $N_v$ and host node from the set of $N_s$.
+\\$suit_{n_s}^{n_v}$ is the suitable host entry for the requested virtual instance.
+\\$d_{n_v}^{RAM}$ is the required demand of RAM for the given virtual instance.
+\\$c_{n_s}^{RAM}$ is the available capacity of RAM in the given host node.
+\\$d_{n_v}^{HDD}$ is the required demand of hard disk for the given virtual instance.
+\\$c_{n_s}^{HDD}$ is the available capacity of hard disk in the given host node.
+
+The objective function is to minimize the host nodes for placing the requested virtual instances. 
+This objective function can be given as:
+\begin{equation} \label{eq:1}
+\min{\sum_{n_s \in N_s}{x_{n_s}}}
+\end{equation}
+
+For each virtual instance, the placement request of the virtual instance is done on one and only one host node. This can be given by the equation:
+\begin{equation} \label{eq:2}
+\sum_{n_s \in N_s}{x_{n_s}^{n_v}}{suit_{n_s}^{n_v}} = 1, \forall{n_v} \in N_v
+\end{equation}
+
+The equation to determine if the host is suitable or not suitable for a given combination of virtual instance and host is given by:
+\begin{equation} \label{eq:3}
+x_{n_s}^{n_v} \leq suit_{n_s}^{n_v},\forall{n_s} \in N_s, n_v \in N_v
+\end{equation}
+
+The equation which evaluates if the placement decision can be made on the given host node or not for a given virtual instance is given by:
+\begin{equation} \label{eq:4}
+x_{n_s} \geq x_{n_s}^{n_v},\forall{n_s} \in N_s, n_v \in N_v
+\end{equation}
+
+The RAM capacity constraints are given as follows:
+\begin{equation} \label{eq:5}
+\sum_{n_v \in N_v}{x_{n s}^{n_v}}{d_{n_v}^{RAM}} \leq c_{n_s}^{RAM}, \forall{n_s} \in N_s 
+\end{equation}
+
+The hard disk(HDD) capacity constraints are given as follows:
+\begin{equation} \label{eq:6}
+\sum_{n_v \in N_v}{x_{n s}^{n_v}}{d_{n_v}^{HDD}} \leq c_{n_s}^{HDD}, \forall{n_s} \in N_s 
+\end{equation}
+
+These equations provide the boundary conditions to determine the possible placement decision of the virtual instances in the host nodes.
+
+\section{The overview of implementation}\label{sec:overviewofimplementation}
+
+IBM ILOG CPLEX\textsuperscript{\textregistered} Optimizer is a mathematical programming technology that enables decision of mathematical optimization for improving efficiency, reducing costs, and increasing profitability\cite{cplex-optimizer}.
+This software is used to provide the solution for placement decision of the virtual instances on the host nodes.
+For the purpose of this Thesis, the version 12.6 of the IBM Cplex is used.
+
+To implement the mathematical formulation described in the section \nameref{sec:mathematicalformulation}, a new scheduler file is created with a name \verb|"tuc_ccn_scheduler.py"|.
+
+The \verb|tuc_ccn_scheduler.py| has the class and function definition similar to the default \verb|FilterScheduler|.
+There are few changes in the implementation of the \verb|_schedule| function and a new function named as \verb|solve_TUC_Cplex| has been added to implement the new cPlex based mathematical scheduling model.
+
+The \verb|_schedule| function for the new \verb|tuc_ccn_scheduler| is given as:
+\newline
+\begin{lstlisting}[frame=single, language=Python, caption={The cPlex based TUC\_scheduler's \_schedule function}, label={lst:tuc_schedule}, escapechar=|]
+def _schedule(self, context, request_spec, filter_properties):
+	"""Returns a list of hosts that meet the required specs,
+	ordered by their fitness.
+	"""
+	elevated = context.elevated()
+	instance_properties = request_spec['instance_properties']
+
+	# NOTE(danms): Instance here is still a dict, which is converted from
+	# an object. The pci_requests are a dict as well. Convert this when
+	# we get an object all the way to this path.
+	# TODO(sbauza): Will be fixed later by the RequestSpec object
+	pci_requests = instance_properties.get('pci_requests')
+	if pci_requests:
+		pci_requests = (
+			objects.InstancePCIRequests.from_request_spec_instance_props(
+				pci_requests))
+		instance_properties['pci_requests'] = pci_requests
+
+	instance_type = request_spec.get("instance_type", None)
+
+	update_group_hosts = filter_properties.get('group_updated', False)
+
+	config_options = self._get_configuration_options()
+
+	filter_properties.update({'context': context,
+							  'request_spec': request_spec,
+							  'config_options': config_options,
+							  'instance_type': instance_type})
+
+	# Find our local list of acceptable hosts by repeatedly
+	# filtering and weighing our options. Each time we choose a
+	# host, we virtually consume resources on it so subsequent
+	# selections can adjust accordingly.
+
+	# Note: remember, we are using an iterator here. So only
+	# traverse this list once. This can bite you if the hosts
+	# are being scanned in a filter or weighing function.
+	hosts = self._get_all_host_states(elevated)
+	selected_hosts = []
+	num_instances = request_spec.get('num_instances', 1)
+
+	# the function get_filtered_hosts is called only once
+	# before the for loop unlike the default scheduler's
+	# _schedule function
+	hosts = self.host_manager.get_filtered_hosts(hosts,|\label{line:tuc_get_filtered_hosts}|
+			filter_properties, index=0)
+
+	weighed_hosts = self.weight_handler.get_weighed_objects(self.weighers,
+			hosts, filter_properties)
+
+	vi_hosts = {}
+	start_time = rtime.time()
+	# implementation of cPlex based mathematical solver
+	try:
+		vi_hosts = self.solve_TUC_Cplex(hosts, filter_properties, num_instances)|\label{line:solve_TUC_Cplex}|
+	except CplexError as exc:
+		LOG.error('%s', exc)
+		reason = _(exc)
+		raise exception.NoValidHost(reason=reason)
+	#end of the function call within try and exception
+	
+	for num in range(num_instances):
+		weighed_hosts = vi_hosts[num]
+
+		scheduler_host_subset_size = CONF.scheduler_host_subset_size
+
+		if scheduler_host_subset_size > len(weighed_hosts):
+			scheduler_host_subset_size = len(weighed_hosts)
+		if scheduler_host_subset_size < 1:
+			scheduler_host_subset_size = 1
+
+		chosen_host = weighed_hosts[0]
+		LOG.debug("Selected host: %(host)s", {'host': chosen_host})
+
+		# append the selected hosts  to the array mapping
+		selected_hosts.append(chosen_host)
+
+		# Now consume the resources so the filter/weights
+		# will change for the next instance.
+		chosen_host.obj.consume_from_instance(instance_properties)
+		if update_group_hosts is True:
+			# NOTE(sbauza): Group details are serialized into a list now
+			# that they are populated by the conductor, we need to
+			# deserialize them
+			if isinstance(filter_properties['group_hosts'], list):
+				filter_properties['group_hosts'] = set(
+					filter_properties['group_hosts'])
+			filter_properties['group_hosts'].add(chosen_host.obj.host)
+	LOG.info('%s number of instances scheduled with tuc scheduler in %s seconds' % (num_instances, (rtime.time() - start_time)))
+	return selected_hosts
+\end{lstlisting}
+
+In the above code listing \ref{lst:tuc_schedule}, the \verb|get_filtered_hosts| at line number \ref{line:tuc_get_filtered_hosts} is called before the for loop and called only once to provide an input to cPlex solver, unlike the default scheduler which filters the hosts for each request of an instance.
+
+The cPlex based solver funtion is called at line number \ref{line:solve_TUC_Cplex}. The hosts, filter\_properties and num\_instances are passed as parameters to the function in the listing \ref{lst:solve_TUC_Cplex}.
+\newline
+\begin{lstlisting}[frame=single, language=Python, caption={The cPlex based TUC\_scheduler's solve\_TUC\_Cplex function}, label={lst:solve_TUC_Cplex}, escapechar=|]
+def solve_TUC_Cplex(self, hosts, filter_properties, num_instances):
+	weighedHosts    = []
+	#available RAM capacity on each compute (host) node
+	ns_rams         = []
+	#available HDD capacity on each compute (host) node
+	ns_hdds         = []
+	for host in hosts:
+		weighedHost = []
+		weighedHost.append(host)
+		weighedHost = self.host_manager.get_weighed_hosts(weighedHost,
+				filter_properties)
+		weighedHosts.append(weighedHost)
+		ns_rams.append(host.free_ram_mb)
+		ns_hdds.append(host.free_disk_mb)
+
+	instance_type = filter_properties['instance_type']
+	root_gb     = instance_type['root_gb']
+	memory_mb   = instance_type['memory_mb']
+	nvram       = 1.0*memory_mb
+	nvhdd       = 1024.0*root_gb
+	my_prob     = cplex.Cplex()
+
+	#Number of hosts available to cater the requested instances
+	host_count  = len(hosts)
+	vis         = num_instances
+
+	# cPlex input parameters
+	# objective function parameters
+	my_obj      = []
+	# upper bound values
+	my_ub       = []
+	# lower bound values
+	my_lb       = []
+	# parameter type
+	my_ctype    = ''
+	# names of all the mathematical parameters
+	my_colnames = []
+	# the values on the right hand side
+	my_rhs      = []
+	# unique name for each row
+	my_rownames = []
+	my_sense    = ''
+
+	rows        =   []
+
+	# translate the mathematical formulations into cPlex input
+	for i in range(host_count):
+		my_obj.append(1.0)
+		my_colnames.append("x_"+str(i))
+		my_ub.append(1.0)
+		my_lb.append(0.0)
+		my_ctype = my_ctype+'B'
+		vvar  = []
+		vvalr = []
+		vvalh = []
+		for j in range(vis):
+			my_obj.append(0.0)
+			my_colnames.append("x_"+str(i)+"_"+str(j))
+			my_ub.append(1.0)
+			my_rhs.append(0.0)
+			my_ctype = my_ctype+'B'
+			my_lb.append(0.0)
+			row = []
+			var = []
+			val = []
+			var.append("x_"+str(i))
+			var.append("x_"+str(i)+"_"+str(j))
+			val.append(1.0)
+			val.append(-1.0)
+			row.append(var)
+			row.append(val)
+			rows.append(row)
+			my_rownames.append('rsv_'+str(i)+'_'+str(j))
+			my_sense = my_sense+'G'
+			vvar.append("x_"+str(i)+"_"+str(j))
+			vvalr.append(nvram)
+			vvalh.append(nvhdd)
+		row = []
+		row.append(vvar)
+		row.append(vvalr)
+		rows.append(row)
+		my_rhs.append(ns_rams[i])
+		my_sense = my_sense+'L'
+		my_rownames.append('rsram_'+str(i))
+		row = []
+		row.append(vvar)
+		row.append(vvalh)
+		rows.append(row)
+		my_rhs.append(ns_hdds[i])
+		my_sense = my_sense+'L'
+		my_rownames.append('rshdd_'+str(i))
+
+	for i in range(vis):
+		row = []
+		var = []
+		val = []
+		for j in range(host_count):
+			var.append("x_"+str(j)+"_"+str(i))
+			val.append(1.0)
+		my_sense = my_sense+'E'
+		row.append(var)
+		row.append(val)
+		rows.append(row)
+		my_rhs.append(1.0)
+		my_rownames.append('rnv_'+str(i))
+
+	my_prob.objective.set_sense(my_prob.objective.sense.minimize)
+
+	my_prob.variables.add(obj=my_obj, lb=my_lb, ub=my_ub,
+		types=my_ctype, names=my_colnames)
+
+	# pass all parameters to cPlex to solve the equation
+	my_prob.linear_constraints.add(lin_expr=rows, senses=my_sense,
+		rhs=my_rhs, names=my_rownames)
+	# solve the mathematical model
+	my_prob.solve()
+
+	numcols = my_prob.variables.get_num()
+	numrows = my_prob.linear_constraints.get_num()
+
+	slack = my_prob.solution.get_linear_slacks()
+	# get the solution values
+	x = my_prob.solution.get_values()
+
+	vi_hosts = {}
+	for i in range(vis):
+		for j in range(host_count):
+			vi_host = (j*vis+1+j)+i
+			if x[vi_host] == 1.0:
+				vi_hosts[i] = weighedHosts[j]
+
+	#LOG.info('VI Hosts: %(vih)s', {'vih': vi_hosts})
+	return vi_hosts
+\end{lstlisting}
+
+The above code listing \ref{lst:solve_TUC_Cplex} is a cPlex based approach to perform scheduling of virtual instances.
+
+The comparisions of both the schedulers and their performances are provided in the chapter \nameref{ch:comparisionofbothscheduler}.

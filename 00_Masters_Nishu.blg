@@ -1,0 +1,31 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: 00_Masters_Nishu.aux
+A level-1 auxiliary file: 01_abstract.aux
+A level-1 auxiliary file: 02_introduction_cloud.aux
+A level-1 auxiliary file: 03_introduction_openstack.aux
+A level-1 auxiliary file: 04_config.aux
+A level-1 auxiliary file: 05_standard_nova.aux
+A level-1 auxiliary file: 06_cplex_scheduler.aux
+A level-1 auxiliary file: 07_evaluation.aux
+A level-1 auxiliary file: 08_possibilities_of_extension.aux
+A level-1 auxiliary file: 09_conclusion.aux
+The style file: unsrtnat.bst
+A level-1 auxiliary file: 90_anhang_01.aux
+A level-1 auxiliary file: 90_anhang_02.aux
+Database file #1: bib/literatur.bib
+Warning--empty year in salesforce
+Warning--empty year in IBMcloud
+Warning--empty year in OpenStack
+Warning--empty year in IBMcloud:SaaS
+Warning--empty year in IBMcloud:PaaS
+Warning--empty year in IBMcloud:IaaS
+Warning--empty year in OpenStack:software
+Warning--empty year in OpenStack:state_transitions
+Warning--empty year in OpenStack:filteringworkflow1
+Warning--empty year in OpenStack:filteringWorkflow2
+Warning--empty year in OpenStack:hwreqs
+Warning--empty year in OpenStack:networklayout
+Warning--empty year in openstack_nfv
+Warning--empty year in openBatonFeatures
+Warning--empty year in cplex-optimizer
+Warning--empty year in nfv_technical_overview
+(There were 16 warnings)

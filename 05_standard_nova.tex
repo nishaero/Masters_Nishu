@@ -1,0 +1,181 @@
+% !TEX root       = ./type_name.tex
+% !TEX program    = pdflatex
+% !TEX encoding   = utf-8
+% !TEX spellcheck = de_DE_frami
+%=======================================================================
+
+\chapter{Standard Nova Scheduling Algorithm}\label{ch:novaalgorithm}
+
+OpenStack Nova uses the \verb|nova-scheduler| service to determine how to dispatch the compute requests which are requested by the user.
+It calculates and determines on which \verb|compute| host node should the request for the virtual machine be processed.
+The scheduler can be configured through a variety of options provided by the OpenStack.
+
+
+\section{Theory of Nova Algorithm}\label{sec:novaalgorithmtheory}
+
+As explained in \nameref{sec:novafilterschedulerdetailed}, the nova scheduler has a \textbf{Filter Scheduler} which supports the filtering and weighting the hosts to make informed decisions about on which host a new instance should or can possibly be created.
+
+The filter scheduler iterates over each host and validates if the available resources on the host can support the requested virtual instance.
+It creates a list of available hosts hosts which can serve the request to host an instance and proceeds with the filter mechanism.
+
+The filter scheduler iterates over each available host, collects the resource information from the host and weighs according to the highest to lowest resource availability.
+
+This filter scheduler in the Compute scheduler service is configured with the following default scheduler options in the \verb|/etc/nova/nova.conf| file:
+
+\begin{lstlisting}[frame=single]
+scheduler_driver_task_period = 60
+scheduler_driver = nova.scheduler.filter_scheduler.FilterScheduler
+scheduler_available_filters = nova.scheduler.filters.all_filters
+scheduler_default_filters = RetryFilter, AvailabilityZoneFilter, RamFilter,DiskFilter, ComputeFilter, ComputeCapabilitiesFilter, ImagePropertiesFilter, ServerGroupAntiAffinityFilter, ServerGroupAffinityFilter
+\end{lstlisting}
+
+By default, the \verb|scheduler_driver| is configured with a filter scheduler which can be found at \verb|/usr/lib/python2.7/dist-packages/nova/scheduler/filter_sche|- \verb|duler.py| with the class name \verb|FilterScheduler|.
+
+In the default configuration, this scheduler considers hosts that meet all the following criteria:
+
+\begin{itemize}
+	\item Any host that has not been attempted for scheduling purposes (RetryFilter).
+
+	\item Any host that is available in the requested availability zone (AvailabilityZoneFilter).
+
+	\item Any host that has sufficient availability of RAM to host an instance (RamFilter).
+
+	\item Any host that has sufficient disk memory space available for root and ephemeral storage (DiskFilter).
+
+	\item Any host that can and is available to service the request (ComputeFilter).
+
+	\item Any host that can satisfy the extra specifications associated with the instance type (ComputeCapabilitiesFilter).
+
+	\item Any host that can satisfy any architecture, hypervisor type, or virtual machine mode properties specified on the instance's image properties (ImagePropertiesFilter).
+
+	\item Any host that is on a different host than other instances of a group (if requested) (ServerGroupAntiAffinityFilter).
+
+	\item Any host that is in a set of group hosts (if requested) (ServerGroupAffinityFilter).
+
+	\item Any host that is visible in the refreshed scheduler cache list of available hosts; by the use of \verb|scheduler_driver_task_period| option to specify how often the list is updated.
+\end{itemize}
+
+When the task of scheduling a virtual machine on a host is triggered by an user, the Filter Scheduler iterates over all found compute nodes, evaluating each against a set of filters.
+The resultant list of available hosts are ordered by the weighers.
+
+At the end, the Filter Scheduler sorts selected hosts by their weight and attempts to provision instances on the chosen hosts.
+
+\newpage
+
+\section{Code Trace}\label{sec:codetrace}
+
+In this section, the code trace to the nova scheduler can be observed.
+
+When an instance is requested, it is received by the nova API listener for validation of the nova API URL and processes the requested tasks based on the requested input parameters.
+The Nova API reads the default scheduler file from the \verb|/etc/|\verb|nova/| \verb|nova.conf| file.
+In the python source file \verb|filter_scheduler|, the \verb|FilterScheduler| \verb|class| is initialized by the \verb|driver.Scheduler| driver.
+
+The scheduler driver object calls the \verb|def| \verb|select_destinations(self,| \verb|context,| \verb|request_spec,| \verb|filter_properties)| function in the \verb|FilterScheduler| class.
+\newline
+\begin{lstlisting}[frame=single, language=Python, caption={The function select\_destination},label={lst:select_destinations}, escapechar=|]
+def select_destinations(self, context, request_spec, filter_properties):
+	"""Selects a filtered set of hosts and nodes."""
+	self.notifier.info(context,
+		'scheduler.select_destinations.start',
+		dict(request_spec=request_spec))
+
+	# Count of requested virtual instances
+	num_instances = request_spec['num_instances']
+
+	# The FilterScheduler._schedule function is called,
+	# which schedules the possible hosts for the requested instances
+	selected_hosts = self._schedule(context, request_spec,|\label{line:select_destinations_schedule}|
+		filter_properties)
+
+	...
+	...
+	
+\end{lstlisting}
+
+In the above code listing \ref{lst:select_destinations}, the function \verb|_schedule| called at line \ref{line:select_destinations_schedule}
+initiates the scheduling algorithm by passing the \verb|request_spec| as the parameter which holds all the specifications for creating the virtual instances like; requested number of instances, required RAM capacity per instance, required HDD capacity per instance, required VCPUs per instance, required OS image to boot the virtual instance with it, and other instance related parameters.
+
+Stepping into the function \verb|FilterScheduler._schedule| given in listing \ref{lst:select_destinations_schedule}.
+\newline
+\begin{lstlisting}[frame=single, language=Python, caption={The function \_schedule}, label={lst:select_destinations_schedule}, escapechar=|]
+def _schedule(self, context, request_spec, filter_properties):
+	"""Returns a list of hosts that meet the required specs,
+	ordered by their fitness.
+	"""
+
+	...
+	...
+	
+	# iterate each host and select the host to place an instance
+	for num in range(num_instances):
+		# Filter local hosts based on requirements ...
+		hosts = self.host_manager.get_filtered_hosts(hosts,|\label{line:get_filtered_hosts}|
+				filter_properties, index=num)
+		if not hosts:
+			# Can't get any more locally.
+			break
+
+		LOG.debug("Filtered %(hosts)s", {'hosts': hosts})
+
+		# weigh the hosts based on the weighing filter
+		weighed_hosts = self.host_manager.get_weighed_hosts(hosts,|\label{line:get_weighed_hosts}|
+				filter_properties)
+
+		...
+		...
+		
+		chosen_host = random.choice(
+			weighed_hosts[0:scheduler_host_subset_size])
+		LOG.debug("Selected host: %(host)s", {'host': chosen_host})
+		selected_hosts.append(chosen_host)|\label{line:chosen_host}|
+
+		...
+		...
+
+	LOG.info('%s number of instances scheduled with filter scheduler in %s seconds' % (num_instances, (rtime.time() - start_time)))
+	return selected_hosts
+\end{lstlisting}
+
+
+In the listing \ref{lst:select_destinations_schedule}, at the line number \ref{line:get_filtered_hosts}, the function \verb|get_filtered_hosts| in the class \verb|HostManager| in the python source file \verb|host_manager| is called to filter the hosts based on the RAM filter, Disk Filter, Compute Filter, and other specified filters in the list.
+
+Stepping into the \verb|get_filtered_hosts| given in listing \ref{lst:get_filtered_hosts}.
+\newline
+\begin{lstlisting}[frame=single, language=Python, caption={The function get\_filtered\_hosts}, label={lst:get_filtered_hosts}, escapechar=|]
+def get_filtered_hosts(self, hosts, filter_properties,
+		filter_class_names=None, index=0):
+	"""Filter hosts and return only ones passing all filters."""
+
+	...
+	...
+	
+	if filter_class_names is None:
+		filters = self.default_filters|\label{line:default_filters}|
+	else:
+		filters = self._choose_host_filters(filter_class_names)|\label{line:choose_host_filters}|
+	ignore_hosts = filter_properties.get('ignore_hosts', [])
+	force_hosts = filter_properties.get('force_hosts', [])
+	force_nodes = filter_properties.get('force_nodes', [])
+
+	...
+	...
+	return self.filter_handler.get_filtered_objects(filters,
+			hosts, filter_properties, index)
+\end{lstlisting}
+
+In this listing \ref{lst:get_filtered_hosts}, the filter classes are loaded either by default at line number \ref{line:default_filters} or by the specified list of filters at line number \ref{line:choose_host_filters}.
+These classes include the \verb|nova|.\verb|scheduler|. \verb|filters|.\verb|ram_filter|, \verb|nova|.\verb|scheduler|.\verb|filters|.\verb|disk_filter|, \verb|nova|.\verb|scheduler|.\newline\verb|filters|.\verb|compute_filter| and other specified default filters.
+
+In the listing \ref{lst:select_destinations_schedule}, at the line number \ref{line:get_weighed_hosts}, the function \verb|get_weighed_hosts| in the class \verb|HostManager| in the python source file \verb|host_manager| is called to get list of hosts sorted according to the weights calculated by the weights filter. At line \ref{line:chosen_host} the chosen host is then set as selected host for the requested virtual instance.
+
+The listing \ref{lst:get_weighed_hosts} calculates the weights of each host by comparing with the available properties of host and the requested properties of an instance as mentioned in the section \ref{ssec:novaweights}
+\begin{lstlisting}[frame=single, language=Python, caption={The function \_schedule}, label={lst:get_weighed_hosts}, escapechar=|]
+def get_weighed_hosts(self, hosts, weight_properties):
+	"""Weigh the hosts."""
+	return self.weight_handler.get_weighed_objects(self.weighers,
+			hosts, weight_properties)
+\end{lstlisting}
+
+The \verb|get_weighed_objects| looks for actual available resources on the hosts and calculates the weight of each objects.
+
+The custom trace of the log can be observed in the Appendix \nameref{app:ch:logs} at \nameref{app:sec:filterschedulerlogtrace}.

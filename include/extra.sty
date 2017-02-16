@@ -1,0 +1,57 @@
+%======================================================================
+% Author(s)     : Daniel Kriesten
+% Email         : daniel.kriesten@etit.tu-chemnitz.de
+% Creation Date : <Mo 09 Mär 2015 13:01:02 krid>
+% Last Modified : <Mo 09 Mär 2015 12:45:44 krid>
+%======================================================================
+% based on 'user.sty' by Matthias Kupfer
+%======================================================================
+
+%=======================================================================
+%:colors
+%=======================================================================
+\definecolor{darkgreen} {rgb}{0, .5, 0}
+\definecolor{aqua}{rgb}{0.31, .5, 0.74}
+\definecolor{susepflaume}{rgb}{0,0,0.45} % Thx an Bernhard Walle
+
+% Solarized palette
+\definecolor{solarizedBase03}{rgb}{0.00, 0.17, 0.21}
+\definecolor{solarizedBase02}{rgb}{0.03, 0.21, 0.26}
+\definecolor{solarizedBase01}{rgb}{0.35, 0.43, 0.46}    % optional emphasized
+\definecolor{solarizedBase00}{rgb}{0.40, 0.48, 0.51}    % body text
+\definecolor{solarizedBase0}{rgb}{0.51, 0.58, 0.59}
+\definecolor{solarizedBase1}{rgb}{0.58, 0.63, 0.63}    % comments
+\definecolor{solarizedBase2}{rgb}{0.93, 0.91, 0.84}    % bg Highlight
+\definecolor{solarizedBase3}{rgb}{0.99, 0.96, 0.89}    % ligh bg
+
+\definecolor{solarizedYellow}{rgb}{0.71, 0.54, 0.00}
+\definecolor{solarizedOrange}{rgb}{0.80, 0.29, 0.09}
+\definecolor{solarizedRed}{rgb}{0.86, 0.20, 0.18}
+\definecolor{solarizedMagenta}{rgb}{0.83, 0.21, 0.51}
+\definecolor{solarizedViolet}{rgb}{0.42, 0.44, 0.77}
+\definecolor{solarizedBlue}{rgb}{0.15, 0.55, 0.82}
+\definecolor{solarizedCyan}{rgb}{0.16, 0.63, 0.60}
+\definecolor{solarizedGreen}{rgb}{0.52, 0.60, 0.00}
+
+%======================================================================
+% missing: eine Randnote fuer fehlende Teile
+% \missing{Beweis fehlt noch}
+%======================================================================
+\newcommand{\missing}[1]{\textcolor{red}{(\marginpar[\hfill\small\bfseries$\longrightarrow$ Hier fehlt was!]{\small\bfseries$\longleftarrow$ Hier fehlt was!}#1)}}
+
+%======================================================================
+% missing: eine Randnote fuer fehlende Teile
+% \hint{stimmt das noch?}
+%======================================================================
+\newcommand{\hint}[1]{\textcolor{red}{(\marginpar[\hfill\small\bfseries$\longrightarrow$ #1]{\small\bfseries$\longleftarrow$ #1}?)}}
+
+%======================================================================
+% comment: Kommentar und einer farbigen Box
+% \comment{Ein Kommentar}
+%======================================================================
+\definecolor{commentcolor}{rgb}{0.99, 0.96, 0.89}
+\definecolor{commentborder}{rgb}{0.93, 0.91, 0.84}
+\setlength{\fboxrule}{0.5mm}
+\newcommand{\comment}[1]{\begin{center}\fcolorbox{commentborder}{commentcolor}{\parbox[][][c]{0.9\textwidth}{#1}}\end{center}}
+
+% vim: tw=0:

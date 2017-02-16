@@ -1,0 +1,309 @@
+% !TEX program    = pdflatex
+
+% !TEX encoding   = utf-8
+%=======================================================================
+% The main file
+% TODO change it's name to fit type of work and your name
+%      (e.g. bachelor_kriesten.tex)
+%      If you use the makefile, change the name there as well
+%=======================================================================
+\documentclass[%
+12pt,
+% DIV=16,      % could be useful when printing
+abstract=true,
+appendixprefix,
+automark,
+BCOR8mm,    % could be useful when printing
+bibliography=totoc,
+cleardoublepage=plain,
+DIV=calc,    % could be useful when printing
+english,
+footsepline,   % just a suggestion
+headings=normal,
+headsepline,   % just a suggestion
+index=totoc,
+listof=totoc,
+numbers=noenddot,
+oneside,
+openany,
+paper=a4,
+parskip=half,  % just a suggestion
+titlepage=true
+%draft,         % TODO remove for final version
+%fontsize=
+%ngerman,
+%bibliography=totoc,
+%toc=listof,
+% twoside,     % could be useful when printing
+]{scrreprt}
+
+%=======================================================================
+% before any other thing, we check if we are called as pdflatex
+%=======================================================================
+%\ifpdfoutput{}{\errmessage{Compilation works only with pdflatex!}}
+
+%=======================================================================
+% default latex preamble
+% TODO Create an English one as well!
+%=======================================================================
+\usepackage{scrhack} % a hack to supress some warnings
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ae,aecompl}
+\usepackage[english]{babel}
+%\usepackage[ngerman]{babel}
+%\usepackage[babel,german=quotes]{csquotes}
+%\usepackage[ngerman]{translator}
+\usepackage{lmodern}
+\usepackage[automark]{scrpage2}
+\usepackage{textcomp}
+\usepackage{booktabs, multirow}
+\usepackage{caption}
+\usepackage[final]{listings} % code listings
+\usepackage{xcolor}
+\usepackage{include/extra}
+\usepackage{include/hacks}
+\usepackage{include/metadatenREV} %nur temporär für \gitversion
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{nameref}
+\usepackage{listings}
+\usepackage[toc]{appendix}
+
+
+%=======================================================================
+%:bibliography
+% compile with biber <basename>
+%=======================================================================
+%\usepackage[
+%  backend=biber,
+%  style=numeric,
+%  sorting=anyt, %anyt, nyt oder none
+%  hyperref=true,
+%  url=true,
+%  doi=false,
+%]{biblatex}
+\usepackage[numbers]{natbib}
+\usepackage{lipsum}
+%\addbibresource{bib/literatur.bib}
+
+%=======================================================================
+%:to include images
+%=======================================================================
+\usepackage[final,pdftex]{graphicx}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\graphicspath{{pictures/pdf/}{pictures/png/}{pictures/jpg/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg}
+
+%=======================================================================
+%:glossaries
+%=======================================================================
+\usepackage[%
+  acronym,
+  shortcuts,
+  nonumberlist,
+  notree,
+  toc,
+  hyperfirst=true,
+%  xindy={language=german-duden,codepage=utf8}
+  xindy={language=english-duden,codepage=utf8}
+]{glossaries}
+\makeglossaries{}
+\setlength{\glslistdottedwidth}{.3\linewidth}
+\loadglsentries{glossaries/glossaries.tex}
+
+%=======================================================================
+% to have clickable links in the .pdf
+% shall also be one of the last packages to include
+%=======================================================================
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[final,pdftex,breaklinks,colorlinks=true]{hyperref}
+\pdfcompresslevel=9
+
+%=======================================================================
+% the clever reference package
+% must be the last one!
+%=======================================================================
+%\usepackage[german]{cleveref}
+\usepackage[paper=a4paper]{geometry}
+
+%=======================================================================
+%:blindtext package (FIXME remove, it's only for testing)
+%=======================================================================
+\usepackage{blindtext} % FIXME remove, it's only for testing
+
+%=======================================================================
+%:page setup using scrpage2
+%=======================================================================
+\clearscrheadings{}
+\ihead{\headmark}
+\chead{}
+\ohead{\pagemark}
+\ifoot{}
+\cfoot{}
+%\ofoot{}
+%\ofoot{\textcolor{gray}{\gitversion}} % remove for final
+\pagestyle{scrheadings}
+
+%=======================================================================
+% include the metadata in the .pdf as well
+%=======================================================================
+\definecolor{susepflaume}{rgb}{0,0,0.45} % Thx an Bernhard Walle
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4
+}
+ 
+\lstset{style=mystyle}
+
+\hypersetup{%
+  pdftitle     = {\dctitle{}},
+%  pdftitle     = {\dctitle{}, \dcsubtitle{}},
+  pdfsubject   = {\dcsubject{}, \dcdate{}},
+  pdfauthor    = {\dcauthorfirstname~\dcauthorlastname, \dcauthoremail},
+  pdfkeywords  = {\dckeywords},
+  linkcolor    = {susepflaume},
+  citecolor    = {darkgreen},
+  urlcolor     = {blue},
+}
+
+%=======================================================================
+%:page construction
+% fussy:  better looking, but often more warnings on over-/underfull boxes
+% sloppy: more relaxed, but sometimes worse looking pages
+%=======================================================================
+%\sloppy
+\fussy
+
+\makeatletter
+  \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
+\makeatother
+\begin{document}
+%=======================================================================
+%:include the titlepage as a snippet
+%=======================================================================
+\input{include/title.tex}
+% output the titlepage(s)
+\maketitle
+
+%=======================================================================
+%:include the abstract
+%=======================================================================
+\include{01_abstract}
+
+%=======================================================================
+% output all the tables/lists of foo
+% TODO remove unused
+\pagenumbering{roman}
+\pdfbookmark{TableofContents}{Table of Contents}
+\tableofcontents{}
+\clearpage{}
+
+\markboth{Abbildungsverzeichnis}{Abbildungsverzeichnis}
+\listoffigures{}
+\clearpage{}
+
+\markboth{Tabellenverzeichnis}{Tabellenverzeichnis}
+\listoftables{}
+\clearpage{}
+\cleardoublepage
+\pagebreak
+\newpage
+
+\printglossary[style=long]{}
+\printglossary[style=listdotted,type=\acronymtype]{}
+\cleardoublepage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%=======================================================================
+
+%=======================================================================
+%:Main part
+%=======================================================================
+% TODO adapt to fit your filenames
+
+%\include{00_abstract}
+%\include{01_introduction}
+\include{02_introduction_cloud}
+\include{03_introduction_openstack}
+\include{04_config}
+\include{05_standard_nova}
+\include{06_cplex_scheduler}
+\include{07_evaluation}
+\include{08_possibilities_of_extension}
+\include{09_conclusion}
+
+%======================================================================
+%:Literaturverzeichnis
+%======================================================================
+\newpage
+\bibliographystyle{unsrtnat}
+\bibliography{bib/literatur}
+
+
+%======================================================================
+%:Anhang (TODO)
+%======================================================================
+\appendix
+\phantomsection{}
+\addcontentsline{toc}{chapter}{\appendixname}
+\addpart*{\appendixname}\label{p:anhang}
+
+\include{90_anhang_01}
+\include{90_anhang_02}
+
+
+
+
+%======================================================================
+%:Selbstständigkeitserklärung
+%======================================================================
+\addchap{Versicherung}
+
+Hiermit versichere ich, dass ich die vorliegende Arbeit ohne unzulässige Hilfe Dritter und ohne
+Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe; die aus fremden Quellen direkt
+oder indirekt übernommenen Gedanken sind als solche kenntlich gemacht.\\
+Bei der Auswahl und Auswertung des Materials sowie bei der Herstellung des Manuskripts habe ich
+Unterstützungsleistungen von folgenden Personen erhalten: \\[2ex]
+\hspace*{\fill}keine\hspace*{\fill}\\[2ex]
+Weitere Personen waren an der Abfassung der vorliegenden Arbeit nicht beteiligt. Die Hilfe eines
+Promotionsberaters habe ich nicht in Anspruch genommen. Weitere Personen haben von mir keine
+geldwerten Leistungen für Arbeiten erhalten, die im Zusammenhang mit dem Inhalt der vorgelegten
+Dissertation stehen.
+
+Die Arbeit wurde bisher weder im Inland noch im Ausland in gleicher oder ähnlicher Form einer
+anderen Prüfungsbehörde vorgelegt.
+
+\vspace{4ex}
+\begin{flushleft}
+\dcplace, \dcdate\\[8ex]
+\newlength\us\settowidth{\us}{-\dcauthorfirstname~\dcauthorlastname-}
+\begin{tabular}{p{\us}}\midrule
+\centering\footnotesize \dcauthorfirstname~\dcauthorlastname{}
+\end{tabular}
+\end{flushleft}
+
+\end{document}
+%=======================================================================
+% vim: ts=2:sw=2:sts=2:expandtab:wrapmargin=2:tw=120
+

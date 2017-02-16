@@ -1,0 +1,71 @@
+% !TEX root       = ./type_name.tex
+% !TEX program    = pdflatex
+% !TEX encoding   = utf-8
+% !TEX spellcheck = de_DE_frami
+%=======================================================================
+
+%\chapter{Introduction}\label{ch:einleitung}
+\chapter{Introduction to OpenStack Cloud}\label{ch:introduction_openstack}
+\sffamily{}
+OpenStack is a cloud operating system that controls large pools of compute, storage, and networking resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering their users to provision resources through a web interface. In other words, it manages the creation, management, upgradation of request based virtual CPU's, the public, private or hybrid cloud networks, and the requested storage allocation.
+
+OpenStack is the open source cloud computing platform that meets the needs of public and private cloud providers regardless of size. OpenStack services control large pools of compute, storage, and networking resources throughout a data center.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\linewidth]{openstack}
+  \caption{OpenStack software diagram}\label{fig:openstack}
+\end{figure}
+
+The technology behind OpenStack consists of a series of interrelated projects delivering various components for a cloud infrastructure solution. Each service provides an open API so that all of these resources can be managed through a dashboard that gives administrators control while empowering users to provision resources through a web interface, a command-line client, or software development kits that support the API.
+
+OpenStack is designed for horizontal scalability, so the user can easily add new compute, network, and storage resources to grow their cloud over time. In addition to the pervasiveness of massive OpenStack public clouds, many organizations, such as PayPal, Intel, and Comcast, build large-scale private clouds. OpenStack offers much more than a typical software package because it lets the user to integrate a number of different technologies to construct a cloud. This approach provides great flexibility, but the number of options might be daunting at first.
+
+OpenStack clouds are powered by various OpenStack projects.
+The selection of the components in openstack depends on how will the user be using OpenStack:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1.0\linewidth]{Compute_ObjectStorage}
+  \caption{Primary objective to decide the purpose of having an OpenStack Cloud}\label{fig:Compute_ObjectStorage}
+\end{figure}
+
+It actually specifies if the usage of OpenStack is, only with Compute - which defines the management of virtual machines on cloud, or only with Object Storage - which defines the allocation of end user based storage space on cloud, or the mix of both of Compute and Object Storage. Based on the objective of setting up the cloud, the core components can be selected as per the need from the wide range of available components.
+
+\section{Motivation}\label{sec:motivation}
+
+%\hint{Keep Scrolling!}\blindtext[1]
+\comment{%
+  \begin{itemize}
+    \item The primary motivation the document is filled with huge amounts of blindtext, showing all the fancy stuff of \LaTeX{} and this template
+    \item Go on scrolling though the document to find all the bells and wistles
+    \item remove it, fill with your knowledge
+    \item adapt the structure to your needs
+  \end{itemize}
+}
+\blindlist{itemize}[3]
+\blindtext[1]
+
+\section{Ziel der Arbeit}\label{sec:ziel}
+
+\blindtext[1]
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.3\linewidth]{BildTBD}
+  \caption{Hier könnte ein Bild stehen}\label{fig:bildtbd}
+\end{figure}
+
+Auch zeigt \cref{fig:bildtbd}, dass es genau so ist. Man könnte das auch mit einer \gls{gls:app}
+realisieren. \missing{Quelle des Bildes noch ergänzen.}
+
+\section{Struktur der Arbeit}\label{sec:struktur}
+
+Die Arbeit gliedert sich wie folgt. \Cref{ch:grundlagen} erläutert wesentliche Grundlagen. Die theoretischen
+Überlegungen zur Arbeit werden in \cref{ch:theorie} dargestellt. Die vorgenommene Entwicklung ist in \cref{ch:impl}
+wiedergegeben.  \Cref{ch:Conclusion} fasst die Ergebnisse der Arbeit noch einmal zusammen und gibt einen Ausblick auf
+zukünftige Entwicklungen.
+
+
+% vim: ts=2:sw=2:sts=2:expandtab:wrapmargin=2:tw=120
+

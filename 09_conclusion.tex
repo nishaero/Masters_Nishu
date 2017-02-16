@@ -1,0 +1,26 @@
+% !TEX root       = ./type_name.tex
+% !TEX program    = pdflatex
+% !TEX encoding   = utf-8
+% !TEX spellcheck = de_DE_frami
+%=======================================================================
+
+\chapter{Conclusion}\label{ch:Conclusion}
+
+OpenStack is an emerging and stable open source Cloud Infrastructure-as-a-Service operating solution.
+OpenStack, with it's usage as Compute service- to create cloud based computing or Storage service- for cloud based storage solutions or both combined, is an easily deployable cloud operating solution with minimum infrastructure to start hosting the Cloud service.
+
+As this thesis is focussed on scheduling algorithm of requested virtual instances, it can be observed from the logs in Appendix \ref{app:sec:filterschedulerlogtrace10vi} that, with the standard nova FilterScheduler, when a large number of virtual instance creation is requested, it iterates for that number of times to provide a placement decision one after the another. There is an opportunity for improvement to solve a large requests with minimum time and better mathematical modelling.
+
+In the section \nameref{sec:comparision} of the chapter \nameref{ch:comparisionofbothscheduler}, it can be observed that the cPlex based scheduling algorithm is effective in providing a placement decision which would reduce the operating power expense of the OpenStack cloud cluster by minimising the active(powered on) number of hosts.
+
+This is also effective in timely creation of large quantity of virtual instances compared to the existing standard nova scheduler.
+
+This thesis is an approach to have a different possible solution in the scheduling algorithm which could be helpful to have constraint dependant scheduling.
+
+This thesis can also be extended to have two different scheduling solutions depending on the number of requests for creation of the virtual instances.
+With a condition based on quantity of instance creation, the selection of the scheduler driver can be switched at runtime.
+
+If the "Live Migration" could work effectively, the scheduling algorithm could also include the migration of existing instances to re-arrange itself which would increase the available capacity on the hosts and place new instances with larger configuration requirements.
+This could also be helpful for live migration of multiple virtual instances when the compute nodes needs a maintenance downtime.
+
+The cloud computing is the growing field of interest which creates lots of opportunities for research and as well as the ideas for business.

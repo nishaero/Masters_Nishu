@@ -1,0 +1,34 @@
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Separation of end user responsibilities based on Internet cloud service model\relax }}{3}{figure.caption.4}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Software as a service model\cite {IBMcloud:SaaS}\relax }}{4}{figure.caption.5}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Platform as a service model\cite {IBMcloud:PaaS}\relax }}{6}{figure.caption.6}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Infrastructure as a service model\cite {IBMcloud:IaaS}\relax }}{7}{figure.caption.7}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces OpenStack software diagram\cite {OpenStack:software}\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Primary objective to decide the purpose of having an OpenStack Cloud\cite {OpenStack}\relax }}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces The relationships among the OpenStack services\relax }}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces The diagram shows the allowed different state transistions of a virtual machine\cite {OpenStack:state_transitions}\relax }}{15}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Filtering the compute hosts and sorting them based on weights\cite {OpenStack:filteringworkflow1}\relax }}{17}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Compute hosts sorted based on weights\cite {OpenStack:filteringWorkflow2}\relax }}{22}{figure.caption.13}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Minimum hardware requirements to set up the OpenStack test bed\cite {OpenStack:hwreqs}\relax }}{25}{figure.caption.14}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Network layout among all the host machines\cite {OpenStack:networklayout}\relax }}{28}{figure.caption.15}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Login screen for the dashboard\relax }}{35}{figure.caption.16}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The dashboard screen showing the diagrammatic representation of network topology\relax }}{36}{figure.caption.17}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces An example of the metering with the number of incoming bytes on a network for a virtual machine interface.\relax }}{38}{figure.caption.18}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Placement decision time for Standard Nova Scheduler from the data \ref {tabular:filterschedulerlogdata}\relax }}{53}{figure.caption.19}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Placement decision time for cPlex based Scheduler from the data \ref {tab:tucschedulerlogdata}\relax }}{54}{figure.caption.20}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Comparision of placement decision time between Standard Nova FilterScheduler and cPlex based Scheduler\relax }}{55}{figure.caption.21}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces NFV functional overview\cite {openstack_nfv}\relax }}{58}{figure.caption.22}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Placement of VNFM and VNF over the OpenStack Vitual Machines\cite {openBatonFeatures}\relax }}{59}{figure.caption.23}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,101 @@
+% !TEX root       = ./type_name.tex
+% !TEX program    = pdflatex
+% !TEX encoding   = utf-8
+% !TEX spellcheck = de_DE_frami
+%=======================================================================
+
+\chapter{Performance Data}\label{app:ch:data}
+
+In this Appendix \nameref{app:ch:data}, the time required for placement decision of the virtual instances is captured in the logs of the \verb|scheduler.log| file and have been used for comparision and performance evaluation.
+
+\section{FilterScheduler's Scheduling Time Logs Data}\label{app:sec:filterschedulerlogdata}
+
+The time taken for the FilterScheduler for placement decision of virtual instances on the hosts for different number of data set has been recorded.
+\newline
+\begin{lstlisting}[frame=single, caption={The filter scheduler based scheduler time logs for scheduling different numbers of virtual instances}, label={lst:filterschedulerlogdata}]
+2016-11-23 06:17:59.466 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
+2016-11-23 06:17:59.471 17314 INFO nova.scheduler.filter_scheduler: 1 number of instances scheduled with filter scheduler in 0.00402498245239 seconds
+
+2016-11-23 06:23:39.579 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
+2016-11-23 06:23:39.590 17314 INFO nova.scheduler.filter_scheduler: 5 number of instances scheduled with filter scheduler in 0.0108880996704 seconds
+
+2016-11-23 06:25:55.949 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
+2016-11-23 06:25:55.975 17314 INFO nova.scheduler.filter_scheduler: 10 number of instances scheduled with filter scheduler in 0.0240979194641 seconds
+
+2016-11-23 06:37:36.863 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
+2016-11-23 06:37:36.914 17314 INFO nova.scheduler.filter_scheduler: 20 number of instances scheduled with filter scheduler in 0.0496470928192 seconds
+
+2016-11-23 06:41:16.201 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
+2016-11-23 06:41:16.282 17314 INFO nova.scheduler.filter_scheduler: 30 number of instances scheduled with filter scheduler in 0.0802478790283 seconds
+
+2016-11-23 06:50:20.638 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
+2016-11-23 06:50:20.746 17314 INFO nova.scheduler.filter_scheduler 40 number of instances scheduled with filter scheduler in 0.10618185997 seconds
+\end{lstlisting}
+
+\begin{table}[!htb]
+	\centering
+		\begin{tabular}{|| p{10em} | p{10em} | p{10em} ||}
+			\hline
+			{Requested Number of Instances} & {Time taken by FilterScheduler in secs} & {Percentage change in time with reference to time taken for scheduling 1 instance} \\ [1ex] 
+			\hline
+			\hline
+			1  & 4.03ms  & 0.00\% \\
+			\hline
+			10 & 24.10ms  & 498.70\% \\
+			\hline
+			20 & 49.65ms  & 1133.47\% \\
+			\hline
+			30 & 80.25ms  & 1893.74\% \\
+			\hline
+			40 & 106.18ms & 2538.07\% \\
+			\hline
+		\end{tabular}
+	\caption{FilterScheduler Time Data}\label{tabular:filterschedulerlogdata}
+\end{table}
+
+
+
+\section{TUC CCN Scheduler's Scheduling Time Logs Data}\label{app:sec:tucschedulerlogdata}
+
+The time taken for the TUC\_CCN\_Scheduler for placement decision of virtual instances on the hosts for different numbers of data set has been recorded.
+\newline
+\begin{lstlisting}[frame=single, caption={The tuc\_ccn\_scheduler scheduler based time logs for scheduling different amounts of virtual instances}, label={lst:tucschedulerlogdata}]
+2016-11-23 07:01:33.293 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
+2016-11-23 07:01:33.310 27964 INFO nova.scheduler.tuc_ccn_scheduler: 1 number of instances scheduled with tuc scheduler in 0.0136959552765 seconds
+
+2016-11-23 07:25:37.228 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
+2016-11-23 07:25:37.283 27964 INFO nova.scheduler.tuc_ccn_scheduler: 5 number of instances scheduled with tuc scheduler in 0.049889087677 seconds
+
+2016-11-23 07:12:07.047 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
+2016-11-23 07:12:07.097 27964 INFO nova.scheduler.tuc_ccn_scheduler: 10 number of instances scheduled with tuc scheduler in 0.0462019443512 seconds
+
+2016-11-23 07:28:47.675 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
+2016-11-23 07:28:47.741 27964 INFO nova.scheduler.tuc_ccn_scheduler: 20 number of instances scheduled with tuc scheduler in 0.0637698173523 seconds
+
+2016-11-23 07:37:45.585 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
+2016-11-23 07:37:45.672 27964 INFO nova.scheduler.tuc_ccn_scheduler: 30 number of instances scheduled with tuc scheduler in 0.0839061737061 seconds
+
+2016-11-23 08:11:37.874 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
+2016-11-23 08:11:37.979 27964 INFO nova.scheduler.tuc_ccn_scheduler: 40 number of instances scheduled with tuc scheduler in 0.103586912155 seconds
+\end{lstlisting}
+
+\begin{table}[!htb]
+	\centering
+		\begin{tabular}{|| p{10em} | p{10em} | p{10em} ||}
+			\hline
+			{Requested Number of Instances} & {Time taken by FilterScheduler in secs} & {Percentage change in time} \\ [1ex] 
+			\hline
+			1  & 13.69ms  & 0\% \\
+			\hline
+			10 & 46.20ms  & 237\% \\
+			\hline
+			20 & 63.77ms  & 365\% \\
+			\hline
+			30 & 83.91ms  & 512\% \\
+			\hline
+			40 & 103.59ms & 656\% \\
+			\hline
+		\end{tabular}
+	\caption{cPlex based Scheduler Time Data}\label{tab:tucschedulerlogdata}
+\end{table}
+

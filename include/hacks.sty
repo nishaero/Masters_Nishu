@@ -1,0 +1,33 @@
+%=======================================================================
+% File          : hacks.sty
+% Author(s)     : Daniel Kriesten
+% Email         : daniel.kriesten@etit.tu-chemnitz.de
+% Creation Date : <Mo 09 Mär 2015 13:35:20 krid>
+% Last Modified : <Mo 09 Mär 2015 13:35:20 krid>
+%=======================================================================
+% additional tweaking of packages
+%=======================================================================
+
+%=======================================================================
+% better rowspan in booktab
+%=======================================================================
+%http://www.unix-ag.uni-kl.de/~fischer/blog/20070411_Tabellen_in_LaTeX/
+\newcommand{\forloop}[5][1]{%
+  \setcounter{#2}{#3}%
+  \ifthenelse{#4}{#5\addtocounter{#2}{#1}%
+    \forloop[#1]{#2}{\value{#2}}{#4}{#5}}%
+  {}}
+\newcounter{crcounter}
+\newcommand{\compensaterule}[1]{%
+  \forloop{crcounter}{1}{\value{crcounter} < #1}%
+  {\vspace*{-\aboverulesep}\vspace*{-\belowrulesep}}}
+\newcommand{\multirowbt}[3]{\multirow{#1}{#2}%
+  {\compensaterule{#1}#3}}
+
+%=======================================================================
+% caption style
+%=======================================================================
+\setkomafont{caption}{\small\sffamily}
+\setkomafont{captionlabel}{\small\itshape\sffamily}
+
+

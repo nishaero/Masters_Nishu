@@ -1,0 +1,62 @@
+% !TEX root       = TODO ./title
+% !TEX program    = pdflatex
+% !TEX encoding   = utf-8
+% !TEX spellcheck = de_DE_frami
+%=======================================================================
+% File          :
+% Author(s)     : Daniel Kriesten
+% Email         : daniel.kriesten@etit.tu-chemnitz.de
+% Creation Date : <Mo 09 Mär 2015 13:01:02 krid>
+% Last Modified : <Mo 09 Mär 2015 12:45:44 krid>
+%=======================================================================
+
+%=======================================================================
+% constructing the titlepage
+%=======================================================================
+\definecolor{tuc_green}{HTML}{007F33}
+
+\titlehead{%
+ 	\vspace*{-1.5cm}
+%	\includegraphics[width=\textwidth]{TUC_deutsch_einzeile_CMYK}
+%	\vspace*{1.5cm}
+	\begin{center}
+		\raisebox{-1ex}{\includegraphics[scale=1.4]{TUC_deutsch_einzeile_CMYK}}\\
+		\textcolor{tuc_green}{\vhrulefill{1pt} \\[1em]}
+		\textcolor{tuc_green}{\sffamily\Large\dcdepart}\\[0.5em]
+%		\textcolor{tuc_green}{\sffamily\Large\dcinst}\\[0.5em]
+		\textcolor{tuc_green}{\sffamily\Large\dcprof}
+	\end{center}
+	\vspace*{0.5cm}
+}
+
+\subject{\sffamily\Large\dcsubject{}}
+\title{\sffamily\LARGE\textcolor{tuc_green}{\dctitle{}}}
+%\subtitle{\mdseries\dcsubtitle{}}
+\author{\sffamily\large\dcauthorfirstname~\dcauthorlastname}
+\date{\sffamily\large\dcplace, \dcdate}
+
+
+\begin{footnotesize}
+\publishers{
+	\sffamily\large{}
+	\begin{tabbing}
+		{Matrikelnummer:}	\qquad\=\kill
+		{\bfseries }		\>\=\kill\\\medskip
+		{\bfseries }		\>\=\kill\\\medskip
+		{\bfseries }		\>\=\kill\\\medskip
+		{Autor:}			\>{\bfseries  \dcauthorfirstname~\dcauthorlastname}\\\medskip
+		{Email:}			\>{\bfseries  \dcauthoremail}\\\medskip
+		{Matrikelnummer:}	\>{\bfseries  \dcauthormatrikulationnummer}\\\medskip
+		{\bfseries }		\>\=\kill\\\medskip
+		{Prüfer:}			\>{\bfseries \dcpruefer}\\\medskip
+		{\bfseries }		\>\=\kill\\\medskip
+		{Betreuer:}			\>{\bfseries\dcadvisora}\\\medskip
+		{\bfseries}			\>{\bfseries\dcadvisoro}\\\medskip
+		{\bfseries }		\>\=\kill\\\medskip
+		{Ausgabedatum:}		\>\tdAusgabedatum\\\medskip
+		{Abgabedatum:}		\>\tdAbgabedatum
+	\end{tabbing}
+}
+\end{footnotesize}
+
+% vim: ts=2:sw=2:sts=2:expandtab:wrapmargin=2:tw=120

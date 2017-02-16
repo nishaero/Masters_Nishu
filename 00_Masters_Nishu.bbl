@@ -1,0 +1,101 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[sal()]{salesforce}
+Cloud computing – apps on tap.
+\newblock URL \url{http://www.salesforce.com/eu/cloudcomputing/}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[IBM({\natexlab{a}})]{IBMcloud}
+What is cloud computing?, {\natexlab{a}}.
+\newblock URL
+  \url{https://www.ibm.com/cloud-computing/what-is-cloud-computing}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[Ope({\natexlab{a}})]{OpenStack}
+What is {OpenStack}?, {\natexlab{a}}.
+\newblock URL \url{http://www.openstack.org/software/}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[IBM({\natexlab{b}})]{IBMcloud:SaaS}
+What is cloud computing {SaaS}?, {\natexlab{b}}.
+\newblock URL
+  \url{http://www.ibm.com/cloud-computing/images/what_is_cc_SaaS_580x530.jpg}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[IBM({\natexlab{c}})]{IBMcloud:PaaS}
+What is cloud computing {PaaS}?, {\natexlab{c}}.
+\newblock URL
+  \url{http://www.ibm.com/cloud-computing/images/what_is_cc_PaaS_580x425.jpg}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[IBM({\natexlab{d}})]{IBMcloud:IaaS}
+What is cloud computing {IaaS}?, {\natexlab{d}}.
+\newblock URL
+  \url{http://www.ibm.com/cloud-computing/images/what_is_cc_IaaS_580x425-2.jpg}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[Ope({\natexlab{b}})]{OpenStack:software}
+Openstack {Software} diagram, {\natexlab{b}}.
+\newblock URL
+  \url{http://www.openstack.org/themes/openstack/images/software/openstack-software-diagram.png}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[Ope({\natexlab{c}})]{OpenStack:state_transitions}
+Virtual {Machine} {States} and {Transitions}, {\natexlab{c}}.
+\newblock URL
+  \url{http://docs.openstack.org/developer/nova/_images/graphviz-aa3b50f03fc95e5ea0896d5f2c606d809e3e2741.png}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[Ope({\natexlab{d}})]{OpenStack:filteringworkflow1}
+Filter {Scheduler}, {\natexlab{d}}.
+\newblock URL
+  \url{http://docs.openstack.org/developer/nova/_images/filteringWorkflow1.png}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[Ope({\natexlab{e}})]{OpenStack:filteringWorkflow2}
+Filter {Scheduler}, {\natexlab{e}}.
+\newblock URL
+  \url{http://docs.openstack.org/developer/nova/_images/filteringWorkflow2.png}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[Ope({\natexlab{f}})]{OpenStack:hwreqs}
+Overview, {\natexlab{f}}.
+\newblock URL
+  \url{http://docs.openstack.org/liberty/install-guide-ubuntu/_images/hwreqs.png}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[Ope({\natexlab{g}})]{OpenStack:networklayout}
+Host networking, {\natexlab{g}}.
+\newblock URL
+  \url{http://docs.openstack.org/liberty/install-guide-ubuntu/_images/networklayout.png}.
+\newblock Online; accessed 06-November-2016.
+
+\bibitem[ope({\natexlab{a}})]{openstack_nfv}
+Accelerating {NFV} {Delivery} with {OpenStack}, {OpenStack} {Foundation}
+  {Report}, {\natexlab{a}}.
+\newblock URL
+  \url{http://www.openstack.org/assets/telecoms-and-nfv/OpenStack-Foundation-NFV-Report.pdf}.
+\newblock Online; accessed 05-November-2016.
+
+\bibitem[ope({\natexlab{b}})]{openBatonFeatures}
+Open {Baton} features, {\natexlab{b}}.
+\newblock URL \url{http://openbaton.github.io/images/feature1.png}.
+\newblock Online; accessed 05-November-2016.
+
+\bibitem[cpl()]{cplex-optimizer}
+{CPLEX} {Optimizer}.
+\newblock URL
+  \url{https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/}.
+\newblock Online; accessed 22-November-2016.
+
+\bibitem[nfv()]{nfv_technical_overview}
+Open {Platform} for {NFV} {(OPNFV)}.
+\newblock URL \url{https://www.opnfv.org/}.
+\newblock Online; accessed 05-November-2016.
+
+\end{thebibliography}
