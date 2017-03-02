@@ -1,76 +1,42 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[sal()]{salesforce}
-Cloud computing – apps on tap.
-\newblock URL \url{http://www.salesforce.com/eu/cloudcomputing/}.
-\newblock Online; accessed 06-November-2016.
+\bibitem[BIC()]{BIC:IRAP}
+What is {BIC-IRAP}?
+\newblock URL \url{http://www.bic-irap.de/index.php/en}.
+\newblock Online; accessed 01-March-2017.
 
-\bibitem[IBM({\natexlab{a}})]{IBMcloud}
-What is cloud computing?, {\natexlab{a}}.
+\bibitem[SDN({\natexlab{a}})]{SDN}
+What is {SDN}?, {\natexlab{a}}.
 \newblock URL
-  \url{https://www.ibm.com/cloud-computing/what-is-cloud-computing}.
-\newblock Online; accessed 06-November-2016.
+  \url{https://www.opennetworking.org/sdn-resources/sdn-definition}.
+\newblock Online; accessed 01-March-2017.
 
-\bibitem[Ope({\natexlab{a}})]{OpenStack}
-What is {OpenStack}?, {\natexlab{a}}.
-\newblock URL \url{http://www.openstack.org/software/}.
-\newblock Online; accessed 06-November-2016.
+\bibitem[Hot()]{Hotspot_2.0_Definition}
+Understanding wi-fi hotspot 2.0 and how to leverage it for your business, by
+  jason guest.
+\newblock
+  \url{http://hotelexecutive.com/business_review/3674/understanding-wi-fi-hotspot-20-and-how-to-leverage-it-for-your-business}.
+\newblock (Accessed on 03/02/2017).
 
-\bibitem[IBM({\natexlab{b}})]{IBMcloud:SaaS}
-What is cloud computing {SaaS}?, {\natexlab{b}}.
+\bibitem[SDN({\natexlab{b}})]{SDN:architecture}
+Sdn {architecture} diagram, {\natexlab{b}}.
 \newblock URL
-  \url{http://www.ibm.com/cloud-computing/images/what_is_cc_SaaS_580x530.jpg}.
-\newblock Online; accessed 06-November-2016.
+  \url{https://www.sdxcentral.com/wp-content/uploads/2015/03/sdn-architecture.png}.
+\newblock Online; accessed 02-March-2017.
 
-\bibitem[IBM({\natexlab{c}})]{IBMcloud:PaaS}
-What is cloud computing {PaaS}?, {\natexlab{c}}.
-\newblock URL
-  \url{http://www.ibm.com/cloud-computing/images/what_is_cc_PaaS_580x425.jpg}.
-\newblock Online; accessed 06-November-2016.
-
-\bibitem[IBM({\natexlab{d}})]{IBMcloud:IaaS}
-What is cloud computing {IaaS}?, {\natexlab{d}}.
-\newblock URL
-  \url{http://www.ibm.com/cloud-computing/images/what_is_cc_IaaS_580x425-2.jpg}.
-\newblock Online; accessed 06-November-2016.
-
-\bibitem[Ope({\natexlab{b}})]{OpenStack:software}
-Openstack {Software} diagram, {\natexlab{b}}.
-\newblock URL
-  \url{http://www.openstack.org/themes/openstack/images/software/openstack-software-diagram.png}.
-\newblock Online; accessed 06-November-2016.
-
-\bibitem[Ope({\natexlab{c}})]{OpenStack:state_transitions}
-Virtual {Machine} {States} and {Transitions}, {\natexlab{c}}.
-\newblock URL
-  \url{http://docs.openstack.org/developer/nova/_images/graphviz-aa3b50f03fc95e5ea0896d5f2c606d809e3e2741.png}.
-\newblock Online; accessed 06-November-2016.
-
-\bibitem[Ope({\natexlab{d}})]{OpenStack:filteringworkflow1}
-Filter {Scheduler}, {\natexlab{d}}.
-\newblock URL
-  \url{http://docs.openstack.org/developer/nova/_images/filteringWorkflow1.png}.
-\newblock Online; accessed 06-November-2016.
-
-\bibitem[Ope({\natexlab{e}})]{OpenStack:filteringWorkflow2}
-Filter {Scheduler}, {\natexlab{e}}.
-\newblock URL
-  \url{http://docs.openstack.org/developer/nova/_images/filteringWorkflow2.png}.
-\newblock Online; accessed 06-November-2016.
-
-\bibitem[Ope({\natexlab{f}})]{OpenStack:hwreqs}
-Overview, {\natexlab{f}}.
+\bibitem[Ope({\natexlab{a}})]{OpenStack:hwreqs}
+Overview, {\natexlab{a}}.
 \newblock URL
   \url{http://docs.openstack.org/liberty/install-guide-ubuntu/_images/hwreqs.png}.
 \newblock Online; accessed 06-November-2016.
 
-\bibitem[Ope({\natexlab{g}})]{OpenStack:networklayout}
-Host networking, {\natexlab{g}}.
+\bibitem[Ope({\natexlab{b}})]{OpenStack:networklayout}
+Host networking, {\natexlab{b}}.
 \newblock URL
   \url{http://docs.openstack.org/liberty/install-guide-ubuntu/_images/networklayout.png}.
 \newblock Online; accessed 06-November-2016.
@@ -86,6 +52,34 @@ Accelerating {NFV} {Delivery} with {OpenStack}, {OpenStack} {Foundation}
 Open {Baton} features, {\natexlab{b}}.
 \newblock URL \url{http://openbaton.github.io/images/feature1.png}.
 \newblock Online; accessed 05-November-2016.
+
+\bibitem[Association et~al.(2012)]{ieee2012802}
+IEEE~Standards Association et~al.
+\newblock 802.11-2012-ieee standard for information
+  technology--telecommunications and information exchange between systems local
+  and metropolitan area networks--specific requirements part 11: Wireless lan
+  medium access control (mac) and physical layer (phy) specifications.
+\newblock \emph{IEEE Std}, 802, 2012.
+
+\bibitem[hos()]{hostapd}
+hostapd: Ieee 802.11 ap, ieee 802.1x/wpa/wpa2/eap/radius authenticator.
+\newblock \url{http://w1.fi/hostapd/}.
+\newblock (Accessed on 03/02/2017).
+
+\bibitem[RFC()]{RFC5412L97}
+Rfc 5412 - lightweight access point protocol.
+\newblock \url{https://tools.ietf.org/html/rfc5412}.
+\newblock (Accessed on 03/02/2017).
+
+\bibitem[IEE()]{IEEE802.11u}
+Ieee xplore full-text pdf:.
+\newblock \url{http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5721908}.
+\newblock (Accessed on 03/02/2017).
+
+\bibitem[Pas()]{Passpoint}
+Wi-fi certified passpoint | wi-fi alliance.
+\newblock \url{http://www.wi-fi.org/discover-wi-fi/wi-fi-certified-passpoint}.
+\newblock (Accessed on 03/02/2017).
 
 \bibitem[cpl()]{cplex-optimizer}
 {CPLEX} {Optimizer}.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.9)  24 FEB 2017 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.9)  2 MAR 2017 20:16
 entering extended mode
 **./00_Masters_Nishu.tex
 (00_Masters_Nishu.tex
@@ -1611,7 +1611,7 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@pangrammax=\count287
 )
 (00_Masters_Nishu.aux (01_abstract.aux) (02_introduction.aux)
-(03_introduction_openstack.aux) (04_config.aux) (05_standard_nova.aux)
+(03_Background.aux) (04_config.aux) (05_standard_nova.aux)
 (06_cplex_scheduler.aux) (07_evaluation.aux) (08_possibilities_of_extension.aux
 ) (09_conclusion.aux) (90_anhang_01.aux) (90_anhang_02.aux))
 \openout1 = `00_Masters_Nishu.aux'.
@@ -1733,7 +1733,7 @@ LaTeX Info: Redefining \nameref on input line 200.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (include/title.tex)
-<pictures/pdf/TUC_deutsch_einzeile_CMYK.pdf, id=299, 273.02pt x 24.09pt>
+<pictures/pdf/TUC_deutsch_einzeile_CMYK.pdf, id=227, 273.02pt x 24.09pt>
 File: pictures/pdf/TUC_deutsch_einzeile_CMYK.pdf Graphic file (type pdf)
 
 <use pictures/pdf/TUC_deutsch_einzeile_CMYK.pdf>
@@ -1798,35 +1798,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]) (00_Masters_Nishu.toc [1
 
 
-] [2])
+])
 \tf@toc=\write7
 \openout7 = `00_Masters_Nishu.toc'.
 
- [3]
-(00_Masters_Nishu.lof
-Overfull \hbox (2.84602pt too wide) in paragraph at lines 28--28
- [][] [][][]\T1/lmr/m/n/12 Placement of VNFM and VNF over the Open-Stack Vi-tua
-l Machines[[]][][] [][]  
- []
-
-)
+ [2] (00_Masters_Nishu.lof)
 \tf@lof=\write8
 \openout8 = `00_Masters_Nishu.lof'.
 
- [4
+[3
 
 
 ] (00_Masters_Nishu.lot)
 \tf@lot=\write9
 \openout9 = `00_Masters_Nishu.lot'.
 
- [5
+ [4
 
 
 ]
 No file 00_Masters_Nishu.gls.
 No file 00_Masters_Nishu.acr.
-[6
+[5
 
 
 
@@ -1846,256 +1839,206 @@ l.16
 
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+lmss on input line 26.
-
- ("E:\Install Files\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd"
-File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 28.
+(hyperref)                removing `\begingroup' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 28.
+(hyperref)                removing `\<let>-command' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 28.
+(hyperref)                removing `\NAT@ctype' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 28.
+(hyperref)                removing `\z@' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 28.
+(hyperref)                removing `\let' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 28.
+(hyperref)                removing `\let' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 28.
+(hyperref)                removing `\new@ifnextchar' on input line 40.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.35 \begin{itemize}
-                     [2]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 42.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 42.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 42.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 42.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 42.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 42.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 42.
-
-<pictures/png/responsibilities.png, id=511, 901.4478pt x 454.3374pt>
-File: pictures/png/responsibilities.png Graphic file (type png)
-
-<use pictures/png/responsibilities.png>
-Package pdftex.def Info: pictures/png/responsibilities.png used on input line 5
-9.
-(pdftex.def)             Requested size: 418.25368pt x 210.80022pt.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 60.
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
+l.45 
+      [2])pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.65 
-      [3] <pictures/jpg/cc_SaaS.jpg, id=517, 461.725pt x 421.575pt>
-File: pictures/jpg/cc_SaaS.jpg Graphic file (type jpg)
+l.247 \include{02_introduction}
+                                [3]
+\openout2 = `03_Background.aux'.
 
-<use pictures/jpg/cc_SaaS.jpg>
-Package pdftex.def Info: pictures/jpg/cc_SaaS.jpg used on input line 73.
-(pdftex.def)             Requested size: 397.3397pt x 362.79187pt.
- [4 <./pictures/png/responsibilities.png>]
-[5 <./pictures/jpg/cc_SaaS.jpg>]
-<pictures/jpg/cc_PaaS.jpg, id=532, 461.725pt x 338.26375pt>
-File: pictures/jpg/cc_PaaS.jpg Graphic file (type jpg)
-
-<use pictures/jpg/cc_PaaS.jpg>
-Package pdftex.def Info: pictures/jpg/cc_PaaS.jpg used on input line 100.
-(pdftex.def)             Requested size: 397.3397pt x 291.09727pt.
- [6] [7 <./pictures/jpg/cc_PaaS.jpg>]
-<pictures/jpg/cc_IaaS.jpg, id=543, 461.725pt x 338.26375pt>
-File: pictures/jpg/cc_IaaS.jpg Graphic file (type jpg)
-
-<use pictures/jpg/cc_IaaS.jpg>
-Package pdftex.def Info: pictures/jpg/cc_IaaS.jpg used on input line 124.
-(pdftex.def)             Requested size: 397.3397pt x 291.09727pt.
- [8 <./pictures/jpg/cc_IaaS.jpg>] [9]) [10]
-\openout2 = `03_introduction_openstack.aux'.
-
-
-(03_introduction_openstack.tex
+ (03_Background.tex
 chapter 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 8.
+(hyperref)                removing `\begingroup' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 8.
+(hyperref)                removing `\<let>-command' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 8.
+(hyperref)                removing `\NAT@ctype' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 8.
+(hyperref)                removing `\z@' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 8.
+(hyperref)                removing `\let' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 8.
+(hyperref)                removing `\let' on input line 13.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 8.
+(hyperref)                removing `\new@ifnextchar' on input line 13.
+
+LaTeX Font Info:    Try loading font information for TS1+lmss on input line 22.
+
+("E:\Install Files\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd"
+File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<pictures/png/sdn-architecture.png, id=388, 1306.8825pt x 861.2175pt>
+File: pictures/png/sdn-architecture.png Graphic file (type png)
+
+<use pictures/png/sdn-architecture.png>
+Package pdftex.def Info: pictures/png/sdn-architecture.png used on input line 2
+9.
+(pdftex.def)             Requested size: 418.25368pt x 275.6215pt.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 30.
+ [4
 
 
-LaTeX Warning: Reference `ch:introduction_cloud' on page 11 undefined on input 
-line 10.
 
-<pictures/png/openstack.png, id=563, 750.805pt x 311.1625pt>
-File: pictures/png/openstack.png Graphic file (type png)
+]
 
-<use pictures/png/openstack.png>
-Package pdftex.def Info: pictures/png/openstack.png used on input line 18.
-(pdftex.def)             Requested size: 418.25368pt x 173.34296pt.
- [11
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 34.
 
 
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 34.
 
- <./pictures/png/openstack.png>]
-<pictures/png/Compute_ObjectStorage.png, id=572, 817.55438pt x 225.09094pt>
-File: pictures/png/Compute_ObjectStorage.png Graphic file (type png)
 
-<use pictures/png/Compute_ObjectStorage.png>
-Package pdftex.def Info: pictures/png/Compute_ObjectStorage.png used on input l
-ine 32.
-(pdftex.def)             Requested size: 418.25368pt x 115.15549pt.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\NAT@ctype' on input line 34.
 
-<pictures/png/conceptual_architecture.png, id=576, 759.3168pt x 510.2262pt>
-File: pictures/png/conceptual_architecture.png Graphic file (type png)
 
-<use pictures/png/conceptual_architecture.png>
-Package pdftex.def Info: pictures/png/conceptual_architecture.png used on input
- line 45.
-(pdftex.def)             Requested size: 418.25368pt x 281.04568pt.
- [12 <./pictures/png/Compute_ObjectStorage.png>] [13 <./pictures/png/conceptual
-_architecture.png>] [14] [15]
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 110.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 34.
 
-<pictures/png/state_transitions_diagram.png, id=603, 1115.16624pt x 591.20876pt
->
-File: pictures/png/state_transitions_diagram.png Graphic file (type png)
- <use pictures/png/state_transitions_diagram.png>
-Package pdftex.def Info: pictures/png/state_transitions_diagram.png used on inp
-ut line 114.
-(pdftex.def)             Requested size: 418.25368pt x 221.73882pt.
- [16 <./pictures/png/state_transitions_diagram.png>]
-<pictures/png/filteringWorkflow1.png, id=615, 414.04688pt x 301.125pt>
-File: pictures/png/filteringWorkflow1.png Graphic file (type png)
 
-<use pictures/png/filteringWorkflow1.png>
-Package pdftex.def Info: pictures/png/filteringWorkflow1.png used on input line
- 146.
-(pdftex.def)             Requested size: 418.25368pt x 304.19357pt.
- [17] [18 <./pictures/png/filteringWorkflow1.png>]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 173.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 34.
 
- ("E:\Install Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [19]
-Overfull \hbox (4.92125pt too wide) in paragraph at lines 185--186
-[]\T1/lmss/bx/n/12 AggregateDiskFilter \T1/lmss/m/n/12 - This fil-ters the host
-s by disk al-lo-ca-tion with per-aggregate
- []
 
-[20]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 243.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 243.
- [21]
-Overfull \hbox (1.26581pt too wide) in paragraph at lines 248--250
-[]\T1/lmss/bx/n/12 ServerGroupSoftAffinityWeigher \T1/lmss/m/n/12 - The weigher
- can com-pute the weight based
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 34.
 
-<pictures/png/filteringWorkflow2.png, id=652, 501.875pt x 376.40625pt>
-File: pictures/png/filteringWorkflow2.png Graphic file (type png)
 
-<use pictures/png/filteringWorkflow2.png>
-Package pdftex.def Info: pictures/png/filteringWorkflow2.png used on input line
- 262.
-(pdftex.def)             Requested size: 418.25368pt x 313.70364pt.
- [22] [23 <./pictures/png/filteringWorkflow2.png>]
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\new@ifnextchar' on input line 34.
 
-LaTeX Warning: Reference `ch:introduction_cloud' on page 24 undefined on input 
-line 284.
+[5 <./pictures/png/sdn-architecture.png>]
 
-) [24]
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\begingroup' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\<let>-command' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\NAT@ctype' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\let' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\new@ifnextchar' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 46.
+
+) [6]
 \openout2 = `04_config.aux'.
 
  (04_config.tex
 chapter 3.
-<pictures/png/hwreqs.png, id=684, 477.7047pt x 421.3341pt>
+<pictures/png/hwreqs.png, id=421, 477.7047pt x 421.3341pt>
 File: pictures/png/hwreqs.png Graphic file (type png)
 
 <use pictures/png/hwreqs.png>
 Package pdftex.def Info: pictures/png/hwreqs.png used on input line 36.
 (pdftex.def)             Requested size: 418.25368pt x 368.91074pt.
- [25
+ [7
 
 
 
-] [26 <./pictures/png/hwreqs.png>] [27]
-<pictures/png/networklayout.png, id=702, 463.2507pt x 378.6948pt>
+]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 43.
+
+("E:\Install Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [8 <./pictures/png/hwreqs.png>] [9] <pictures/png/networklayout.png, id=441, 
+463.2507pt x 378.6948pt>
 File: pictures/png/networklayout.png Graphic file (type png)
 
 <use pictures/png/networklayout.png>
 Package pdftex.def Info: pictures/png/networklayout.png used on input line 112.
 
 (pdftex.def)             Requested size: 418.25368pt x 341.93161pt.
- [28] [29 <./pictures/png/networklayout.png>] [30] [31]
+ [10] [11 <./pictures/png/networklayout.png>] [12]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 157.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 157.
+
+
+LaTeX Warning: Reference `fig:openstack_architecture' on page 13 undefined on i
+nput line 168.
+
+[13]
 Overfull \hbox (1.64653pt too wide) in paragraph at lines 205--208
 \T1/lmtt/m/n/12 nova-scheduler, nova-conductor, nova-api, nova-cert, nova-novnc
 proxy
  []
 
-[32] [33]
+[14] [15]
 Overfull \hbox (8.4796pt too wide) in paragraph at lines 287--289
 []\T1/lmss/m/n/12 In the []\T1/lmtt/m/n/12 /etc/neutron/metadata_agent.ini \T1/
 lmss/m/n/12 file of the con-troller, un-der the []\T1/lmtt/m/n/12 [DEFAULT]
@@ -2108,27 +2051,29 @@ Overfull \hbox (0.58247pt too wide) in paragraph at lines 297--298
 mss/m/n/12 -
  []
 
-[34] <pictures/png/dashboard_login.png, id=782, 243.91125pt x 318.59026pt>
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 320.
+[16] <pictures/png/dashboard_login.png, id=522, 243.91125pt x 318.59026pt>
 File: pictures/png/dashboard_login.png Graphic file (type png)
 
 <use pictures/png/dashboard_login.png>
 Package pdftex.def Info: pictures/png/dashboard_login.png used on input line 34
 5.
 (pdftex.def)             Requested size: 292.77629pt x 382.42307pt.
- [35]
+ [17]
 Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
  []
 
 
-<pictures/png/network_topology_dashboard_view.png, id=792, 551.661pt x 496.8562
+<pictures/png/network_topology_dashboard_view.png, id=534, 551.661pt x 496.8562
 5pt>
 File: pictures/png/network_topology_dashboard_view.png Graphic file (type png)
  <use pictures/png/network_topology_dashboard_view.png>
 Package pdftex.def Info: pictures/png/network_topology_dashboard_view.png used 
 on input line 361.
 (pdftex.def)             Requested size: 418.25368pt x 376.69731pt.
- [36 <./pictures/png/dashboard_login.png>] [37 <./pictures/png/network_topology
+ [18 <./pictures/png/dashboard_login.png>] [19 <./pictures/png/network_topology
 _dashboard_view.png>]
 Overfull \hbox (7.09224pt too wide) in paragraph at lines 396--397
 []\T1/lmss/m/n/12 In the []\T1/lmtt/m/n/12 [service_credentials] \T1/lmss/m/n/1
@@ -2144,7 +2089,7 @@ Overfull \hbox (7.09224pt too wide) in paragraph at lines 432--433
  []
 
 
-<pictures/png/telemetry_network_incoming_bytes.png, id=806, 552.8655pt x 496.25
+<pictures/png/telemetry_network_incoming_bytes.png, id=548, 552.8655pt x 496.25
 4pt>
 File: pictures/png/telemetry_network_incoming_bytes.png Graphic file (type png)
 
@@ -2152,16 +2097,20 @@ File: pictures/png/telemetry_network_incoming_bytes.png Graphic file (type png)
 Package pdftex.def Info: pictures/png/telemetry_network_incoming_bytes.png used
  on input line 442.
 (pdftex.def)             Requested size: 418.25368pt x 375.43805pt.
- [38]) [39 <./pictures/png/telemetry_network_incoming_bytes.png>]
+ [20]) [21 <./pictures/png/telemetry_network_incoming_bytes.png>]
 \openout2 = `05_standard_nova.aux'.
 
  (05_standard_nova.tex
 chapter 4.
-[40
+
+LaTeX Warning: Reference `sec:novafilterschedulerdetailed' on page 22 undefined
+ on input line 16.
+
+[22
 
 
 
-] [41] ("E:\Install Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+] [23] ("E:\Install Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 Underfull \hbox (badness 10000) in paragraph at lines 73--75
@@ -2173,31 +2122,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--100
 
  []
 
-[42]
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 142--144
 
  []
 
-[43]) [44]
+[25]
+
+LaTeX Warning: Reference `ssec:novaweights' on page 26 undefined on input line 
+171.
+
+) [26]
 \openout2 = `06_cplex_scheduler.aux'.
 
  (06_cplex_scheduler.tex
 chapter 5.
-[45
+[27
 
 
 
-] [46]
+] [28]
 Underfull \hbox (badness 10000) in paragraph at lines 85--87
 
  []
 
-[47] [48]
+[29] [30]
 Underfull \hbox (badness 10000) in paragraph at lines 182--184
 
  []
 
-[49] [50] [51]) [52]
+[31] [32] [33]) [34]
 \openout2 = `07_evaluation.aux'.
 
  (07_evaluation.tex
@@ -2209,33 +2163,34 @@ Overfull \hbox (0.48462pt too wide) in paragraph at lines 22--23
  []
 
 
-<pictures/png/NovaFilterSchedulerChart.png, id=1239, 927.96687pt x 524.45938pt>
+<pictures/png/NovaFilterSchedulerChart.png, id=979, 927.96687pt x 524.45938pt>
 File: pictures/png/NovaFilterSchedulerChart.png Graphic file (type png)
+
 <use pictures/png/NovaFilterSchedulerChart.png>
 Package pdftex.def Info: pictures/png/NovaFilterSchedulerChart.png used on inpu
 t line 26.
 (pdftex.def)             Requested size: 418.25368pt x 236.38866pt.
- [53
+ [35
 
 
 
 ]
-<pictures/png/cPlexSchedulerChart.png, id=1258, 927.96687pt x 524.45938pt>
+<pictures/png/cPlexSchedulerChart.png, id=999, 927.96687pt x 524.45938pt>
 File: pictures/png/cPlexSchedulerChart.png Graphic file (type png)
 
 <use pictures/png/cPlexSchedulerChart.png>
 Package pdftex.def Info: pictures/png/cPlexSchedulerChart.png used on input lin
 e 48.
 (pdftex.def)             Requested size: 418.25368pt x 236.38866pt.
- [54 <./pictures/png/NovaFilterSchedulerChart.png>]
-<pictures/png/novavscplex.png, id=1272, 928.97063pt x 524.96124pt>
+ [36 <./pictures/png/NovaFilterSchedulerChart.png>]
+<pictures/png/novavscplex.png, id=1013, 928.97063pt x 524.96124pt>
 File: pictures/png/novavscplex.png Graphic file (type png)
 
 <use pictures/png/novavscplex.png>
 Package pdftex.def Info: pictures/png/novavscplex.png used on input line 67.
 (pdftex.def)             Requested size: 418.25368pt x 236.35854pt.
- [55 <./pictures/png/cPlexSchedulerChart.png>] [56 <./pictures/png/novavscplex.
-png>]) [57]
+ [37 <./pictures/png/cPlexSchedulerChart.png>] [38 <./pictures/png/novavscplex.
+png>]) [39]
 \openout2 = `08_possibilities_of_extension.aux'.
 
 
@@ -2248,97 +2203,73 @@ Com-put-ing in Infrastructure-
  []
 
 
-<pictures/png/OpenStackFoundationNFVReport.png, id=1289, 696.10063pt x 517.935p
+<pictures/png/OpenStackFoundationNFVReport.png, id=1030, 696.10063pt x 517.935p
 t>
 File: pictures/png/OpenStackFoundationNFVReport.png Graphic file (type png)
  <use pictures/png/OpenStackFoundationNFVReport.png>
 Package pdftex.def Info: pictures/png/OpenStackFoundationNFVReport.png used on 
 input line 28.
 (pdftex.def)             Requested size: 418.25368pt x 311.19804pt.
- [58
+ [40
 
 
 
-] [59 <./pictures/png/OpenStackFoundationNFVReport.png>]
-<pictures/png/openbaton_openstack.png, id=1303, 423.5825pt x 422.57875pt>
+] [41 <./pictures/png/OpenStackFoundationNFVReport.png>]
+<pictures/png/openbaton_openstack.png, id=1044, 423.5825pt x 422.57875pt>
 File: pictures/png/openbaton_openstack.png Graphic file (type png)
 
 <use pictures/png/openbaton_openstack.png>
 Package pdftex.def Info: pictures/png/openbaton_openstack.png used on input lin
 e 52.
 (pdftex.def)             Requested size: 418.25368pt x 417.27744pt.
- [60 <./pictures/png/openbaton_openstack.png>]) [61]
+ [42 <./pictures/png/openbaton_openstack.png>]) [43]
 \openout2 = `09_conclusion.aux'.
 
  (09_conclusion.tex
 chapter 8.
-) [62
+) [44
 
 
 
 ] (00_Masters_Nishu.bbl
 chapter without number
 
-Underfull \hbox (badness 1122) in paragraph at lines 25--29
-[]\T1/lmss/m/n/12 What is cloud com-put-ing SaaS?, .  URL [][]$\T1/lmtt/m/n/12 
-http : / / www . ibm . com / cloud -[]
+Underfull \hbox (badness 1728) in paragraph at lines 20--25
+\T1/lmss/m/n/12 by ja-son guest.  [][]$\T1/lmtt/m/n/12 http : / / hotelexecutiv
+e . com / business _ review / 3674 /
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 31--35
-[]\T1/lmss/m/n/12 What is cloud com-put-ing PaaS?, .  URL [][]$\T1/lmtt/m/n/12 
-http : / / www . ibm . com / cloud -[]
+Underfull \hbox (badness 10000) in paragraph at lines 20--25
+\T1/lmtt/m/n/12 understanding -[] wi -[] fi -[] hotspot -[] 20 -[] and -[] how 
+-[] to -[] leverage -[] it -[] for -[]
  []
 
 
-Underfull \hbox (badness 1424) in paragraph at lines 37--41
-[]\T1/lmss/m/n/12 What is cloud com-put-ing IaaS?, .  URL [][]$\T1/lmtt/m/n/12 
-http : / / www . ibm . com / cloud -[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--53
-[]\T1/lmss/m/n/12 Virtual Ma-chine States and Tran-si-tions, .  URL [][]$\T1/lm
-tt/m/n/12 http :
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--53
-\T1/lmtt/m/n/12 / / docs . openstack . org / developer / nova / _images / graph
-viz -[]
- []
-
-
-Underfull \hbox (badness 5563) in paragraph at lines 49--53
-\T1/lmtt/m/n/12 aa3b50f03fc95e5ea0896d5f2c606d809e3e2741 . png$[][]\T1/lmss/m/n
-/12 .  On-line; ac-cessed
- []
-
-[63
-
-
-]
-Underfull \hbox (badness 2302) in paragraph at lines 86--89
+Underfull \hbox (badness 2302) in paragraph at lines 52--55
 []\T1/lmss/m/n/12 Open Ba-ton fea-tures, .  URL [][]$\T1/lmtt/m/n/12 http : / /
  openbaton . github . io / images /
  []
 
-) [64] [65
+[45
+
+
+]) [46] [47
 
 ]
 \openout2 = `90_anhang_01.aux'.
 
  (90_anhang_01.tex
 chapter A.
-[66
+[48
 
 
 ]
 chapter B.
-[67
+[49
 
-] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81]
-[82] [83] [84] [85] [86] [87] [88] [89] [90]) [91]
+] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63]
+[64] [65] [66] [67] [68] [69] [70] [71] [72]) [73]
 \openout2 = `90_anhang_02.aux'.
 
  (90_anhang_02.tex
@@ -2348,7 +2279,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--15
 
  []
 
-[92
+[74
 
 
 
@@ -2362,12 +2293,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
  []
 
-[93]
+[75]
 Underfull \hbox (badness 1337) in paragraph at lines 86--86
 []\T1/lmr/m/n/12 Percentage change in
  []
 
-) [94]
+) [76]
 chapter without number
 
 Overfull \hbox (5.79388pt too wide) in paragraph at lines 283--293
@@ -2377,29 +2308,29 @@ Her-stel-lung des Manuskripts
 
 \us=\skip87
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 306.
-[95
+[77
 
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 306.
  (00_Masters_Nishu.aux (01_abstract.aux) (02_introduction.aux)
-(03_introduction_openstack.aux) (04_config.aux) (05_standard_nova.aux)
+(03_Background.aux) (04_config.aux) (05_standard_nova.aux)
 (06_cplex_scheduler.aux) (07_evaluation.aux) (08_possibilities_of_extension.aux
 ) (09_conclusion.aux) (90_anhang_01.aux) (90_anhang_02.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 306.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 306.
 Package rerunfilecheck Info: File `00_Masters_Nishu.out' has not changed.
-(rerunfilecheck)             Checksum: 36ADD4AC4B134684D70A1FC6DA5A3E4F;5521.
+(rerunfilecheck)             Checksum: 673238C9AD60C1A9854C8B585E2A1E04;4009.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 29934 strings out of 493333
- 519273 string characters out of 3139186
- 1168979 words of memory out of 3000000
- 32008 multiletter control sequences out of 15000+200000
+ 29791 strings out of 493333
+ 515808 string characters out of 3139186
+ 1165898 words of memory out of 3000000
+ 31926 multiletter control sequences out of 15000+200000
  93214 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,80p,10456b,1978s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2422,9 +2353,9 @@ KTeX 2.9/fonts/type1/public/lm/lmsso10.pfb><E:/Install Files/MiKTeX 2.9/fonts/t
 ype1/public/lm/lmsso12.pfb><E:/Install Files/MiKTeX 2.9/fonts/type1/public/lm/l
 msy10.pfb><E:/Install Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><E:/Inst
 all Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on 00_Masters_Nishu.pdf (104 pages, 1904568 bytes).
+Output written on 00_Masters_Nishu.pdf (85 pages, 1422778 bytes).
 PDF statistics:
- 2051 PDF objects out of 2073 (max. 8388607)
- 897 named destinations out of 1000 (max. 500000)
- 698 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1777 PDF objects out of 2073 (max. 8388607)
+ 846 named destinations out of 1000 (max. 500000)
+ 509 words of extra memory for PDF output out of 10000 (max. 10000000)
 
