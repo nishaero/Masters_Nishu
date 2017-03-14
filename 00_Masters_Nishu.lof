@@ -3,20 +3,24 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces SDN architecture diagram\cite {SDN:architecture}\relax }}{5}{figure.caption.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Minimum hardware requirements to set up the OpenStack test bed\cite {OpenStack:hwreqs}\relax }}{8}{figure.caption.5}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Network layout among all the host machines\cite {OpenStack:networklayout}\relax }}{11}{figure.caption.6}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Login screen for the dashboard\relax }}{18}{figure.caption.7}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces The dashboard screen showing the diagrammatic representation of network topology\relax }}{19}{figure.caption.8}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces An example of the metering with the number of incoming bytes on a network for a virtual machine interface.\relax }}{21}{figure.caption.9}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces RYU SDN Controller Framework \cite {ryu_framewrk_png}\relax }}{9}{figure.caption.5}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Floodlight Controller architecture \cite {Floodlight_arch}\relax }}{10}{figure.caption.6}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces OpenDaylight Architecture Framework \cite {OpenDaylight_framework}\relax }}{11}{figure.caption.7}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Minimum hardware requirements to set up the OpenStack test bed\cite {OpenStack:hwreqs}\relax }}{15}{figure.caption.8}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Network layout among all the host machines\cite {OpenStack:networklayout}\relax }}{18}{figure.caption.9}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Login screen for the dashboard\relax }}{25}{figure.caption.10}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The dashboard screen showing the diagrammatic representation of network topology\relax }}{26}{figure.caption.11}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces An example of the metering with the number of incoming bytes on a network for a virtual machine interface.\relax }}{28}{figure.caption.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Placement decision time for Standard Nova Scheduler from the data \ref {tabular:filterschedulerlogdata}\relax }}{36}{figure.caption.10}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Placement decision time for cPlex based Scheduler from the data \ref {tab:tucschedulerlogdata}\relax }}{37}{figure.caption.11}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Comparision of placement decision time between Standard Nova FilterScheduler and cPlex based Scheduler\relax }}{38}{figure.caption.12}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Placement decision time for Standard Nova Scheduler from the data \ref {tabular:filterschedulerlogdata}\relax }}{43}{figure.caption.13}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Placement decision time for cPlex based Scheduler from the data \ref {tab:tucschedulerlogdata}\relax }}{44}{figure.caption.14}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Comparision of placement decision time between Standard Nova FilterScheduler and cPlex based Scheduler\relax }}{45}{figure.caption.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces NFV functional overview\cite {openstack_nfv}\relax }}{41}{figure.caption.13}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Placement of VNFM and VNF over the OpenStack Vitual Machines\cite {openBatonFeatures}\relax }}{42}{figure.caption.14}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces NFV functional overview\cite {openstack_nfv}\relax }}{48}{figure.caption.16}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Placement of VNFM and VNF over the OpenStack Vitual Machines\cite {openBatonFeatures}\relax }}{49}{figure.caption.17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

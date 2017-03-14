@@ -1,6 +1,6 @@
 \select@language {english}
-\contentsline {chapter}{\nonumberline List of Figures}{iii}{chapter*.2}
-\contentsline {chapter}{\nonumberline List of Tables}{iv}{chapter*.3}
+\contentsline {chapter}{\nonumberline List of Figures}{iv}{chapter*.2}
+\contentsline {chapter}{\nonumberline List of Tables}{v}{chapter*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Contribution}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Results}{2}{section.1.2}
@@ -10,47 +10,53 @@
 \contentsline {section}{\numberline {2.1}Software Defined Networking \cite {SDN}}{4}{section.2.1}
 \contentsline {section}{\numberline {2.2}IEEE 802.11 MAC \cite {ieee2012802}}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Hotspot 2.0 \cite {Hotspot_2.0_Definition}}{6}{section.2.3}
-\contentsline {chapter}{\numberline {3}Installation and Configuration of OpenStack}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Minimum hardware requirements for the compute purpose of the cloud}{7}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Controller}{8}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Compute}{9}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Block Storage}{9}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Object Storage}{9}{subsection.3.1.4}
-\contentsline {section}{\numberline {3.2}Networking Options}{9}{section.3.2}
-\contentsline {section}{\numberline {3.3}Configuration of Services and config files}{10}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Host networking}{11}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Network Time Protocol (NTP)}{12}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}OpenStack packages}{12}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Add the Identity service}{12}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Add the Image service}{13}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Add the Compute service}{14}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}Add the Networking service}{15}{subsection.3.3.7}
-\contentsline {subsection}{\numberline {3.3.8}Add the dashboard}{17}{subsection.3.3.8}
-\contentsline {subsection}{\numberline {3.3.9}Add the Telemetry service}{19}{subsection.3.3.9}
-\contentsline {chapter}{\numberline {4}Standard Nova Scheduling Algorithm}{22}{chapter.4}
-\contentsline {section}{\numberline {4.1}Theory of Nova Algorithm}{22}{section.4.1}
-\contentsline {section}{\numberline {4.2}Code Trace}{24}{section.4.2}
-\contentsline {chapter}{\numberline {5}Implementation of Cplex based Nova Scheduler}{27}{chapter.5}
-\contentsline {section}{\numberline {5.1}Mathematical Formulation}{27}{section.5.1}
-\contentsline {section}{\numberline {5.2}The overview of implementation}{29}{section.5.2}
-\contentsline {chapter}{\numberline {6}Comparision of performance evaluation}{35}{chapter.6}
-\contentsline {section}{\numberline {6.1}Observations of standard Nova scheduler}{35}{section.6.1}
-\contentsline {section}{\numberline {6.2}Observations of cPlex based scheduler}{36}{section.6.2}
-\contentsline {section}{\numberline {6.3}Comparision}{37}{section.6.3}
-\contentsline {section}{\numberline {6.4}Space for further improvements}{38}{section.6.4}
-\contentsline {chapter}{\numberline {7}Further possible extensions in OpenStack}{40}{chapter.7}
-\contentsline {section}{\numberline {7.1}Open Baton - NFV Orchestrator}{42}{section.7.1}
-\contentsline {section}{\numberline {7.2}Tacker - OpenStack NFV Orchestration}{43}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusion}{44}{chapter.8}
-\contentsline {chapter}{\nonumberline Bibliography}{45}{chapter*.15}
-\contentsline {chapter}{Appendix}{46}{section*.16}
-\contentsline {chapter}{\numberline {A}Configuration Content}{48}{appendix.A}
-\contentsline {section}{\numberline {A.1}RabbitMQ configuration}{48}{section.A.1}
-\contentsline {chapter}{\numberline {B}Logs}{49}{appendix.B}
-\contentsline {section}{\numberline {B.1}FilterScheduler log trace}{49}{section.B.1}
-\contentsline {section}{\numberline {B.2}FilterScheduler log trace for creation of 10 virtual instances}{52}{section.B.2}
-\contentsline {section}{\numberline {B.3}cPlex based Scheduler log trace for creation of 10 virtual instances}{69}{section.B.3}
-\contentsline {chapter}{\numberline {C}Performance Data}{74}{appendix.C}
-\contentsline {section}{\numberline {C.1}FilterScheduler's Scheduling Time Logs Data}{74}{section.C.1}
-\contentsline {section}{\numberline {C.2}TUC CCN Scheduler's Scheduling Time Logs Data}{75}{section.C.2}
-\contentsline {chapter}{\nonumberline Versicherung}{77}{chapter*.21}
+\contentsline {chapter}{\numberline {3}Software Defined Networking}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Existing SDN Controllers}{8}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Ryu Controller \cite {RYU_Switching_Hub}}{8}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Floodlight Controller \cite {Floodlight_defn}}{9}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}OpenDaylight}{11}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Applications of SDN}{12}{section.3.2}
+\contentsline {chapter}{\numberline {4}Installation and Configuration of OpenStack}{14}{chapter.4}
+\contentsline {section}{\numberline {4.1}Minimum hardware requirements for the compute purpose of the cloud}{14}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Controller}{15}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Compute}{16}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Block Storage}{16}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Object Storage}{16}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Networking Options}{16}{section.4.2}
+\contentsline {section}{\numberline {4.3}Configuration of Services and config files}{17}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Host networking}{18}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Network Time Protocol (NTP)}{19}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}OpenStack packages}{19}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Add the Identity service}{19}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Add the Image service}{20}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Add the Compute service}{21}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.7}Add the Networking service}{22}{subsection.4.3.7}
+\contentsline {subsection}{\numberline {4.3.8}Add the dashboard}{24}{subsection.4.3.8}
+\contentsline {subsection}{\numberline {4.3.9}Add the Telemetry service}{26}{subsection.4.3.9}
+\contentsline {chapter}{\numberline {5}Standard Nova Scheduling Algorithm}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Theory of Nova Algorithm}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Code Trace}{31}{section.5.2}
+\contentsline {chapter}{\numberline {6}Implementation of Cplex based Nova Scheduler}{34}{chapter.6}
+\contentsline {section}{\numberline {6.1}Mathematical Formulation}{34}{section.6.1}
+\contentsline {section}{\numberline {6.2}The overview of implementation}{36}{section.6.2}
+\contentsline {chapter}{\numberline {7}Comparision of performance evaluation}{42}{chapter.7}
+\contentsline {section}{\numberline {7.1}Observations of standard Nova scheduler}{42}{section.7.1}
+\contentsline {section}{\numberline {7.2}Observations of cPlex based scheduler}{43}{section.7.2}
+\contentsline {section}{\numberline {7.3}Comparision}{44}{section.7.3}
+\contentsline {section}{\numberline {7.4}Space for further improvements}{45}{section.7.4}
+\contentsline {chapter}{\numberline {8}Further possible extensions in OpenStack}{47}{chapter.8}
+\contentsline {section}{\numberline {8.1}Open Baton - NFV Orchestrator}{49}{section.8.1}
+\contentsline {section}{\numberline {8.2}Tacker - OpenStack NFV Orchestration}{50}{section.8.2}
+\contentsline {chapter}{\numberline {9}Conclusion}{51}{chapter.9}
+\contentsline {chapter}{\nonumberline Bibliography}{52}{chapter*.18}
+\contentsline {chapter}{Appendix}{54}{section*.19}
+\contentsline {chapter}{\numberline {A}Configuration Content}{56}{appendix.A}
+\contentsline {section}{\numberline {A.1}RabbitMQ configuration}{56}{section.A.1}
+\contentsline {chapter}{\numberline {B}Logs}{57}{appendix.B}
+\contentsline {section}{\numberline {B.1}FilterScheduler log trace}{57}{section.B.1}
+\contentsline {section}{\numberline {B.2}FilterScheduler log trace for creation of 10 virtual instances}{60}{section.B.2}
+\contentsline {section}{\numberline {B.3}cPlex based Scheduler log trace for creation of 10 virtual instances}{77}{section.B.3}
+\contentsline {chapter}{\numberline {C}Performance Data}{82}{appendix.C}
+\contentsline {section}{\numberline {C.1}FilterScheduler's Scheduling Time Logs Data}{82}{section.C.1}
+\contentsline {section}{\numberline {C.2}TUC CCN Scheduler's Scheduling Time Logs Data}{83}{section.C.2}
+\contentsline {chapter}{\nonumberline Versicherung}{85}{chapter*.24}

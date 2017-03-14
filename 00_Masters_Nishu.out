@@ -10,47 +10,53 @@
 \BOOKMARK [1][-]{section.2.1}{Software Defined Networking SDN}{chapter.2}% 10
 \BOOKMARK [1][-]{section.2.2}{IEEE 802.11 MAC ieee2012802}{chapter.2}% 11
 \BOOKMARK [1][-]{section.2.3}{Hotspot 2.0 Hotspot2.0Definition}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Installation and Configuration of OpenStack}{}% 13
-\BOOKMARK [1][-]{section.3.1}{Minimum hardware requirements for the compute purpose of the cloud}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.1.1}{Controller}{section.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.1.2}{Compute}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.3}{Block Storage}{section.3.1}% 17
-\BOOKMARK [2][-]{subsection.3.1.4}{Object Storage}{section.3.1}% 18
-\BOOKMARK [1][-]{section.3.2}{Networking Options}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.3}{Configuration of Services and config files}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.3.1}{Host networking}{section.3.3}% 21
-\BOOKMARK [2][-]{subsection.3.3.2}{Network Time Protocol \(NTP\)}{section.3.3}% 22
-\BOOKMARK [2][-]{subsection.3.3.3}{OpenStack packages}{section.3.3}% 23
-\BOOKMARK [2][-]{subsection.3.3.4}{Add the Identity service}{section.3.3}% 24
-\BOOKMARK [2][-]{subsection.3.3.5}{Add the Image service}{section.3.3}% 25
-\BOOKMARK [2][-]{subsection.3.3.6}{Add the Compute service}{section.3.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.7}{Add the Networking service}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.8}{Add the dashboard}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.9}{Add the Telemetry service}{section.3.3}% 29
-\BOOKMARK [0][-]{chapter.4}{Standard Nova Scheduling Algorithm}{}% 30
-\BOOKMARK [1][-]{section.4.1}{Theory of Nova Algorithm}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.2}{Code Trace}{chapter.4}% 32
-\BOOKMARK [0][-]{chapter.5}{Implementation of Cplex based Nova Scheduler}{}% 33
-\BOOKMARK [1][-]{section.5.1}{Mathematical Formulation}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.2}{The overview of implementation}{chapter.5}% 35
-\BOOKMARK [0][-]{chapter.6}{Comparision of performance evaluation}{}% 36
-\BOOKMARK [1][-]{section.6.1}{Observations of standard Nova scheduler}{chapter.6}% 37
-\BOOKMARK [1][-]{section.6.2}{Observations of cPlex based scheduler}{chapter.6}% 38
-\BOOKMARK [1][-]{section.6.3}{Comparision}{chapter.6}% 39
-\BOOKMARK [1][-]{section.6.4}{Space for further improvements}{chapter.6}% 40
-\BOOKMARK [0][-]{chapter.7}{Further possible extensions in OpenStack}{}% 41
-\BOOKMARK [1][-]{section.7.1}{Open Baton - NFV Orchestrator}{chapter.7}% 42
-\BOOKMARK [1][-]{section.7.2}{Tacker - OpenStack NFV Orchestration}{chapter.7}% 43
-\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 44
-\BOOKMARK [0][-]{chapter*.15}{Bibliography}{}% 45
-\BOOKMARK [0][-]{section*.16}{Appendix}{}% 46
-\BOOKMARK [0][-]{appendix.A}{Configuration Content}{}% 47
-\BOOKMARK [1][-]{section.A.1}{RabbitMQ configuration}{appendix.A}% 48
-\BOOKMARK [0][-]{appendix.B}{Logs}{}% 49
-\BOOKMARK [1][-]{section.B.1}{FilterScheduler log trace}{appendix.B}% 50
-\BOOKMARK [1][-]{section.B.2}{FilterScheduler log trace for creation of 10 virtual instances}{appendix.B}% 51
-\BOOKMARK [1][-]{section.B.3}{cPlex based Scheduler log trace for creation of 10 virtual instances}{appendix.B}% 52
-\BOOKMARK [0][-]{appendix.C}{Performance Data}{}% 53
-\BOOKMARK [1][-]{section.C.1}{FilterScheduler's Scheduling Time Logs Data}{appendix.C}% 54
-\BOOKMARK [1][-]{section.C.2}{TUC CCN Scheduler's Scheduling Time Logs Data}{appendix.C}% 55
-\BOOKMARK [0][-]{chapter*.21}{Versicherung}{}% 56
+\BOOKMARK [0][-]{chapter.3}{Software Defined Networking}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Existing SDN Controllers}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.1.1}{Ryu Controller RYUSwitchingHub}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.2}{Floodlight Controller Floodlightdefn}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.3}{OpenDaylight}{section.3.1}% 17
+\BOOKMARK [1][-]{section.3.2}{Applications of SDN}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{Installation and Configuration of OpenStack}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Minimum hardware requirements for the compute purpose of the cloud}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.1.1}{Controller}{section.4.1}% 21
+\BOOKMARK [2][-]{subsection.4.1.2}{Compute}{section.4.1}% 22
+\BOOKMARK [2][-]{subsection.4.1.3}{Block Storage}{section.4.1}% 23
+\BOOKMARK [2][-]{subsection.4.1.4}{Object Storage}{section.4.1}% 24
+\BOOKMARK [1][-]{section.4.2}{Networking Options}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.3}{Configuration of Services and config files}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.3.1}{Host networking}{section.4.3}% 27
+\BOOKMARK [2][-]{subsection.4.3.2}{Network Time Protocol \(NTP\)}{section.4.3}% 28
+\BOOKMARK [2][-]{subsection.4.3.3}{OpenStack packages}{section.4.3}% 29
+\BOOKMARK [2][-]{subsection.4.3.4}{Add the Identity service}{section.4.3}% 30
+\BOOKMARK [2][-]{subsection.4.3.5}{Add the Image service}{section.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.3.6}{Add the Compute service}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.7}{Add the Networking service}{section.4.3}% 33
+\BOOKMARK [2][-]{subsection.4.3.8}{Add the dashboard}{section.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.3.9}{Add the Telemetry service}{section.4.3}% 35
+\BOOKMARK [0][-]{chapter.5}{Standard Nova Scheduling Algorithm}{}% 36
+\BOOKMARK [1][-]{section.5.1}{Theory of Nova Algorithm}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{Code Trace}{chapter.5}% 38
+\BOOKMARK [0][-]{chapter.6}{Implementation of Cplex based Nova Scheduler}{}% 39
+\BOOKMARK [1][-]{section.6.1}{Mathematical Formulation}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.2}{The overview of implementation}{chapter.6}% 41
+\BOOKMARK [0][-]{chapter.7}{Comparision of performance evaluation}{}% 42
+\BOOKMARK [1][-]{section.7.1}{Observations of standard Nova scheduler}{chapter.7}% 43
+\BOOKMARK [1][-]{section.7.2}{Observations of cPlex based scheduler}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.3}{Comparision}{chapter.7}% 45
+\BOOKMARK [1][-]{section.7.4}{Space for further improvements}{chapter.7}% 46
+\BOOKMARK [0][-]{chapter.8}{Further possible extensions in OpenStack}{}% 47
+\BOOKMARK [1][-]{section.8.1}{Open Baton - NFV Orchestrator}{chapter.8}% 48
+\BOOKMARK [1][-]{section.8.2}{Tacker - OpenStack NFV Orchestration}{chapter.8}% 49
+\BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 50
+\BOOKMARK [0][-]{chapter*.18}{Bibliography}{}% 51
+\BOOKMARK [0][-]{section*.19}{Appendix}{}% 52
+\BOOKMARK [0][-]{appendix.A}{Configuration Content}{}% 53
+\BOOKMARK [1][-]{section.A.1}{RabbitMQ configuration}{appendix.A}% 54
+\BOOKMARK [0][-]{appendix.B}{Logs}{}% 55
+\BOOKMARK [1][-]{section.B.1}{FilterScheduler log trace}{appendix.B}% 56
+\BOOKMARK [1][-]{section.B.2}{FilterScheduler log trace for creation of 10 virtual instances}{appendix.B}% 57
+\BOOKMARK [1][-]{section.B.3}{cPlex based Scheduler log trace for creation of 10 virtual instances}{appendix.B}% 58
+\BOOKMARK [0][-]{appendix.C}{Performance Data}{}% 59
+\BOOKMARK [1][-]{section.C.1}{FilterScheduler's Scheduling Time Logs Data}{appendix.C}% 60
+\BOOKMARK [1][-]{section.C.2}{TUC CCN Scheduler's Scheduling Time Logs Data}{appendix.C}% 61
+\BOOKMARK [0][-]{chapter*.24}{Versicherung}{}% 62
