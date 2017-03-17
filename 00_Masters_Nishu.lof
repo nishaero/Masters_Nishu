@@ -6,21 +6,27 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces RYU SDN Controller Framework \cite {ryu_framewrk_png}\relax }}{9}{figure.caption.5}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Floodlight Controller architecture \cite {Floodlight_arch}\relax }}{10}{figure.caption.6}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces OpenDaylight Architecture Framework \cite {OpenDaylight_framework}\relax }}{11}{figure.caption.7}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Open vSwitch features \cite {ovs_features}\relax }}{14}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Minimum hardware requirements to set up the OpenStack test bed\cite {OpenStack:hwreqs}\relax }}{15}{figure.caption.8}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Network layout among all the host machines\cite {OpenStack:networklayout}\relax }}{18}{figure.caption.9}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Login screen for the dashboard\relax }}{25}{figure.caption.10}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces The dashboard screen showing the diagrammatic representation of network topology\relax }}{26}{figure.caption.11}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces An example of the metering with the number of incoming bytes on a network for a virtual machine interface.\relax }}{28}{figure.caption.12}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces OpenWrt Terminal View \cite {openwrt_terminal_img}\relax }}{18}{figure.caption.9}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces OpenWrt GUI Interface \cite {openwrt_luci_img}\relax }}{19}{figure.caption.10}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces OpenFlow features \cite {openflow_features}\relax }}{20}{figure.caption.11}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces OpenFlow Protocol \cite {of_protocol_spec_img}\relax }}{21}{figure.caption.14}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces OpenFlow Switch Anatomy \cite {Of_Switch_img}\relax }}{23}{figure.caption.16}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces OpenFlow Switch Agent \cite {Of_Switch_agent_img}\relax }}{23}{figure.caption.18}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces OpenFlow Data Plane Schematic \cite {Of_data_plane_flow_img}\relax }}{24}{figure.caption.20}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Packet Lifecycle \cite {Of_packet_lifecycle}\relax }}{25}{figure.caption.22}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces RADIUS Components \cite {RADIUS_components_img}\relax }}{27}{figure.caption.26}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces RADIUS Architecture \cite {Radius_operation_img}\relax }}{29}{figure.caption.29}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces IEEE 802.1x WLAN authentication process \cite {WLAN_802.1x_img}\relax }}{31}{figure.caption.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Placement decision time for Standard Nova Scheduler from the data \ref {tabular:filterschedulerlogdata}\relax }}{42}{figure.caption.32}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Placement decision time for cPlex based Scheduler from the data \ref {tab:tucschedulerlogdata}\relax }}{43}{figure.caption.33}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Comparision of placement decision time between Standard Nova FilterScheduler and cPlex based Scheduler\relax }}{44}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Placement decision time for Standard Nova Scheduler from the data \ref {tabular:filterschedulerlogdata}\relax }}{43}{figure.caption.13}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Placement decision time for cPlex based Scheduler from the data \ref {tab:tucschedulerlogdata}\relax }}{44}{figure.caption.14}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Comparision of placement decision time between Standard Nova FilterScheduler and cPlex based Scheduler\relax }}{45}{figure.caption.15}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces NFV functional overview\cite {openstack_nfv}\relax }}{48}{figure.caption.16}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Placement of VNFM and VNF over the OpenStack Vitual Machines\cite {openBatonFeatures}\relax }}{49}{figure.caption.17}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces NFV functional overview\cite {openstack_nfv}\relax }}{47}{figure.caption.35}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Placement of VNFM and VNF over the OpenStack Vitual Machines\cite {openBatonFeatures}\relax }}{48}{figure.caption.36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

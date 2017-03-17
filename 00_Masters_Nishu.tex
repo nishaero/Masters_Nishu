@@ -28,7 +28,9 @@ oneside,
 openany,
 paper=a4,
 parskip=half,  % just a suggestion
-titlepage=true
+titlepage=true,
+table,
+xcdraw
 %draft,         % TODO remove for final version
 %fontsize=
 %ngerman,
@@ -92,21 +94,21 @@ titlepage=true
 %=======================================================================
 \usepackage[final,pdftex]{graphicx}
 \usepackage[caption=false,font=footnotesize]{subfig}
-\graphicspath{{pictures/pdf/}{pictures/png/}{pictures/jpg/}}
-\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg}
+\graphicspath{{pictures/pdf/}{pictures/png/}{pictures/jpg/}{pictures/gif/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.jpeg,.gif}
 
 %=======================================================================
 %:glossaries
 %=======================================================================
 \usepackage[%
-  acronym,
-  shortcuts,
-  nonumberlist,
-  notree,
-  toc,
-  hyperfirst=true,
+acronym,
+shortcuts,
+nonumberlist,
+notree,
+toc,
+hyperfirst=true,
 %  xindy={language=german-duden,codepage=utf8}
-  xindy={language=english-duden,codepage=utf8}
+xindy={language=english-duden,codepage=utf8}
 ]{glossaries}
 \makeglossaries{}
 \setlength{\glslistdottedwidth}{.3\linewidth}
@@ -172,18 +174,18 @@ titlepage=true
 	showtabs=false,
 	tabsize=4
 }
- 
+
 \lstset{style=mystyle}
 
 \hypersetup{%
-  pdftitle     = {\dctitle{}},
-%  pdftitle     = {\dctitle{}, \dcsubtitle{}},
-  pdfsubject   = {\dcsubject{}, \dcdate{}},
-  pdfauthor    = {\dcauthorfirstname~\dcauthorlastname, \dcauthoremail},
-  pdfkeywords  = {\dckeywords},
-  linkcolor    = {susepflaume},
-  citecolor    = {darkgreen},
-  urlcolor     = {blue},
+	pdftitle     = {\dctitle{}},
+	%  pdftitle     = {\dctitle{}, \dcsubtitle{}},
+	pdfsubject   = {\dcsubject{}, \dcdate{}},
+	pdfauthor    = {\dcauthorfirstname~\dcauthorlastname, \dcauthoremail},
+	pdfkeywords  = {\dckeywords},
+	linkcolor    = {susepflaume},
+	citecolor    = {darkgreen},
+	urlcolor     = {blue},
 }
 
 %=======================================================================
@@ -195,115 +197,116 @@ titlepage=true
 \fussy
 
 \makeatletter
-  \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
+\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
 \makeatother
 \begin{document}
-%=======================================================================
-%:include the titlepage as a snippet
-%=======================================================================
-\input{include/title.tex}
-% output the titlepage(s)
-\maketitle
-
-%=======================================================================
-%:include the abstract
-%=======================================================================
-\include{01_abstract}
-
-%=======================================================================
-% output all the tables/lists of foo
-% TODO remove unused
-\pagenumbering{roman}
-\pdfbookmark{TableofContents}{Table of Contents}
-\tableofcontents{}
-\clearpage{}
-
-\markboth{Abbildungsverzeichnis}{Abbildungsverzeichnis}
-\listoffigures{}
-\clearpage{}
-
-\markboth{Tabellenverzeichnis}{Tabellenverzeichnis}
-\listoftables{}
-\clearpage{}
-\cleardoublepage
-\pagebreak
-\newpage
-
-\printglossary[style=long]{}
-\printglossary[style=listdotted,type=\acronymtype]{}
-\cleardoublepage
-
-\pagenumbering{arabic}
-\setcounter{page}{1}
-%=======================================================================
-
-%=======================================================================
-%:Main part
-%=======================================================================
-% TODO adapt to fit your filenames
-
-%\include{00_abstract}
-%\include{01_introduction}
-\include{02_introduction}
-\include{03_Background}
-\include{04_Software_Defined_Networking}
-\include{04_config}
-\include{05_standard_nova}
-\include{06_cplex_scheduler}
-\include{07_evaluation}
-\include{08_possibilities_of_extension}
-\include{09_conclusion}
-
-%======================================================================
-%:Literaturverzeichnis
-%======================================================================
-\newpage
-\bibliographystyle{unsrtnat}
-\bibliography{bib/literatur}
-
-
-%======================================================================
-%:Anhang (TODO)
-%======================================================================
-\appendix
-\phantomsection{}
-\addcontentsline{toc}{chapter}{\appendixname}
-\addpart*{\appendixname}\label{p:anhang}
-
-\include{90_anhang_01}
-\include{90_anhang_02}
-
-
-
-
-%======================================================================
-%:Selbstständigkeitserklärung
-%======================================================================
-\addchap{Versicherung}
-
-Hiermit versichere ich, dass ich die vorliegende Arbeit ohne unzulässige Hilfe Dritter und ohne
-Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe; die aus fremden Quellen direkt
-oder indirekt übernommenen Gedanken sind als solche kenntlich gemacht.\\
-Bei der Auswahl und Auswertung des Materials sowie bei der Herstellung des Manuskripts habe ich
-Unterstützungsleistungen von folgenden Personen erhalten: \\[2ex]
-\hspace*{\fill}keine\hspace*{\fill}\\[2ex]
-Weitere Personen waren an der Abfassung der vorliegenden Arbeit nicht beteiligt. Die Hilfe eines
-Promotionsberaters habe ich nicht in Anspruch genommen. Weitere Personen haben von mir keine
-geldwerten Leistungen für Arbeiten erhalten, die im Zusammenhang mit dem Inhalt der vorgelegten
-Dissertation stehen.
-
-Die Arbeit wurde bisher weder im Inland noch im Ausland in gleicher oder ähnlicher Form einer
-anderen Prüfungsbehörde vorgelegt.
-
-\vspace{4ex}
-\begin{flushleft}
-\dcplace, \dcdate\\[8ex]
-\newlength\us\settowidth{\us}{-\dcauthorfirstname~\dcauthorlastname-}
-\begin{tabular}{p{\us}}\midrule
-\centering\footnotesize \dcauthorfirstname~\dcauthorlastname{}
-\end{tabular}
-\end{flushleft}
-
+	%=======================================================================
+	%:include the titlepage as a snippet
+	%=======================================================================
+	\input{include/title.tex}
+	% output the titlepage(s)
+	\maketitle
+	
+	%=======================================================================
+	%:include the abstract
+	%=======================================================================
+	\include{01_abstract}
+	
+	%=======================================================================
+	% output all the tables/lists of foo
+	% TODO remove unused
+	\pagenumbering{roman}
+	\pdfbookmark{TableofContents}{Table of Contents}
+	\tableofcontents{}
+	\clearpage{}
+	
+	\markboth{Abbildungsverzeichnis}{Abbildungsverzeichnis}
+	\listoffigures{}
+	\clearpage{}
+	
+	\markboth{Tabellenverzeichnis}{Tabellenverzeichnis}
+	\listoftables{}
+	\clearpage{}
+	\cleardoublepage
+	\pagebreak
+	\newpage
+	
+	\printglossary[style=long]{}
+	\printglossary[style=listdotted,type=\acronymtype]{}
+	\cleardoublepage
+	
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	%=======================================================================
+	
+	%=======================================================================
+	%:Main part
+	%=======================================================================
+	% TODO adapt to fit your filenames
+	
+	%\include{00_abstract}
+	%\include{01_introduction}
+	\include{02_introduction}
+	\include{03_Background}
+	\include{04_Software_Defined_Networking}
+	%\include{04_config}
+	\include{05_Control_and_Authentication_Mechanism}
+%	\include{05_standard_nova}
+	\include{06_cplex_scheduler}
+	\include{07_evaluation}
+	\include{08_possibilities_of_extension}
+	\include{09_conclusion}
+	
+	%======================================================================
+	%:Literaturverzeichnis
+	%======================================================================
+	\newpage
+	\bibliographystyle{unsrtnat}
+	\bibliography{bib/literatur}
+	
+	
+	%======================================================================
+	%:Anhang (TODO)
+	%======================================================================
+	\appendix
+	\phantomsection{}
+	\addcontentsline{toc}{chapter}{\appendixname}
+	\addpart*{\appendixname}\label{p:anhang}
+	
+	\include{90_anhang_01}
+	\include{90_anhang_02}
+	
+	
+	
+	
+	%======================================================================
+	%:Selbstständigkeitserklärung
+	%======================================================================
+	\addchap{Versicherung}
+	
+	Hiermit versichere ich, dass ich die vorliegende Arbeit ohne unzulässige Hilfe Dritter und ohne
+	Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe; die aus fremden Quellen direkt
+	oder indirekt übernommenen Gedanken sind als solche kenntlich gemacht.\\
+	Bei der Auswahl und Auswertung des Materials sowie bei der Herstellung des Manuskripts habe ich
+	Unterstützungsleistungen von folgenden Personen erhalten: \\[2ex]
+	\hspace*{\fill}keine\hspace*{\fill}\\[2ex]
+	Weitere Personen waren an der Abfassung der vorliegenden Arbeit nicht beteiligt. Die Hilfe eines
+	Promotionsberaters habe ich nicht in Anspruch genommen. Weitere Personen haben von mir keine
+	geldwerten Leistungen für Arbeiten erhalten, die im Zusammenhang mit dem Inhalt der vorgelegten
+	Dissertation stehen.
+	
+	Die Arbeit wurde bisher weder im Inland noch im Ausland in gleicher oder ähnlicher Form einer
+	anderen Prüfungsbehörde vorgelegt.
+	
+	\vspace{4ex}
+	\begin{flushleft}
+		\dcplace, \dcdate\\[8ex]
+		\newlength\us\settowidth{\us}{-\dcauthorfirstname~\dcauthorlastname-}
+		\begin{tabular}{p{\us}}\midrule
+			\centering\footnotesize \dcauthorfirstname~\dcauthorlastname{}
+		\end{tabular}
+	\end{flushleft}
+	
 \end{document}
 %=======================================================================
 % vim: ts=2:sw=2:sts=2:expandtab:wrapmargin=2:tw=120

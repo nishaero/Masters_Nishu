@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{47}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -16,43 +16,6 @@ What is {SDN}?, {\natexlab{a}}.
   \url{https://www.opennetworking.org/sdn-resources/sdn-definition}.
 \newblock Online; accessed 01-March-2017.
 
-\bibitem[Hot()]{Hotspot_2.0_Definition}
-Understanding wi-fi hotspot 2.0 and how to leverage it for your business, by
-  jason guest.
-\newblock
-  \url{http://hotelexecutive.com/business_review/3674/understanding-wi-fi-hotspot-20-and-how-to-leverage-it-for-your-business}.
-\newblock (Accessed on 03/02/2017).
-
-\bibitem[SDN({\natexlab{b}})]{SDN:architecture}
-Sdn {architecture} diagram, {\natexlab{b}}.
-\newblock URL
-  \url{https://www.sdxcentral.com/wp-content/uploads/2015/03/sdn-architecture.png}.
-\newblock Online; accessed 02-March-2017.
-
-\bibitem[Ope({\natexlab{a}})]{OpenStack:hwreqs}
-Overview, {\natexlab{a}}.
-\newblock URL
-  \url{http://docs.openstack.org/liberty/install-guide-ubuntu/_images/hwreqs.png}.
-\newblock Online; accessed 06-November-2016.
-
-\bibitem[Ope({\natexlab{b}})]{OpenStack:networklayout}
-Host networking, {\natexlab{b}}.
-\newblock URL
-  \url{http://docs.openstack.org/liberty/install-guide-ubuntu/_images/networklayout.png}.
-\newblock Online; accessed 06-November-2016.
-
-\bibitem[ope({\natexlab{a}})]{openstack_nfv}
-Accelerating {NFV} {Delivery} with {OpenStack}, {OpenStack} {Foundation}
-  {Report}, {\natexlab{a}}.
-\newblock URL
-  \url{http://www.openstack.org/assets/telecoms-and-nfv/OpenStack-Foundation-NFV-Report.pdf}.
-\newblock Online; accessed 05-November-2016.
-
-\bibitem[ope({\natexlab{b}})]{openBatonFeatures}
-Open {Baton} features, {\natexlab{b}}.
-\newblock URL \url{http://openbaton.github.io/images/feature1.png}.
-\newblock Online; accessed 05-November-2016.
-
 \bibitem[Association et~al.(2012)]{ieee2012802}
 IEEE~Standards Association et~al.
 \newblock 802.11-2012-ieee standard for information
@@ -60,6 +23,172 @@ IEEE~Standards Association et~al.
   and metropolitan area networks--specific requirements part 11: Wireless lan
   medium access control (mac) and physical layer (phy) specifications.
 \newblock \emph{IEEE Std}, 802, 2012.
+
+\bibitem[Hot()]{Hotspot_2.0_Definition}
+Understanding wi-fi hotspot 2.0 and how to leverage it for your business, by
+  jason guest.
+\newblock
+  \url{http://hotelexecutive.com/business_review/3674/understanding-wi-fi-hotspot-20-and-how-to-leverage-it-for-your-business}.
+\newblock (Accessed on 03/02/2017).
+
+\bibitem[RYU()]{RYU_Switching_Hub}
+Switching hub — ryubook 1.0 documentation.
+\newblock URL \url{https://osrg.github.io/ryu-book/en/html/switching_hub.html}.
+\newblock (Accessed on 03/06/2017).
+
+\bibitem[Flo({\natexlab{a}})]{Floodlight_defn}
+What is a floodlight controller? - defined.
+\newblock
+  \url{https://www.sdxcentral.com/sdn/definitions/sdn-controllers/open-source-sdn-controllers/what-is-floodlight-controller/},
+  {\natexlab{a}}.
+\newblock (Accessed on 03/08/2017).
+
+\bibitem[Pfaff et~al.(2015)Pfaff, Pettit, Koponen, Jackson, Zhou, Rajahalme,
+  Gross, Wang, Stringer, Shelar, et~al.]{OpenVswitch_design}
+Ben Pfaff, Justin Pettit, Teemu Koponen, Ethan~J Jackson, Andy Zhou, Jarno
+  Rajahalme, Jesse Gross, Alex Wang, Joe Stringer, Pravin Shelar, et~al.
+\newblock The design and implementation of open vswitch.
+\newblock In \emph{NSDI}, pages 117--130, 2015.
+
+\bibitem[Wha({\natexlab{a}})]{WhatIsOpenWrt}
+What is openwrt and why should i use it for my router?
+\newblock
+  \url{http://www.makeuseof.com/tag/what-is-openwrt-and-why-should-i-use-it-for-my-router/},
+  {\natexlab{a}}.
+\newblock (Accessed on 03/15/2017).
+
+\bibitem[Wha({\natexlab{b}})]{WhatIsOpenFlow}
+Openflow - open networking foundation.
+\newblock \url{https://www.opennetworking.org/sdn-resources/openflow},
+  {\natexlab{b}}.
+\newblock (Accessed on 03/16/2017).
+
+\bibitem[RAD({\natexlab{a}})]{RADIUS_RFC2865}
+Rfc 2865 - remote authentication dial in user service (radius).
+\newblock \url{https://tools.ietf.org/html/rfc2865}, {\natexlab{a}}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[Chen and Wang(2005)]{WLAN_802.1x}
+Jyh-Cheng Chen and Yu-Ping Wang.
+\newblock Extensible authentication protocol (eap) and ieee 802.1x: tutorial
+  and empirical experience.
+\newblock \emph{IEEE Communications Magazine}, 43\penalty0 (12):\penalty0
+  supl.26--supl.32, Dec 2005.
+\newblock ISSN 0163-6804.
+\newblock \doi{10.1109/MCOM.2005.1561920}.
+
+\bibitem[SDN({\natexlab{b}})]{SDN:architecture}
+Sdn {architecture} diagram, {\natexlab{b}}.
+\newblock URL
+  \url{https://www.sdxcentral.com/wp-content/uploads/2015/03/sdn-architecture.png}.
+\newblock Online; accessed 02-March-2017.
+
+\bibitem[ryu()]{ryu_framewrk_png}
+Ryu-controller-sdn-framework.jpg (jpeg image, 900 × 495 pixels).
+\newblock URL
+  \url{https://www.sdxcentral.com/wp-content/uploads/2014/09/ryu-controller-sdn-framework.jpg}.
+\newblock (Accessed on 03/08/2017).
+
+\bibitem[Flo({\natexlab{b}})]{Floodlight_arch}
+Floodlight architecture diagram.
+\newblock
+  \url{https://www.sdxcentral.com/wp-content/uploads/2014/09/floodlight-open-sdn-controller-diagram.jpg},
+  {\natexlab{b}}.
+\newblock (Accessed on 03/08/2017).
+
+\bibitem[Ope()]{OpenDaylight_framework}
+Architectural\_framework.jpg (717×435).
+\newblock
+  \url{https://wiki.opendaylight.org/images/b/b1/Architectural_Framework.jpg}.
+\newblock (Accessed on 03/14/2017).
+
+\bibitem[ovs()]{ovs_features}
+featured-image.jpg (714×594).
+\newblock \url{http://openvswitch.org/assets/featured-image.jpg}.
+\newblock (Accessed on 03/14/2017).
+
+\bibitem[ope({\natexlab{a}})]{openwrt_terminal_img}
+openwrt4-49e2cc8.jpg (554×493).
+\newblock \url{http://img110.xooimage.com/files/0/d/4/openwrt4-49e2cc8.jpg},
+  {\natexlab{a}}.
+\newblock (Accessed on 03/16/2017).
+
+\bibitem[ope({\natexlab{b}})]{openwrt_luci_img}
+bootstrap-luci-theme.png (959×580).
+\newblock
+  \url{https://i1.wp.com/advanxer.com/blog/wp-content/uploads/2013/02/bootstrap-luci-theme.png},
+  {\natexlab{b}}.
+\newblock (Accessed on 03/16/2017).
+
+\bibitem[ope({\natexlab{c}})]{openflow_features}
+12-8-openflow-diagram.jpg (417×348).
+\newblock
+  \url{https://www.opennetworking.org/images/stories/sdn-resources/openflow/12-8-OpenFlow-Diagram.jpg},
+  {\natexlab{c}}.
+\newblock (Accessed on 03/16/2017).
+
+\bibitem[of_()]{of_protocol_spec_img}
+openflow-protocol.png (217×242).
+\newblock
+  \url{http://flowgrammable.org/static/media/uploads/components/protocol.png}.
+\newblock (Accessed on 03/16/2017).
+
+\bibitem[Of_({\natexlab{a}})]{Of_Switch_img}
+switch\_anatomy.png (335×209).
+\newblock
+  \url{http://flowgrammable.org/static/media/uploads/components/switch_anatomy.png},
+  {\natexlab{a}}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[Of_({\natexlab{b}})]{Of_Switch_agent_img}
+switch\_agent\_anatomy.png (385×166).
+\newblock
+  \url{http://flowgrammable.org/static/media/uploads/components/switch_agent_anatomy.png},
+  {\natexlab{b}}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[Of_({\natexlab{c}})]{Of_data_plane_flow_img}
+switch.png (473×250).
+\newblock
+  \url{http://flowgrammable.org/static/media/uploads/components/switch.png},
+  {\natexlab{c}}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[Of_({\natexlab{d}})]{Of_packet_lifecycle}
+packet\_lifecycle.png (710×138).
+\newblock
+  \url{http://flowgrammable.org/static/media/uploads/components/packet_lifecycle.png},
+  {\natexlab{d}}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[RAD({\natexlab{b}})]{RADIUS_components_img}
+Radius components (513×318).
+\newblock \url{https://i-technet.sec.s-msft.com/dynimg/IC195130.gif},
+  {\natexlab{b}}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[Rad()]{Radius_operation_img}
+Radius operation (560×460).
+\newblock \url{http://www.wi-fiplanet.com/img/tutorial-radius-fig1.gif}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[WLA()]{WLAN_802.1x_img}
+802.1x\_over\_802.11\_with\_eap\_expansion.png (513×393).
+\newblock
+  \url{https://www.eduroam.us/files/images/admin_guide/technical_overview/802.1x_over_802.11_with_EAP_expansion.png}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[ope({\natexlab{d}})]{openstack_nfv}
+Accelerating {NFV} {Delivery} with {OpenStack}, {OpenStack} {Foundation}
+  {Report}, {\natexlab{d}}.
+\newblock URL
+  \url{http://www.openstack.org/assets/telecoms-and-nfv/OpenStack-Foundation-NFV-Report.pdf}.
+\newblock Online; accessed 05-November-2016.
+
+\bibitem[ope({\natexlab{e}})]{openBatonFeatures}
+Open {Baton} features, {\natexlab{e}}.
+\newblock URL \url{http://openbaton.github.io/images/feature1.png}.
+\newblock Online; accessed 05-November-2016.
 
 \bibitem[hos()]{hostapd}
 hostapd: Ieee 802.11 ap, ieee 802.1x/wpa/wpa2/eap/radius authenticator.
@@ -80,6 +209,83 @@ Ieee xplore full-text pdf:.
 Wi-fi certified passpoint | wi-fi alliance.
 \newblock \url{http://www.wi-fi.org/discover-wi-fi/wi-fi-certified-passpoint}.
 \newblock (Accessed on 03/02/2017).
+
+\bibitem[Wha({\natexlab{c}})]{What_is_SDN}
+What’s software-defined networking (sdn)?
+\newblock
+  \url{https://www.sdxcentral.com/sdn/definitions/what-the-definition-of-software-defined-networking-sdn/},
+  {\natexlab{c}}.
+\newblock (Accessed on 03/06/2017).
+
+\bibitem[Jose et~al.()Jose, Yu, and Rexford]{jose2011online}
+Lavanya Jose, Minlan Yu, and Jennifer Rexford.
+\newblock Online measurement of large traffic aggregates on commodity switches.
+\newblock
+  \url{http://static.usenix.org/events/hotice11/tech/full_papers/Jose.pdf}.
+\newblock (Accessed on 03/14/2017).
+
+\bibitem[Nayak et~al.(2009)Nayak, Reimers, Feamster, and
+  Clark]{Nayak:2009:RDA:1592681.1592684}
+Ankur~Kumar Nayak, Alex Reimers, Nick Feamster, and Russ Clark.
+\newblock Resonance: Dynamic access control for enterprise networks.
+\newblock In \emph{Proceedings of the 1st ACM Workshop on Research on
+  Enterprise Networking}, WREN '09, pages 11--18, New York, NY, USA, 2009. ACM.
+\newblock ISBN 978-1-60558-443-0.
+\newblock \doi{10.1145/1592681.1592684}.
+\newblock URL \url{http://doi.acm.org/10.1145/1592681.1592684}.
+
+\bibitem[Ballard et~al.(2010)Ballard, Rae, and Akella]{ballard2010extensible}
+Jeffrey~R Ballard, Ian Rae, and Aditya Akella.
+\newblock Extensible and scalable network monitoring using opensafe.
+\newblock In \emph{INM/WREN}, 2010.
+
+\bibitem[Al-Fares et~al.(2010)Al-Fares, Radhakrishnan, Raghavan, Huang, and
+  Vahdat]{al2010hedera}
+Mohammad Al-Fares, Sivasankar Radhakrishnan, Barath Raghavan, Nelson Huang, and
+  Amin Vahdat.
+\newblock Hedera: Dynamic flow scheduling for data center networks.
+\newblock In \emph{NSDI}, volume~10, pages 19--19, 2010.
+
+\bibitem[Wang et~al.(2011)Wang, Butnariu, Rexford, et~al.]{wang2011openflow}
+Richard Wang, Dana Butnariu, Jennifer Rexford, et~al.
+\newblock Openflow-based server load balancing gone wild.
+\newblock \emph{Hot-ICE}, 11:\penalty0 12--12, 2011.
+
+\bibitem[Wha({\natexlab{d}})]{WhatisOVS}
+What is open vswitch (ovs)?
+\newblock
+  \url{https://www.sdxcentral.com/cloud/open-source/definitions/what-is-open-vswitch/},
+  {\natexlab{d}}.
+\newblock (Accessed on 03/14/2017).
+
+\bibitem[Ope({\natexlab{a}})]{OpenFlow_functionality}
+Openflow » what is openflow?
+\newblock \url{http://archive.openflow.org/wp/learnmore/}, {\natexlab{a}}.
+\newblock (Accessed on 03/16/2017).
+
+\bibitem[Ope({\natexlab{b}})]{Openflow_protocol_spec}
+Sdn / openflow | flowgrammable.
+\newblock \url{http://flowgrammable.org/sdn/openflow/#tab_protocol},
+  {\natexlab{b}}.
+\newblock (Accessed on 03/16/2017).
+
+\bibitem[Opn()]{Opnflow_switch}
+Sdn / openflow | flowgrammable.
+\newblock \url{http://flowgrammable.org/sdn/openflow/#tab_switch}.
+\newblock (Accessed on 03/16/2017).
+
+\bibitem[RAD({\natexlab{a}})]{RADIUS_AAA}
+Aaa and nas.
+\newblock \url{https://www.tutorialspoint.com/radius/aaa_and_nas.htm},
+  {\natexlab{a}}.
+\newblock (Accessed on 03/17/2017).
+
+\bibitem[RAD({\natexlab{b}})]{RADIUS_components}
+Radius protocol and components.
+\newblock
+  \url{https://technet.microsoft.com/en-us/library/cc726017(v=ws.10).aspx},
+  {\natexlab{b}}.
+\newblock (Accessed on 03/17/2017).
 
 \bibitem[cpl()]{cplex-optimizer}
 {CPLEX} {Optimizer}.

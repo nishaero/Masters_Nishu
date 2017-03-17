@@ -3,8 +3,7 @@ A level-1 auxiliary file: 01_abstract.aux
 A level-1 auxiliary file: 02_introduction.aux
 A level-1 auxiliary file: 03_Background.aux
 A level-1 auxiliary file: 04_Software_Defined_Networking.aux
-A level-1 auxiliary file: 04_config.aux
-A level-1 auxiliary file: 05_standard_nova.aux
+A level-1 auxiliary file: 05_Control_and_Authentication_Mechanism.aux
 A level-1 auxiliary file: 06_cplex_scheduler.aux
 A level-1 auxiliary file: 07_evaluation.aux
 A level-1 auxiliary file: 08_possibilities_of_extension.aux
@@ -18,12 +17,25 @@ Warning--empty year in SDN
 Warning--empty year in Hotspot_2.0_Definition
 Warning--empty year in RYU_Switching_Hub
 Warning--empty year in Floodlight_defn
+Warning--empty year in WhatIsOpenWrt
+Warning--empty year in WhatIsOpenFlow
+Warning--empty year in RADIUS_RFC2865
 Warning--empty year in SDN:architecture
 Warning--empty year in ryu_framewrk_png
 Warning--empty year in Floodlight_arch
 Warning--empty year in OpenDaylight_framework
-Warning--empty year in OpenStack:hwreqs
-Warning--empty year in OpenStack:networklayout
+Warning--empty year in ovs_features
+Warning--empty year in openwrt_terminal_img
+Warning--empty year in openwrt_luci_img
+Warning--empty year in openflow_features
+Warning--empty year in of_protocol_spec_img
+Warning--empty year in Of_Switch_img
+Warning--empty year in Of_Switch_agent_img
+Warning--empty year in Of_data_plane_flow_img
+Warning--empty year in Of_packet_lifecycle
+Warning--empty year in RADIUS_components_img
+Warning--empty year in Radius_operation_img
+Warning--empty year in WLAN_802.1x_img
 Warning--empty year in openstack_nfv
 Warning--empty year in openBatonFeatures
 Warning--empty year in hostapd
@@ -32,6 +44,12 @@ Warning--empty year in IEEE802.11u
 Warning--empty year in Passpoint
 Warning--empty year in What_is_SDN
 Warning--empty year in jose2011online
+Warning--empty year in WhatisOVS
+Warning--empty year in OpenFlow_functionality
+Warning--empty year in Openflow_protocol_spec
+Warning--empty year in Opnflow_switch
+Warning--empty year in RADIUS_AAA
+Warning--empty year in RADIUS_components
 Warning--empty year in cplex-optimizer
 Warning--empty year in nfv_technical_overview
-(There were 21 warnings)
+(There were 40 warnings)

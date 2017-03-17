@@ -36,21 +36,35 @@
 \citation{Hotspot_2.0_Definition}
 \citation{RYU_Switching_Hub}
 \citation{Floodlight_defn}
+\citation{OpenVswitch_design}
+\citation{WhatIsOpenWrt}
+\citation{WhatIsOpenFlow}
+\citation{RADIUS_RFC2865}
+\citation{WLAN_802.1x}
 \citation{SDN:architecture}
 \citation{ryu_framewrk_png}
 \citation{Floodlight_arch}
 \citation{OpenDaylight_framework}
-\citation{OpenStack:hwreqs}
-\citation{OpenStack:networklayout}
+\citation{ovs_features}
+\citation{openwrt_terminal_img}
+\citation{openwrt_luci_img}
+\citation{openflow_features}
+\citation{of_protocol_spec_img}
+\citation{Of_Switch_img}
+\citation{Of_Switch_agent_img}
+\citation{Of_data_plane_flow_img}
+\citation{Of_packet_lifecycle}
+\citation{RADIUS_components_img}
+\citation{Radius_operation_img}
+\citation{WLAN_802.1x_img}
 \citation{openstack_nfv}
 \citation{openBatonFeatures}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Figures}{iv}{chapter*.2}}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Tables}{v}{chapter*.3}}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Figures}{iii}{chapter*.2}}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline List of Tables}{iv}{chapter*.3}}
 \@input{02_introduction.aux}
 \@input{03_Background.aux}
 \@input{04_Software_Defined_Networking.aux}
-\@input{04_config.aux}
-\@input{05_standard_nova.aux}
+\@input{05_Control_and_Authentication_Mechanism.aux}
 \@input{06_cplex_scheduler.aux}
 \@input{07_evaluation.aux}
 \@input{08_possibilities_of_extension.aux}
@@ -63,33 +77,54 @@
 \bibcite{Hotspot_2.0_Definition}{{4}{}{{Hot}}{{}}}
 \bibcite{RYU_Switching_Hub}{{5}{}{{RYU}}{{}}}
 \bibcite{Floodlight_defn}{{6}{}{{Flo}}{{}}}
-\bibcite{SDN:architecture}{{7}{}{{SDN}}{{}}}
-\bibcite{ryu_framewrk_png}{{8}{}{{ryu}}{{}}}
-\bibcite{Floodlight_arch}{{9}{}{{Flo}}{{}}}
-\bibcite{OpenDaylight_framework}{{10}{}{{Ope}}{{}}}
-\bibcite{OpenStack:hwreqs}{{11}{}{{Ope}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{52}{chapter*.18}}
+\bibcite{OpenVswitch_design}{{7}{2015}{{Pfaff et~al.}}{{Pfaff, Pettit, Koponen, Jackson, Zhou, Rajahalme, Gross, Wang, Stringer, Shelar, et~al.}}}
+\bibcite{WhatIsOpenWrt}{{8}{}{{Wha}}{{}}}
+\bibcite{WhatIsOpenFlow}{{9}{}{{Wha}}{{}}}
+\bibcite{RADIUS_RFC2865}{{10}{}{{RAD}}{{}}}
+\bibcite{WLAN_802.1x}{{11}{2005}{{Chen and Wang}}{{}}}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{51}{chapter*.37}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}
-\bibcite{OpenStack:networklayout}{{12}{}{{Ope}}{{}}}
-\bibcite{openstack_nfv}{{13}{}{{ope}}{{}}}
-\bibcite{openBatonFeatures}{{14}{}{{ope}}{{}}}
-\bibcite{hostapd}{{15}{}{{hos}}{{}}}
-\bibcite{RFC5412L97}{{16}{}{{RFC}}{{}}}
-\bibcite{IEEE802.11u}{{17}{}{{IEE}}{{}}}
-\bibcite{Passpoint}{{18}{}{{Pas}}{{}}}
-\bibcite{What_is_SDN}{{19}{}{{Wha}}{{}}}
-\bibcite{jose2011online}{{20}{}{{Jose et~al.}}{{Jose, Yu, and Rexford}}}
-\bibcite{Nayak:2009:RDA:1592681.1592684}{{21}{2009}{{Nayak et~al.}}{{Nayak, Reimers, Feamster, and Clark}}}
-\bibcite{ballard2010extensible}{{22}{2010}{{Ballard et~al.}}{{Ballard, Rae, and Akella}}}
-\bibcite{al2010hedera}{{23}{2010}{{Al-Fares et~al.}}{{Al-Fares, Radhakrishnan, Raghavan, Huang, and Vahdat}}}
-\bibcite{wang2011openflow}{{24}{2011}{{Wang et~al.}}{{Wang, Butnariu, Rexford, et~al.}}}
-\bibcite{cplex-optimizer}{{25}{}{{cpl}}{{}}}
-\bibcite{nfv_technical_overview}{{26}{}{{nfv}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{Appendix}{54}{section*.19}}
+\bibcite{SDN:architecture}{{12}{}{{SDN}}{{}}}
+\bibcite{ryu_framewrk_png}{{13}{}{{ryu}}{{}}}
+\bibcite{Floodlight_arch}{{14}{}{{Flo}}{{}}}
+\bibcite{OpenDaylight_framework}{{15}{}{{Ope}}{{}}}
+\bibcite{ovs_features}{{16}{}{{ovs}}{{}}}
+\bibcite{openwrt_terminal_img}{{17}{}{{ope}}{{}}}
+\bibcite{openwrt_luci_img}{{18}{}{{ope}}{{}}}
+\bibcite{openflow_features}{{19}{}{{ope}}{{}}}
+\bibcite{of_protocol_spec_img}{{20}{}{{of_}}{{}}}
+\bibcite{Of_Switch_img}{{21}{}{{Of_}}{{}}}
+\bibcite{Of_Switch_agent_img}{{22}{}{{Of_}}{{}}}
+\bibcite{Of_data_plane_flow_img}{{23}{}{{Of_}}{{}}}
+\bibcite{Of_packet_lifecycle}{{24}{}{{Of_}}{{}}}
+\bibcite{RADIUS_components_img}{{25}{}{{RAD}}{{}}}
+\bibcite{Radius_operation_img}{{26}{}{{Rad}}{{}}}
+\bibcite{WLAN_802.1x_img}{{27}{}{{WLA}}{{}}}
+\bibcite{openstack_nfv}{{28}{}{{ope}}{{}}}
+\bibcite{openBatonFeatures}{{29}{}{{ope}}{{}}}
+\bibcite{hostapd}{{30}{}{{hos}}{{}}}
+\bibcite{RFC5412L97}{{31}{}{{RFC}}{{}}}
+\bibcite{IEEE802.11u}{{32}{}{{IEE}}{{}}}
+\bibcite{Passpoint}{{33}{}{{Pas}}{{}}}
+\bibcite{What_is_SDN}{{34}{}{{Wha}}{{}}}
+\bibcite{jose2011online}{{35}{}{{Jose et~al.}}{{Jose, Yu, and Rexford}}}
+\bibcite{Nayak:2009:RDA:1592681.1592684}{{36}{2009}{{Nayak et~al.}}{{Nayak, Reimers, Feamster, and Clark}}}
+\bibcite{ballard2010extensible}{{37}{2010}{{Ballard et~al.}}{{Ballard, Rae, and Akella}}}
+\bibcite{al2010hedera}{{38}{2010}{{Al-Fares et~al.}}{{Al-Fares, Radhakrishnan, Raghavan, Huang, and Vahdat}}}
+\bibcite{wang2011openflow}{{39}{2011}{{Wang et~al.}}{{Wang, Butnariu, Rexford, et~al.}}}
+\bibcite{WhatisOVS}{{40}{}{{Wha}}{{}}}
+\bibcite{OpenFlow_functionality}{{41}{}{{Ope}}{{}}}
+\bibcite{Openflow_protocol_spec}{{42}{}{{Ope}}{{}}}
+\bibcite{Opnflow_switch}{{43}{}{{Opn}}{{}}}
+\bibcite{RADIUS_AAA}{{44}{}{{RAD}}{{}}}
+\bibcite{RADIUS_components}{{45}{}{{RAD}}{{}}}
+\bibcite{cplex-optimizer}{{46}{}{{cpl}}{{}}}
+\bibcite{nfv_technical_overview}{{47}{}{{nfv}}{{}}}
+\@writefile{toc}{\contentsline {chapter}{Appendix}{54}{section*.38}}
 \@input{90_anhang_01.aux}
-\newlabel{p:anhang}{{9}{56}{\appendixname }{part*.21}{}}
+\newlabel{p:anhang}{{8}{56}{\appendixname }{part*.40}{}}
 \@input{90_anhang_02.aux}
 \providecommand\@xdylanguage[2]{}
 \@xdylanguage{main}{english-duden}
@@ -99,7 +134,7 @@
 \@xdylanguage{acronym}{english-duden}
 \providecommand\@gls@codepage[2]{}
 \@gls@codepage{acronym}{utf8}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline Versicherung}{85}{chapter*.24}}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline Versicherung}{85}{chapter*.43}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}
