@@ -4,13 +4,10 @@ A level-1 auxiliary file: 02_introduction.aux
 A level-1 auxiliary file: 03_Background.aux
 A level-1 auxiliary file: 04_Software_Defined_Networking.aux
 A level-1 auxiliary file: 05_Control_and_Authentication_Mechanism.aux
-A level-1 auxiliary file: 06_cplex_scheduler.aux
-A level-1 auxiliary file: 07_evaluation.aux
-A level-1 auxiliary file: 08_possibilities_of_extension.aux
-A level-1 auxiliary file: 09_conclusion.aux
+A level-1 auxiliary file: 06_Build_Environment.aux
+A level-1 auxiliary file: 07_Designing_the_Application.aux
+A level-1 auxiliary file: 08_Implementation.aux
 The style file: unsrtnat.bst
-A level-1 auxiliary file: 90_anhang_01.aux
-A level-1 auxiliary file: 90_anhang_02.aux
 Database file #1: bib/literatur.bib
 Warning--empty year in BIC:IRAP
 Warning--empty year in SDN
@@ -20,6 +17,11 @@ Warning--empty year in Floodlight_defn
 Warning--empty year in WhatIsOpenWrt
 Warning--empty year in WhatIsOpenFlow
 Warning--empty year in RADIUS_RFC2865
+Warning--empty year in Install_virtualenv
+Warning--empty year in Install_RyuSDN
+Warning--empty year in OpenWrt_build_root
+Warning--empty year in RYU_app_process
+Warning--empty year in Freeradius_install
 Warning--empty year in SDN:architecture
 Warning--empty year in ryu_framewrk_png
 Warning--empty year in Floodlight_arch
@@ -36,8 +38,7 @@ Warning--empty year in Of_packet_lifecycle
 Warning--empty year in RADIUS_components_img
 Warning--empty year in Radius_operation_img
 Warning--empty year in WLAN_802.1x_img
-Warning--empty year in openstack_nfv
-Warning--empty year in openBatonFeatures
+Warning--empty year in RYU_event_process_diag
 Warning--empty year in hostapd
 Warning--empty year in RFC5412L97
 Warning--empty year in IEEE802.11u
@@ -50,6 +51,4 @@ Warning--empty year in Openflow_protocol_spec
 Warning--empty year in Opnflow_switch
 Warning--empty year in RADIUS_AAA
 Warning--empty year in RADIUS_components
-Warning--empty year in cplex-optimizer
-Warning--empty year in nfv_technical_overview
-(There were 40 warnings)
+(There were 42 warnings)

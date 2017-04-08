@@ -1,4 +1,4 @@
-\begin{thebibliography}{47}
+\begin{thebibliography}{49}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -31,8 +31,8 @@ Understanding wi-fi hotspot 2.0 and how to leverage it for your business, by
   \url{http://hotelexecutive.com/business_review/3674/understanding-wi-fi-hotspot-20-and-how-to-leverage-it-for-your-business}.
 \newblock (Accessed on 03/02/2017).
 
-\bibitem[RYU()]{RYU_Switching_Hub}
-Switching hub — ryubook 1.0 documentation.
+\bibitem[RYU({\natexlab{a}})]{RYU_Switching_Hub}
+Switching hub — ryubook 1.0 documentation, {\natexlab{a}}.
 \newblock URL \url{https://osrg.github.io/ryu-book/en/html/switching_hub.html}.
 \newblock (Accessed on 03/06/2017).
 
@@ -77,6 +77,35 @@ Jyh-Cheng Chen and Yu-Ping Wang.
 \newblock ISSN 0163-6804.
 \newblock \doi{10.1109/MCOM.2005.1561920}.
 
+\bibitem[Ins({\natexlab{a}})]{Install_virtualenv}
+Virtual environments — the hitchhiker's guide to python.
+\newblock \url{http://docs.python-guide.org/en/latest/dev/virtualenvs/},
+  {\natexlab{a}}.
+\newblock (Accessed on 03/20/2017).
+
+\bibitem[Ins({\natexlab{b}})]{Install_RyuSDN}
+Ryu sdn framework.
+\newblock \url{https://osrg.github.io/ryu/}, {\natexlab{b}}.
+\newblock (Accessed on 03/20/2017).
+
+\bibitem[Ope({\natexlab{a}})]{OpenWrt_build_root}
+Openwrt build system – installation [openwrt wiki].
+\newblock \url{https://wiki.openwrt.org/doc/howto/buildroot.exigence},
+  {\natexlab{a}}.
+\newblock (Accessed on 03/20/2017).
+
+\bibitem[RYU({\natexlab{b}})]{RYU_app_process}
+Architecture — ryubook 1.0 documentation.
+\newblock \url{https://osrg.github.io/ryu-book/en/html/arch.html},
+  {\natexlab{b}}.
+\newblock (Accessed on 04/06/2017).
+
+\bibitem[Fre()]{Freeradius_install}
+guide/sql howto.
+\newblock
+  \url{https://wiki.freeradius.org/guide/SQL-HOWTO#Create_MySQL_Database}.
+\newblock (Accessed on 04/08/2017).
+
 \bibitem[SDN({\natexlab{b}})]{SDN:architecture}
 Sdn {architecture} diagram, {\natexlab{b}}.
 \newblock URL
@@ -96,10 +125,11 @@ Floodlight architecture diagram.
   {\natexlab{b}}.
 \newblock (Accessed on 03/08/2017).
 
-\bibitem[Ope()]{OpenDaylight_framework}
+\bibitem[Ope({\natexlab{b}})]{OpenDaylight_framework}
 Architectural\_framework.jpg (717×435).
 \newblock
-  \url{https://wiki.opendaylight.org/images/b/b1/Architectural_Framework.jpg}.
+  \url{https://wiki.opendaylight.org/images/b/b1/Architectural_Framework.jpg},
+  {\natexlab{b}}.
 \newblock (Accessed on 03/14/2017).
 
 \bibitem[ovs()]{ovs_features}
@@ -178,17 +208,10 @@ Radius operation (560×460).
   \url{https://www.eduroam.us/files/images/admin_guide/technical_overview/802.1x_over_802.11_with_EAP_expansion.png}.
 \newblock (Accessed on 03/17/2017).
 
-\bibitem[ope({\natexlab{d}})]{openstack_nfv}
-Accelerating {NFV} {Delivery} with {OpenStack}, {OpenStack} {Foundation}
-  {Report}, {\natexlab{d}}.
-\newblock URL
-  \url{http://www.openstack.org/assets/telecoms-and-nfv/OpenStack-Foundation-NFV-Report.pdf}.
-\newblock Online; accessed 05-November-2016.
-
-\bibitem[ope({\natexlab{e}})]{openBatonFeatures}
-Open {Baton} features, {\natexlab{e}}.
-\newblock URL \url{http://openbaton.github.io/images/feature1.png}.
-\newblock Online; accessed 05-November-2016.
+\bibitem[RYU()]{RYU_event_process_diag}
+fig1.png (987×669).
+\newblock \url{https://osrg.github.io/ryu-book/en/html/_images/fig1.png}.
+\newblock (Accessed on 04/06/2017).
 
 \bibitem[hos()]{hostapd}
 hostapd: Ieee 802.11 ap, ieee 802.1x/wpa/wpa2/eap/radius authenticator.
@@ -286,16 +309,5 @@ Radius protocol and components.
   \url{https://technet.microsoft.com/en-us/library/cc726017(v=ws.10).aspx},
   {\natexlab{b}}.
 \newblock (Accessed on 03/17/2017).
-
-\bibitem[cpl()]{cplex-optimizer}
-{CPLEX} {Optimizer}.
-\newblock URL
-  \url{https://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/}.
-\newblock Online; accessed 22-November-2016.
-
-\bibitem[nfv()]{nfv_technical_overview}
-Open {Platform} for {NFV} {(OPNFV)}.
-\newblock URL \url{https://www.opnfv.org/}.
-\newblock Online; accessed 05-November-2016.
 
 \end{thebibliography}

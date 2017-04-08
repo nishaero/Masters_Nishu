@@ -1,0 +1,72 @@
+% !TEX root       = ./type_name.tex
+% !TEX program    = pdflatex
+% !TEX encoding   = utf-8
+% !TEX spellcheck = de_DE_frami
+%=======================================================================
+\chapter{Build Environment} \label{ch:build_environment}
+This chapter discusses on how the development environment is set up starting with the RYU controller from Git repository and OpenWrt to build firmware for the TP-Link WDR4300 test router.
+\section{RYU in Python virtual environment \cite{Install_virtualenv}} \label{virtualenv}
+Python by default stores all its packages in a global location accessible from any were within the system. Though this may sound advantageous, like many other programming language, uses its own way to store, download and retrieve its packages. Python uses same site packages directory to install 3rd-party packages and different versions of python also reside in the same location. 
+
+Python couldn’t differentiate between different versions and thus creates dependency issues. To resolve this problem, a virtual environment is used for setting up an isolated location for Python projects. In a virtual environment, each project can have its own dependencies. There is also no limit to the number of environments that can be created since they are just directories containing scripts. 
+
+\subsection{Installation and Access \cite{Install_virtualenv} \cite{Install_RyuSDN}} \label{RYU_install}
+
+To install the virtual environment in Linux, the following python package manager (PIP) commands are used in the terminal.
+
+\begin{itemize}
+	\item Installing the virtual environment :
+	\begin{lstlisting} [frame=single]
+	$ pip install virtualenv
+	\end{lstlisting} 
+	\item Create a directory in virtualenv for python packages: 
+	\begin{lstlisting} [frame=single]
+	$ virtualenv ryu-virtualenv
+	\end{lstlisting}
+	\item In the newly created environment, there is an activate shell script to change the \textit{path} to the /bin directory in the virtualenv: 
+	\begin{lstlisting} [frame=single]
+	$ source bin/activate
+	\end{lstlisting}
+	\item To install RYU in this virtual environment:
+	\begin{lstlisting} [frame=single]
+	$ pip install ryu
+	\end{lstlisting}
+	\item Building RYU applications requires the RYU repo from Git which can be downloaded from the command:
+	\begin{lstlisting} [frame=single]
+	$ git clone  git://github.com/osrg/ryu.git
+	\end{lstlisting}
+	\item Once the installation is complete and the repo downloaded, \textit{ryu-manager} command is used to run the RYU Python applications.
+\end{itemize}
+
+\section{OpenWrt Build System \cite{OpenWrt_build_root}} \label{OpenWrt_build}
+OpenWrt supports building custom firmware to any supported hardware. For this thesis, TP-Link WDR4300 is chosen because of its compatibility with OpenWrt, a larger RAM and ROM for adding more packages and functionality, and a dual band WLAN which is necessary for this thesis in order to simulate two different network.
+\subsection{Hardware Prerequisites}
+The following requisites must be met to generate an installable firmware on a supported hardware.
+\begin{itemize}
+	\item At least 3-4 Gb of hard disk space for OpenWrt build system, source packages and its feeds, and to generate firmware files.
+	\item At least 3-4 GB of RAM to build OpenWrt.
+\end{itemize}
+\subsection{Installation steps on GNU/Linux}
+\begin{enumerate}
+	\item Install Git to conveniently manage and download repository such as OpenWrt and RYU, build tools for cross compilation process: 
+	\begin{lstlisting} [frame=single]
+	$ sudo apt-get install update
+	$ sudo apt-get install git-core build-essential libssl-dev libncurses5-dev unzip gawk zlib1g-dev
+	\end{lstlisting}
+	\item Clone the Git repository on local machine: 
+	\begin{lstlisting} [frame=single]
+	$ git clone https://github.com/openwrt/openwrt.git
+	\end{lstlisting}
+	\item Install available all available feeds for OpenWrt: 
+	\begin{lstlisting} [frame=single]
+	$ cd openwrt
+	$ ./scripts/feeds update -a
+	$ ./scripts/feeds install -a
+	\end{lstlisting}
+	\item To check for any missing packages the following command is used for a GUI applicaton popup in terminal:
+	\begin{lstlisting} [frame=single]
+	$ make menuconfig
+	\end{lstlisting}
+	\item The chapter on implementation discusses in detail on building custom OpenWrt firmware with custom packages such as OpenvSwitch.
+	
+\end{enumerate}

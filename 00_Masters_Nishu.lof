@@ -21,15 +21,14 @@
 \contentsline {figure}{\numberline {4.11}{\ignorespaces IEEE 802.1x WLAN authentication process \cite {WLAN_802.1x_img}\relax }}{31}{figure.caption.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Placement decision time for Standard Nova Scheduler from the data \ref {tabular:filterschedulerlogdata}\relax }}{42}{figure.caption.32}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Placement decision time for cPlex based Scheduler from the data \ref {tab:tucschedulerlogdata}\relax }}{43}{figure.caption.33}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Comparision of placement decision time between Standard Nova FilterScheduler and cPlex based Scheduler\relax }}{44}{figure.caption.34}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces RADIUS Authentication Procedure - Timing Diagram \relax }}{37}{figure.caption.32}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces RADIUS Authentication Procedure - Flowchart \relax }}{38}{figure.caption.33}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces RYU Control Procedure - Timing Diagram \relax }}{39}{figure.caption.34}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces RYU Control Procedure - Flowchart\relax }}{41}{figure.caption.35}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces RYU Manager Event Process \cite {RYU_event_process_diag}\relax }}{42}{figure.caption.36}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces NFV functional overview\cite {openstack_nfv}\relax }}{47}{figure.caption.35}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Placement of VNFM and VNF over the OpenStack Vitual Machines\cite {openBatonFeatures}\relax }}{48}{figure.caption.36}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Open vSwitch option in OpenWrt build configuration menu\relax }}{47}{figure.caption.37}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Hostapd option in OpenWrt build configuration menu\relax }}{48}{figure.caption.38}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces SSID's OpenWrt and OpenWrt 5G Available on client device\relax }}{53}{figure.caption.39}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
