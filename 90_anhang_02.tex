@@ -4,98 +4,183 @@
 % !TEX spellcheck = de_DE_frami
 %=======================================================================
 
-\chapter{Performance Data}\label{app:ch:data}
+\chapter{User Segregation Application code}\label{app:ch:app_code}
 
-In this Appendix \nameref{app:ch:data}, the time required for placement decision of the virtual instances is captured in the logs of the \verb|scheduler.log| file and have been used for comparision and performance evaluation.
+In this Appendix \nameref{app:ch:app_code}, the entire application code written in Python is listed here.
 
-\section{FilterScheduler's Scheduling Time Logs Data}\label{app:sec:filterschedulerlogdata}
 
-The time taken for the FilterScheduler for placement decision of virtual instances on the hosts for different number of data set has been recorded.
-\newline
-\begin{lstlisting}[frame=single, caption={The filter scheduler based scheduler time logs for scheduling different numbers of virtual instances}, label={lst:filterschedulerlogdata}]
-2016-11-23 06:17:59.466 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
-2016-11-23 06:17:59.471 17314 INFO nova.scheduler.filter_scheduler: 1 number of instances scheduled with filter scheduler in 0.00402498245239 seconds
+\begin{lstlisting}[language = Python, caption={The User Segregation Mac Learning Application}, label={lst:userseg-code}]
+# Copyright (C) 2011 Nippon Telegraph and Telephone Corporation.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import MySQLdb
+import sys
+import datetime
+from ryu.base import app_manager
+from ryu.controller import ofp_event
+from ryu.controller.handler import CONFIG_DISPATCHER, MAIN_DISPATCHER
+from ryu.controller.handler import set_ev_cls
+from ryu.ofproto import ofproto_v1_3
+from ryu.lib.packet import packet
+from ryu.lib.packet import ethernet
+from ryu.lib.packet import ether_types
+from ryu.lib.packet import udp
 
-2016-11-23 06:23:39.579 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
-2016-11-23 06:23:39.590 17314 INFO nova.scheduler.filter_scheduler: 5 number of instances scheduled with filter scheduler in 0.0108880996704 seconds
 
-2016-11-23 06:25:55.949 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
-2016-11-23 06:25:55.975 17314 INFO nova.scheduler.filter_scheduler: 10 number of instances scheduled with filter scheduler in 0.0240979194641 seconds
 
-2016-11-23 06:37:36.863 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
-2016-11-23 06:37:36.914 17314 INFO nova.scheduler.filter_scheduler: 20 number of instances scheduled with filter scheduler in 0.0496470928192 seconds
+class SimpleSwitch13(app_manager.RyuApp):
+	OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]
 
-2016-11-23 06:41:16.201 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
-2016-11-23 06:41:16.282 17314 INFO nova.scheduler.filter_scheduler: 30 number of instances scheduled with filter scheduler in 0.0802478790283 seconds
+	def __init__(self, *args, **kwargs):
+		super(SimpleSwitch13, self).__init__(*args, **kwargs)
+		self.mac_to_port = {}
 
-2016-11-23 06:50:20.638 17314 INFO nova.scheduler.filter_scheduler: Hanif: _schedule FilterScheduler:
-2016-11-23 06:50:20.746 17314 INFO nova.scheduler.filter_scheduler 40 number of instances scheduled with filter scheduler in 0.10618185997 seconds
+	@set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
+	def switch_features_handler(self, ev):
+		datapath = ev.msg.datapath
+		ofproto = datapath.ofproto
+		parser = datapath.ofproto_parser
+
+		# install table-miss flow entry
+		#
+		# We specify NO BUFFER to max_len of the output action due to
+		# OVS bug. At this moment, if we specify a lesser number, e.g.,
+		# 128, OVS will send Packet-In with invalid buffer_id and
+		# truncated packet data. In that case, we cannot output packets
+		# correctly.  The bug has been fixed in OVS v2.1.0.
+		match = parser.OFPMatch()
+		actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER,
+		ofproto.OFPCML_NO_BUFFER)]
+		self.add_flow(datapath, 0, match, actions)
+
+	def add_flow(self, datapath, priority, match, actions, buffer_id=None):
+		ofproto = datapath.ofproto
+		parser = datapath.ofproto_parser
+		
+		inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS, actions)]
+		if buffer_id: 
+			mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_id, priority=priority, match=match, instructions=inst)
+		else:
+			mod = parser.OFPFlowMod(datapath=datapath, priority=priority, match=match, instructions=inst)
+		datapath.send_msg(mod)
+
+	@set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
+	def _packet_in_handler(self, ev):
+		# If you hit this you might want to increase
+		# the "miss_send_length" of your switch
+		if ev.msg.msg_len < ev.msg.total_len:
+			self.logger.debug("packet truncated: only %s of %s bytes", ev.msg.msg_len, ev.msg.total_len)
+		msg = ev.msg
+		datapath = msg.datapath
+		ofproto = datapath.ofproto
+		parser = datapath.ofproto_parser
+		in_port = msg.match['in_port']
+		
+		pkt = packet.Packet(msg.data)
+		eth = pkt.get_protocols(ethernet.ethernet)[0]
+		udp_payload = pkt.get_protocols(udp.udp)
+		
+		
+		if eth.ethertype == ether_types.ETH_TYPE_LLDP:
+			# ignore lldp packet
+			return
+		dst = eth.dst
+		src = eth.src
+		
+		dpid = datapath.id
+		self.mac_to_port.setdefault(dpid, {})
+	#self.logger.info ("Destination is %s", eth.dst)	
+
+	#creating a mysql connection to database -last edit 17/11
+
+	connection = MySQLdb.connect(host = "192.168.1.169", user = "freerad", passwd = "pass", db = "radius")
+	cursor = connection.cursor ()
+
+	#cursor.execute ("select CallingStationId from radpostauth order by id desc LIMIT 1")
+	#data = cursor.fetchall ()
+	cursor.execute ("SELECT portid FROM radcheck WHERE username IN (SELECT user FROM radpostauth WHERE CallingStationId = %s AND id = (SELECT MAX(id) from radpostauth) )", src)
+	outport_for_src = cursor.fetchone ()
+	self.logger.info ("outport_for_src tuple is %s", outport_for_src)
+	#portid = outport_for_src[0]
+	self.logger.info ("Data is %s", src)	
+	cursor.close()
+	connection.close ()
+	# Mysql verification end
+
+		self.logger.info("packet in %s %s %s %s", dpid, src, dst, in_port)
+
+
+		# learn a mac address to avoid FLOOD next time.
+		self.mac_to_port[dpid][src] = in_port
+
+	#self.logger.info ("Mac to port in dst is %s ",self.mac_to_port[dpid] )
+	self.logger.info ("DST is %s", dst)
+		if dst in self.mac_to_port[dpid]:
+		test = self.mac_to_port[dpid][dst]
+		self.logger.info ("self.mac_to_port[dpid][dst] value %s", test)
+		self.logger.info ("Out_Port before condition %s", outport_for_src)
+		#try:		
+		#if portid in self.mac_to_port[dpid][dst]:
+		if outport_for_src != None and all(outport_for_src):
+			if int(outport_for_src[0]) == self.mac_to_port[dpid][dst]:
+				out_port = self.mac_to_port[dpid][dst]
+				self.logger.info ("Out_Port is the same as in database table %s", out_port)
+			else:
+				self.logger.info ("Out_Port is not allowed, dropping packet")	
+				return
+
+		else:
+		#except (TypeError,UnboundLocalError):		
+			out_port = self.mac_to_port[dpid][dst]		
+			self.logger.info ("Out_Port not defined in database, using learned port")	
+			#return
+		else:
+		#try:
+		#if portid > 0 :
+		self.logger.info ("Out_Port before else flood condition %s", outport_for_src)
+		if outport_for_src != None and all(outport_for_src):
+			out_port = int(outport_for_src[0])
+			self.logger.info ("Setting Out_Port same as in table, changing flow %s", out_port)
+		else:
+		#except (TypeError,UnboundLocalError):
+
+			out_port = ofproto.OFPP_FLOOD
+		#out_port = 4
+			self.logger.info ("Out_Port is Flooded %s", out_port)
+
+	self.logger.info ("Above actions Out_Port %s", out_port)
+		actions = [parser.OFPActionOutput(out_port)]
+	self.logger.info ("Actions is %s", actions)
+
+		# install a flow to avoid packet_in next time
+		if out_port != ofproto.OFPP_FLOOD:
+		self.logger.info ("Out_Port not flooded adding flow ")	
+			match = parser.OFPMatch(in_port=in_port, eth_dst=dst)
+			# verify if we have a valid buffer_id, if yes avoid to send both
+			# flow_mod & packet_out
+			if msg.buffer_id != ofproto.OFP_NO_BUFFER:
+				self.add_flow(datapath, 1, match, actions, msg.buffer_id)
+				return
+			else:
+				self.add_flow(datapath, 1, match, actions)
+		data = None
+		if msg.buffer_id == ofproto.OFP_NO_BUFFER:
+			data = msg.data
+
+		out = parser.OFPPacketOut(datapath=datapath, buffer_id=msg.buffer_id, in_port=in_port, actions=actions, data=data)
+		datapath.send_msg(out)
+
+
 \end{lstlisting}
-
-\begin{table}[!htb]
-	\centering
-		\begin{tabular}{|| p{10em} | p{10em} | p{10em} ||}
-			\hline
-			{Requested Number of Instances} & {Time taken by FilterScheduler in secs} & {Percentage change in time with reference to time taken for scheduling 1 instance} \\ [1ex] 
-			\hline
-			\hline
-			1  & 4.03ms  & 0.00\% \\
-			\hline
-			10 & 24.10ms  & 498.70\% \\
-			\hline
-			20 & 49.65ms  & 1133.47\% \\
-			\hline
-			30 & 80.25ms  & 1893.74\% \\
-			\hline
-			40 & 106.18ms & 2538.07\% \\
-			\hline
-		\end{tabular}
-	\caption{FilterScheduler Time Data}\label{tabular:filterschedulerlogdata}
-\end{table}
-
-
-
-\section{TUC CCN Scheduler's Scheduling Time Logs Data}\label{app:sec:tucschedulerlogdata}
-
-The time taken for the TUC\_CCN\_Scheduler for placement decision of virtual instances on the hosts for different numbers of data set has been recorded.
-\newline
-\begin{lstlisting}[frame=single, caption={The tuc\_ccn\_scheduler scheduler based time logs for scheduling different amounts of virtual instances}, label={lst:tucschedulerlogdata}]
-2016-11-23 07:01:33.293 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
-2016-11-23 07:01:33.310 27964 INFO nova.scheduler.tuc_ccn_scheduler: 1 number of instances scheduled with tuc scheduler in 0.0136959552765 seconds
-
-2016-11-23 07:25:37.228 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
-2016-11-23 07:25:37.283 27964 INFO nova.scheduler.tuc_ccn_scheduler: 5 number of instances scheduled with tuc scheduler in 0.049889087677 seconds
-
-2016-11-23 07:12:07.047 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
-2016-11-23 07:12:07.097 27964 INFO nova.scheduler.tuc_ccn_scheduler: 10 number of instances scheduled with tuc scheduler in 0.0462019443512 seconds
-
-2016-11-23 07:28:47.675 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
-2016-11-23 07:28:47.741 27964 INFO nova.scheduler.tuc_ccn_scheduler: 20 number of instances scheduled with tuc scheduler in 0.0637698173523 seconds
-
-2016-11-23 07:37:45.585 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
-2016-11-23 07:37:45.672 27964 INFO nova.scheduler.tuc_ccn_scheduler: 30 number of instances scheduled with tuc scheduler in 0.0839061737061 seconds
-
-2016-11-23 08:11:37.874 27964 INFO nova.scheduler.tuc_ccn_scheduler: Hanif: _schedule tuc_ccn_scheduler
-2016-11-23 08:11:37.979 27964 INFO nova.scheduler.tuc_ccn_scheduler: 40 number of instances scheduled with tuc scheduler in 0.103586912155 seconds
-\end{lstlisting}
-
-\begin{table}[!htb]
-	\centering
-		\begin{tabular}{|| p{10em} | p{10em} | p{10em} ||}
-			\hline
-			{Requested Number of Instances} & {Time taken by FilterScheduler in secs} & {Percentage change in time} \\ [1ex] 
-			\hline
-			1  & 13.69ms  & 0\% \\
-			\hline
-			10 & 46.20ms  & 237\% \\
-			\hline
-			20 & 63.77ms  & 365\% \\
-			\hline
-			30 & 83.91ms  & 512\% \\
-			\hline
-			40 & 103.59ms & 656\% \\
-			\hline
-		\end{tabular}
-	\caption{cPlex based Scheduler Time Data}\label{tab:tucschedulerlogdata}
-\end{table}
 

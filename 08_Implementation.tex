@@ -51,15 +51,6 @@ The router has been freshly updated with the OpenWrt firmware. To configure the 
 	\item To create two wifi networks in the router, first open the networks configuration in the editor using vi or nano with the following command \textit{nano /ect/config/wireless}.
 	\item The configurations are changed to look like the one shown below.
 	\begin{lstlisting}
-	config wifi-device 'radio0'
-	option type 'mac80211'
-	option channel '11'
-	option hwmode '11g'
-	option path 'platform/ar934x_wmac'
-	option htmode 'HT20'
-	option txpower '20'
-	option country 'DE'
-	option disabled '0'
 	
 	config wifi-iface
 	option device 'radio0'
@@ -69,15 +60,6 @@ The router has been freshly updated with the OpenWrt firmware. To configure the 
 	option key 'testing123'
 	option encryption 'wpa2'
 	option network 'wifi'
-	
-	config wifi-device 'radio1'
-	option type 'mac80211'
-	option channel '36'
-	option hwmode '11a'
-	option path 'pci0000:00/0000:00:00.0'
-	option htmode 'HT20'
-	option txpower '17'
-	option country 'DE'
 	
 	config wifi-iface
 	option device 'radio1'
@@ -90,23 +72,6 @@ The router has been freshly updated with the OpenWrt firmware. To configure the 
 	\end{lstlisting}
 	\item Save the file using ctrl + x and enter. Now open the network configuration file from the command \textit{nano /etc/config/network} and change it to look as shown below.
 	\begin{lstlisting}
-	config interface 'loopback'
-	option ifname 'lo'
-	option proto 'static'
-	option ipaddr '127.0.0.1'
-	option netmask '255.0.0.0'
-	
-	config globals 'globals'
-	option ula_prefix 'fd04:beb4:615d::/48'
-	
-	config interface 'wan'
-	option ifname 'eth0.1'
-	option proto 'dhcp'
-	
-	config interface 'wan6'
-	option ifname 'eth0.1'
-	option proto 'dhcpv6'
-	
 	config interface 'lan'
 	option type 'bridge'
 	option ifname 'eth0.2'
@@ -132,17 +97,6 @@ The router has been freshly updated with the OpenWrt firmware. To configure the 
 	config interface 'lan5'
 	option ifname 'eth0.5'
 	
-	config switch
-	option name 'switch0'
-	option reset '1'
-	option enable_vlan '1'
-	
-	config switch_vlan
-	option device 'switch0'
-	option vlan '1'
-	option ports '1 0t'
-	option vid '1'
-	
 	config switch_vlan
 	option device 'switch0'
 	option vlan '2'
@@ -150,50 +104,7 @@ The router has been freshly updated with the OpenWrt firmware. To configure the 
 	option ipaddr '192.168.3.1'
 	option netmask '255.255.255.0'
 	option ip6assign '60'
-	
-	config interface 'lan3'
-	option ifname 'eth0.3'
-	
-	config interface 'lan4'
-	option ifname 'eth0.4'
-	
-	config interface 'lan5'
-	option ifname 'eth0.5'
-	
-	config switch
-	option name 'switch0'
-	option reset '1'
-	option enable_vlan '1'
-	
-	config switch_vlan
-	option device 'switch0'
-	option vlan '1'
-	option ports '1 0t'
-	option vid '1'
-	
-	config switch_vlan
-	option device 'switch0'
-	option vlan '2'
-	option ports '2 0t'
-	option vid '2'
-	
-	config switch_vlan
-	option device 'switch0'
-	option vlan '3'
-	option ports '3 0t'
-	option vid '3'
-	
-	config switch_vlan
-	option device 'switch0'
-	option vlan '4'
-	option vid '4'
-	option ports '0t 4'
-	
-	config switch_vlan
-	option device 'switch0'
-	option vlan '5'
-	option vid '5'
-	option ports '0t 5'
+
 	\end{lstlisting}
 	\item The DHCP for the second network is configured in the file \textit{/etc/config/dhcp} and the following entry is added to the file.
 	\begin{lstlisting}
@@ -207,7 +118,7 @@ The router has been freshly updated with the OpenWrt firmware. To configure the 
 \end{enumerate}
   \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.0\linewidth]{two-ssid}
+	\includegraphics[width=10cm, height=13cm,keepaspectratio]{two-ssid}
 	\caption {SSID's OpenWrt and OpenWrt 5G Available on client device}
 	\label{fig:two-ssid}
 	\vspace{-10pt}

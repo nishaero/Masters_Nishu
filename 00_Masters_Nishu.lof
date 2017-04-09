@@ -29,6 +29,20 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Open vSwitch option in OpenWrt build configuration menu\relax }}{47}{figure.caption.37}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Hostapd option in OpenWrt build configuration menu\relax }}{48}{figure.caption.38}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces SSID's OpenWrt and OpenWrt 5G Available on client device\relax }}{53}{figure.caption.39}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces SSID's OpenWrt and OpenWrt 5G Available on client device\relax }}{50}{figure.caption.39}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Physical Layout of the Test Environment\relax }}{55}{figure.caption.40}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Enabling Internet Information Services (IIS) in Windows\relax }}{57}{figure.caption.41}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces IIS Server options and root directory\relax }}{58}{figure.caption.42}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Iperf Throughput between two IIS servers\relax }}{61}{figure.caption.43}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Bandwidth without RYU}}}{61}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bandwidth with RYU}}}{61}{subfigure.4.2}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Iperf Throughput between Mobile client and IIS servers\relax }}{63}{figure.caption.44}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Bandwidth without RYU}}}{63}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bandwidth throughput with RYU}}}{63}{subfigure.5.2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
