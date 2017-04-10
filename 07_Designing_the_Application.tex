@@ -3,7 +3,7 @@
 % !TEX encoding   = utf-8
 % !TEX spellcheck = de_DE_frami
 %=======================================================================
-\chapter{Designing the Application}\label{application}
+\chapter{Designing the Application}\label{ch:application_design}
 This chapter delves into the design objectives of the application, the architectural frame work of the RYU controller and converting the design into a Python code.
 
 \section{The Design Objectives}
@@ -20,13 +20,13 @@ The finished application should be compatible with the RYU controller and be abl
 	\vspace{-10pt}
 \end{figure}
 
-\begin{itemize}
+\begin{enumerate}
 	\item The mobile client first initiates a radius authentication request with the Access Point.
 	\item The packet is verified and authenticated by the RADIUS request and response messages.
 	\item If the authentication is a success, the connection is setup with the access point with WPA2 enterprise keying.
 	\item Once the client is authenticated, it makes a DHCP request with the access point.   
 	
-\end{itemize}
+\end{enumerate}
 The following flow chart shows the authentication procedure of the RADIUS server.It also shows the step by step actions that take place in authenticating a client.
 \begin{figure}[H]
 	\centering
@@ -46,7 +46,7 @@ The following timing diagram shows how the RYU is supposed to listen to the MAC 
 	\vspace{-10pt}
 \end{figure}
 
-\begin{itemize}
+\begin{enumerate}
 	\item When the client initiates a DHCP request to the access point, the RYU controller listens to the clients MAC address and checks if it exists in the OVS flow table.
 	\item If it exists, apply the corresponding rule associated with the MAC. If it doesn’t exist, check the MAC in the MySQL database.
 	\item In the first scenario, if the MAC address exists in the MySQL DB, get the port ID associated with the MAC.
@@ -54,7 +54,7 @@ The following timing diagram shows how the RYU is supposed to listen to the MAC 
 	\item In the second scenario, if the MAC address does not exist in MySQL DB, add the MAC to the table and set the port id to flood mode in the OVS flow table in the access point.
 	\item Complete the DHCP response by providing an IP to the client.
 	
-\end{itemize}
+\end{enumerate}
 The following flow chart will provide an overview of the control flow that would take place in the RYU controller and the OVS. Starting from learning the MAC address to assigning the port id to the MAC.
 
 \begin{figure}[H]
@@ -75,9 +75,10 @@ The following flow chart will provide an overview of the control flow that would
  	\vspace{-10pt}
  \end{figure}
 To build the application in python, the following classes are mainly used which are explained below.
+
 \begin{itemize}
-	\item Application is nothing but the user logic that explains how the application should behave. The Application is a class that inherits the \textit{ryu.base.app\_manager.RyuApp}.
-	\item Events are nothing but class objects that are used in communication between applications. It inherits the class \textit{ryu.controller.event.EventBase}.
+	\item Application is the user logic that explains how the application should behave. It is a class that inherits the \textit{ryu.base.app\_manager.RyuApp}.
+	\item Events are class objects that are used in communication between applications. It inherits the class \textit{ryu.controller.event.EventBase}.
 	\item Event queues are the single queues that each application has for receiving events.
 	\item RYU uses eventlets to run in multi-threaded environment. These threads are non-preemptive.
 	\item Event Loops: A thread that is created for each application runs an event loop. When there is an event in the queue, this loop will load the event and call the corresponding handler.

@@ -3,10 +3,10 @@
 % !TEX encoding   = utf-8
 % !TEX spellcheck = de_DE_frami
 %=======================================================================
-\chapter{Implementation} \label{implementation}
+\chapter{Implementation} \label{ch:implementation}
 This chapter will discuss about the procedures involved such as flashing the router with OpenWrt, building the OpenWrt firmware with OVS modules, configuring OVS, setting up RADIUS server in a virtual machine and creating a MySQL database with custom table for access to out port id etc.
 \section{Building and Flashing Custom OpenWrt Firmware}
-To build the custom firmware for the OpenWrt, we use the Make Menuconfig command in terminal from the directory where the OpenWrt repository has been cloned. The following steps will explain which modules to choose from the Menu and to compile the custom build.
+To build the custom firmware for the OpenWrt, we use the \textit{make menuconfig} command in terminal from the directory where the OpenWrt repository has been cloned. The following steps will explain which modules to choose from the Menu and to compile the custom build.
 \begin{enumerate}
 	\item Navigate to the directory \textit{<buildroot\_dir>} in terminal and then enter the command \textit{make menuconfig}.
 	\item In the menu that appears, select the target system by using the arrows and enter key to navigate the menu.
@@ -45,77 +45,152 @@ To build the custom firmware for the OpenWrt, we use the Make Menuconfig command
 	\vspace{-10pt}
 \end{figure}
 \section{Router Configuration}
-The router has been freshly updated with the OpenWrt firmware. To configure the router, it is first connected via shell which will be discussed in steps below.
-\begin{enumerate}
-	\item Connect to the router using the command ssh 192.168.1.1 and accept the key signatures. It will now show the configuration window with \textit{root@openwrt}.
-	\item To create two wifi networks in the router, first open the networks configuration in the editor using vi or nano with the following command \textit{nano /ect/config/wireless}.
-	\item The configurations are changed to look like the one shown below.
-	\begin{lstlisting}
-	
-	config wifi-iface
-	option device 'radio0'
-	option mode 'ap'
-	option ssid 'OpenWrt'
-	option server '192.168.1.169'
-	option key 'testing123'
-	option encryption 'wpa2'
-	option network 'wifi'
-	
-	config wifi-iface
-	option device 'radio1'
-	option mode 'ap'
-	option server '192.168.1.169'
-	option key 'testing123'
-	option ssid 'OpenWrt 5G'
-	option encryption 'wpa2'
-	option network 'wifi'
-	\end{lstlisting}
-	\item Save the file using ctrl + x and enter. Now open the network configuration file from the command \textit{nano /etc/config/network} and change it to look as shown below.
-	\begin{lstlisting}
-	config interface 'lan'
-	option type 'bridge'
-	option ifname 'eth0.2'
-	option proto 'static'
-	option ipaddr '192.168.1.1'
-	option netmask '255.255.255.0'
-	option ip6assign '60'
-	
-	config interface 'wifi'
-	option type 'bridge'
-	option ifname 'eth0.3'
-	option proto 'static'
-	option ipaddr '192.168.3.1'
-	option netmask '255.255.255.0'
-	option ip6assign '60'
-	
-	config interface 'lan3'
-	option ifname 'eth0.3'
-	
-	config interface 'lan4'
-	option ifname 'eth0.4'
-	
-	config interface 'lan5'
-	option ifname 'eth0.5'
-	
-	config switch_vlan
-	option device 'switch0'
-	option vlan '2'
-	option ports '2 0t'
-	option ipaddr '192.168.3.1'
-	option netmask '255.255.255.0'
-	option ip6assign '60'
+The router has been freshly updated with the OpenWrt firmware. To configure the router, it is first connected via shell which will be discussed below.
 
-	\end{lstlisting}
-	\item The DHCP for the second network is configured in the file \textit{/etc/config/dhcp} and the following entry is added to the file.
+The router is first connected via the shell using the command \textit{sudo ssh 192.168.1.1} as seen in the test layout \ref{fig:test-layout}. This will open a OpenWrt configuration terminal that look like in the figure \ref{fig:OpenWrt_terminal}.
+
+The wireless configuration has to be modified to create two ssid's, this can be accessed using the internal editor with the command \textit{nano /etc/config/wireless}. the configuration contains all the information related to the wireless module. In the configuration, there are two device names and only these two needs to be modified. The device configured to use a RADIUS server in the server option and the key, the ssid's are changed to OpenWrt and OpenWrt 5G respectively. The configuration will look like as shown below after modification. The complete configuration can be accessed from the appendix 
+
+\nameref{app:sec:wireless_config}
 	\begin{lstlisting}
-	config dhcp 'lan4'
-		option interface 'lan4'
-		option ignore '1'
-	\end{lstlisting}
-	\item Save the configuration and reboot the router.
-	\item The web interface of OpenWrt can be opened using the ip \textbf{192.168.1.1}. Enable the wireless interfaces in the Networks menu as they are disabled by default. Now, there should be two network ssid openwrt and openwrt 5G available in the client device.
-	
-\end{enumerate}
+
+config wifi-iface
+option device 'radio0'
+option mode 'ap'
+option ssid 'OpenWrt'
+option server '192.168.1.169'
+option key 'testing123'
+option encryption 'wpa2'
+option network 'wifi'
+
+config wifi-iface
+option device 'radio1'
+option mode 'ap'
+option server '192.168.1.169'
+option key 'testing123'
+option ssid 'OpenWrt 5G'
+option encryption 'wpa2'
+option network 'wifi'
+\end{lstlisting}
+
+The second step would be to modify the network configuration in order to bridge the first two ethernet ports Eth0.1 and Eth0.2 and separate the rest of the ports as individual interfaces which can be seen in the configuration below. A second network is created using a new switch\_vlan that hosts the network \textit{192.168.3.1}. The full configuration file is added in the appendix of this document \nameref{app:sec:Network_config}
+
+\begin{lstlisting}
+config interface 'lan'
+option type 'bridge'
+option ifname 'eth0.2'
+option proto 'static'
+option ipaddr '192.168.1.1'
+option netmask '255.255.255.0'
+option ip6assign '60'
+
+config interface 'wifi'
+option type 'bridge'
+option ifname 'eth0.3'
+option proto 'static'
+option ipaddr '192.168.3.1'
+option netmask '255.255.255.0'
+option ip6assign '60'
+
+config interface 'lan3'
+option ifname 'eth0.3'
+
+config interface 'lan4'
+option ifname 'eth0.4'
+
+config interface 'lan5'
+option ifname 'eth0.5'
+
+config switch_vlan
+option device 'switch0'
+option vlan '2'
+option ports '2 0t'
+option ipaddr '192.168.3.1'
+option netmask '255.255.255.0'
+option ip6assign '60'
+
+\end{lstlisting}
+
+To enable the new network to provide DHCP to the devices that connects to the OVS bridge, the DHCP has to be modified to accomodate the new network. This can be easily access in the editor with the commans \textit{nano /etc/config/dhcp} and the configuration shown below  is added to the file and saved.
+
+\begin{lstlisting}
+config dhcp 'lan4'
+option interface 'lan4'
+option ignore '1'
+\end{lstlisting}
+
+Once the configurations are complete, the router is restarted to apply the changes. It is verified by logging into the web interface with the ip \textit{192.168.1.1}. This will open a LuCi web interface in the browser and shows the routers status and reflects the changes that were made with the configuration.
+
+%\begin{enumerate}
+%	\item Connect to the router using the command ssh 192.168.1.1 and accept the key signatures. It will now show the configuration window with \textit{root@openwrt}.
+%	\item To create two wifi networks in the router, first open the networks configuration in the editor using vi or nano with the following command \textit{nano /ect/config/wireless}.
+%	\item The configurations are changed to look like the one shown below.
+%	\begin{lstlisting}
+%	
+%	config wifi-iface
+%	option device 'radio0'
+%	option mode 'ap'
+%	option ssid 'OpenWrt'
+%	option server '192.168.1.169'
+%	option key 'testing123'
+%	option encryption 'wpa2'
+%	option network 'wifi'
+%	
+%	config wifi-iface
+%	option device 'radio1'
+%	option mode 'ap'
+%	option server '192.168.1.169'
+%	option key 'testing123'
+%	option ssid 'OpenWrt 5G'
+%	option encryption 'wpa2'
+%	option network 'wifi'
+%	\end{lstlisting}
+%	\item Save the file using ctrl + x and enter. Now open the network configuration file from the command \textit{nano /etc/config/network} and change it to look as shown below.
+%	\begin{lstlisting}
+%	config interface 'lan'
+%	option type 'bridge'
+%	option ifname 'eth0.2'
+%	option proto 'static'
+%	option ipaddr '192.168.1.1'
+%	option netmask '255.255.255.0'
+%	option ip6assign '60'
+%	
+%	config interface 'wifi'
+%	option type 'bridge'
+%	option ifname 'eth0.3'
+%	option proto 'static'
+%	option ipaddr '192.168.3.1'
+%	option netmask '255.255.255.0'
+%	option ip6assign '60'
+%	
+%	config interface 'lan3'
+%	option ifname 'eth0.3'
+%	
+%	config interface 'lan4'
+%	option ifname 'eth0.4'
+%	
+%	config interface 'lan5'
+%	option ifname 'eth0.5'
+%	
+%	config switch_vlan
+%	option device 'switch0'
+%	option vlan '2'
+%	option ports '2 0t'
+%	option ipaddr '192.168.3.1'
+%	option netmask '255.255.255.0'
+%	option ip6assign '60'
+%
+%	\end{lstlisting}
+%	\item The DHCP for the second network is configured in the file \textit{/etc/config/dhcp} and the following entry is added to the file.
+%	\begin{lstlisting}
+%	config dhcp 'lan4'
+%		option interface 'lan4'
+%		option ignore '1'
+%	\end{lstlisting}
+%	\item Save the configuration and reboot the router.
+%	\item The web interface of OpenWrt can be opened using the ip \textbf{192.168.1.1}. Enable the wireless interfaces in the Networks menu as they are disabled by default. Now, there should be two network ssid openwrt and openwrt 5G available in the client device.
+%	
+%\end{enumerate}
   \begin{figure}[H]
 	\centering
 	\includegraphics[width=10cm, height=13cm,keepaspectratio]{two-ssid}

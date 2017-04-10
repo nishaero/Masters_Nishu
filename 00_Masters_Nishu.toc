@@ -1,6 +1,6 @@
 \select@language {english}
-\contentsline {chapter}{\nonumberline List of Figures}{iii}{chapter*.2}
-\contentsline {chapter}{\nonumberline List of Tables}{iv}{chapter*.3}
+\contentsline {chapter}{\nonumberline List of Figures}{iv}{chapter*.2}
+\contentsline {chapter}{\nonumberline List of Tables}{v}{chapter*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Contribution}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Results}{2}{section.1.2}
@@ -51,24 +51,27 @@
 \contentsline {section}{\numberline {7.1}Building and Flashing Custom OpenWrt Firmware}{46}{section.7.1}
 \contentsline {section}{\numberline {7.2}Router Configuration}{48}{section.7.2}
 \contentsline {section}{\numberline {7.3}Configuring Open vSwitch}{51}{section.7.3}
-\contentsline {section}{\numberline {7.4}MySQL Setup}{51}{section.7.4}
-\contentsline {section}{\numberline {7.5}Installing Ubuntu Virtual Machine and Freeradius Server \cite {Freeradius_install}}{52}{section.7.5}
-\contentsline {chapter}{\numberline {8}Evaluation}{54}{chapter.8}
-\contentsline {section}{\numberline {8.1}Testbed Description}{55}{section.8.1}
+\contentsline {section}{\numberline {7.4}MySQL Setup}{52}{section.7.4}
+\contentsline {section}{\numberline {7.5}Installing Ubuntu Virtual Machine and Freeradius Server \cite {Freeradius_install}}{53}{section.7.5}
+\contentsline {chapter}{\numberline {8}Evaluation}{55}{chapter.8}
+\contentsline {section}{\numberline {8.1}Testbed Description}{56}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}IIS Setup on Windows}{57}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Associating Two Mobile Clients to Access Point}{58}{subsection.8.1.2}
-\contentsline {section}{\numberline {8.2}RYU Controller Performance}{58}{section.8.2}
-\contentsline {section}{\numberline {8.3}Open vSwitch performance}{59}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Iperf result comparison}{60}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.1.2}Associating Two Mobile Clients to Access Point}{59}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}RYU Controller Performance}{59}{section.8.2}
+\contentsline {section}{\numberline {8.3}Open vSwitch performance}{60}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Iperf result comparison}{61}{subsection.8.3.1}
 \contentsline {subsection}{\numberline {8.3.2}Ping tests}{64}{subsection.8.3.2}
-\contentsline {chapter}{\numberline {9}Conclusion}{65}{chapter.9}
-\contentsline {chapter}{\nonumberline Bibliography}{66}{chapter*.45}
-\contentsline {chapter}{Appendix}{69}{section*.46}
-\contentsline {chapter}{\numberline {A}Router Configuration Content}{71}{appendix.A}
-\contentsline {section}{\numberline {A.1}Wireless configuration}{71}{section.A.1}
-\contentsline {section}{\numberline {A.2}Network configuration}{72}{section.A.2}
-\contentsline {section}{\numberline {A.3}DHCP configuration}{74}{section.A.3}
-\contentsline {chapter}{\numberline {B}RYU Verbose output}{76}{appendix.B}
-\contentsline {section}{\numberline {B.1}RYU log trace}{76}{section.B.1}
-\contentsline {chapter}{\numberline {C}User Segregation Application code}{80}{appendix.C}
-\contentsline {chapter}{\nonumberline Versicherung}{85}{chapter*.49}
+\contentsline {chapter}{\numberline {9}Conclusion}{66}{chapter.9}
+\contentsline {section}{\numberline {9.1}Discussion}{66}{section.9.1}
+\contentsline {section}{\numberline {9.2}Technology Demonstrator}{66}{section.9.2}
+\contentsline {section}{\numberline {9.3}Future Enhancements}{67}{section.9.3}
+\contentsline {chapter}{\nonumberline Bibliography}{68}{chapter*.45}
+\contentsline {chapter}{Appendix}{71}{section*.46}
+\contentsline {chapter}{\numberline {A}Router Configuration Content}{73}{appendix.A}
+\contentsline {section}{\numberline {A.1}Wireless configuration}{73}{section.A.1}
+\contentsline {section}{\numberline {A.2}Network configuration}{74}{section.A.2}
+\contentsline {section}{\numberline {A.3}DHCP configuration}{76}{section.A.3}
+\contentsline {chapter}{\numberline {B}RYU Verbose output}{78}{appendix.B}
+\contentsline {section}{\numberline {B.1}RYU log trace}{78}{section.B.1}
+\contentsline {chapter}{\numberline {C}User Segregation Application code}{82}{appendix.C}
+\contentsline {chapter}{\nonumberline Versicherung}{87}{chapter*.49}

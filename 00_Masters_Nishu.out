@@ -50,13 +50,16 @@
 \BOOKMARK [2][-]{subsection.8.3.1}{Iperf result comparison}{section.8.3}% 50
 \BOOKMARK [2][-]{subsection.8.3.2}{Ping tests}{section.8.3}% 51
 \BOOKMARK [0][-]{chapter.9}{Conclusion}{}% 52
-\BOOKMARK [0][-]{chapter*.45}{Bibliography}{}% 53
-\BOOKMARK [0][-]{section*.46}{Appendix}{}% 54
-\BOOKMARK [0][-]{appendix.A}{Router Configuration Content}{}% 55
-\BOOKMARK [1][-]{section.A.1}{Wireless configuration}{appendix.A}% 56
-\BOOKMARK [1][-]{section.A.2}{Network configuration}{appendix.A}% 57
-\BOOKMARK [1][-]{section.A.3}{DHCP configuration}{appendix.A}% 58
-\BOOKMARK [0][-]{appendix.B}{RYU Verbose output}{}% 59
-\BOOKMARK [1][-]{section.B.1}{RYU log trace}{appendix.B}% 60
-\BOOKMARK [0][-]{appendix.C}{User Segregation Application code}{}% 61
-\BOOKMARK [0][-]{chapter*.49}{Versicherung}{}% 62
+\BOOKMARK [1][-]{section.9.1}{Discussion}{chapter.9}% 53
+\BOOKMARK [1][-]{section.9.2}{Technology Demonstrator}{chapter.9}% 54
+\BOOKMARK [1][-]{section.9.3}{Future Enhancements}{chapter.9}% 55
+\BOOKMARK [0][-]{chapter*.45}{Bibliography}{}% 56
+\BOOKMARK [0][-]{section*.46}{Appendix}{}% 57
+\BOOKMARK [0][-]{appendix.A}{Router Configuration Content}{}% 58
+\BOOKMARK [1][-]{section.A.1}{Wireless configuration}{appendix.A}% 59
+\BOOKMARK [1][-]{section.A.2}{Network configuration}{appendix.A}% 60
+\BOOKMARK [1][-]{section.A.3}{DHCP configuration}{appendix.A}% 61
+\BOOKMARK [0][-]{appendix.B}{RYU Verbose output}{}% 62
+\BOOKMARK [1][-]{section.B.1}{RYU log trace}{appendix.B}% 63
+\BOOKMARK [0][-]{appendix.C}{User Segregation Application code}{}% 64
+\BOOKMARK [0][-]{chapter*.49}{Versicherung}{}% 65
