@@ -1,6 +1,5 @@
 \select@language {english}
 \contentsline {chapter}{\nonumberline List of Figures}{iv}{chapter*.2}
-\contentsline {chapter}{\nonumberline List of Tables}{v}{chapter*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Contribution}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Results}{2}{section.1.2}
@@ -17,61 +16,61 @@
 \contentsline {subsection}{\numberline {3.1.3}OpenDaylight}{11}{subsection.3.1.3}
 \contentsline {section}{\numberline {3.2}Applications of SDN}{12}{section.3.2}
 \contentsline {section}{\numberline {3.3}Open vSwitch \cite {OpenVswitch_design}}{13}{section.3.3}
-\contentsline {chapter}{\numberline {4}Control and Authentication Mechanism}{16}{chapter.4}
-\contentsline {section}{\numberline {4.1}OpenWrt \cite {WhatIsOpenWrt}}{16}{section.4.1}
-\contentsline {section}{\numberline {4.2}Protocols}{19}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}OpenFlow \cite {WhatIsOpenFlow}}{19}{subsection.4.2.1}
-\contentsline {subsubsection}{\nonumberline How does OpenFlow Work? \cite {OpenFlow_functionality}}{20}{section*.12}
-\contentsline {subsubsection}{\nonumberline OpenFlow Specification \cite {Openflow_protocol_spec}}{20}{section*.13}
-\contentsline {subsubsection}{\nonumberline OpenFlow Switch \cite {Opnflow_switch}}{22}{section*.15}
-\contentsline {subsubsection}{\nonumberline OpenFlow Switch Agent \cite {Opnflow_switch}}{23}{section*.17}
-\contentsline {subsubsection}{\nonumberline Data Plane \cite {Opnflow_switch}}{24}{section*.19}
-\contentsline {subsubsection}{\nonumberline Data Plane - Packet Lifecycle \cite {Opnflow_switch}}{24}{section*.21}
-\contentsline {subsection}{\numberline {4.2.2}RADIUS \cite {RADIUS_RFC2865}}{25}{subsection.4.2.2}
-\contentsline {subsubsection}{\nonumberline What is AAA Protocol? \cite {RADIUS_AAA}}{25}{section*.23}
-\contentsline {subsubsection}{\nonumberline Key Features of RADIUS: \cite {RADIUS_RFC2865}}{26}{section*.24}
-\contentsline {subsubsection}{\nonumberline RADIUS Components \cite {RADIUS_components}}{26}{section*.25}
-\contentsline {subsubsection}{\nonumberline RADIUS Operation \cite {RADIUS_components}}{27}{section*.27}
-\contentsline {subsubsection}{\nonumberline RADIUS Authentication Mechanism}{28}{section*.28}
-\contentsline {subsection}{\numberline {4.2.3}WLAN 802.1x Security \cite {WLAN_802.1x}}{30}{subsection.4.2.3}
-\contentsline {subsubsection}{\nonumberline 802.1x Authentication Process}{31}{section*.30}
-\contentsline {chapter}{\numberline {5}Build Environment}{33}{chapter.5}
-\contentsline {section}{\numberline {5.1}RYU in Python virtual environment \cite {Install_virtualenv}}{33}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Installation and Access \cite {Install_virtualenv} \cite {Install_RyuSDN}}{33}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}OpenWrt Build System \cite {OpenWrt_build_root}}{34}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Hardware Prerequisites}{34}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Installation steps on GNU/Linux}{35}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Designing the Application}{36}{chapter.6}
-\contentsline {section}{\numberline {6.1}The Design Objectives}{36}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}RADIUS Procedure}{37}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}RYU Control Procedure}{38}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}RYU Manager Process \cite {RYU_app_process}}{42}{section.6.2}
-\contentsline {section}{\numberline {6.3}Python Coding}{43}{section.6.3}
-\contentsline {chapter}{\numberline {7}Implementation}{46}{chapter.7}
-\contentsline {section}{\numberline {7.1}Building and Flashing Custom OpenWrt Firmware}{46}{section.7.1}
-\contentsline {section}{\numberline {7.2}Router Configuration}{48}{section.7.2}
-\contentsline {section}{\numberline {7.3}Configuring Open vSwitch}{51}{section.7.3}
-\contentsline {section}{\numberline {7.4}MySQL Setup}{52}{section.7.4}
-\contentsline {section}{\numberline {7.5}Installing Ubuntu Virtual Machine and Freeradius Server \cite {Freeradius_install}}{53}{section.7.5}
-\contentsline {chapter}{\numberline {8}Evaluation}{55}{chapter.8}
-\contentsline {section}{\numberline {8.1}Testbed Description}{56}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}IIS Setup on Windows}{57}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}Associating Two Mobile Clients to Access Point}{59}{subsection.8.1.2}
-\contentsline {section}{\numberline {8.2}RYU Controller Performance}{59}{section.8.2}
-\contentsline {section}{\numberline {8.3}Open vSwitch performance}{60}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Iperf result comparison}{61}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Ping tests}{64}{subsection.8.3.2}
-\contentsline {chapter}{\numberline {9}Conclusion}{66}{chapter.9}
-\contentsline {section}{\numberline {9.1}Discussion}{66}{section.9.1}
-\contentsline {section}{\numberline {9.2}Technology Demonstrator}{66}{section.9.2}
-\contentsline {section}{\numberline {9.3}Future Enhancements}{67}{section.9.3}
-\contentsline {chapter}{\nonumberline Bibliography}{68}{chapter*.45}
-\contentsline {chapter}{Appendix}{71}{section*.46}
-\contentsline {chapter}{\numberline {A}Router Configuration Content}{73}{appendix.A}
-\contentsline {section}{\numberline {A.1}Wireless configuration}{73}{section.A.1}
-\contentsline {section}{\numberline {A.2}Network configuration}{74}{section.A.2}
-\contentsline {section}{\numberline {A.3}DHCP configuration}{76}{section.A.3}
-\contentsline {chapter}{\numberline {B}RYU Verbose output}{78}{appendix.B}
-\contentsline {section}{\numberline {B.1}RYU log trace}{78}{section.B.1}
-\contentsline {chapter}{\numberline {C}User Segregation Application code}{82}{appendix.C}
-\contentsline {chapter}{\nonumberline Versicherung}{87}{chapter*.49}
+\contentsline {chapter}{\numberline {4}Control and Authentication Mechanism}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}OpenWrt \cite {WhatIsOpenWrt}}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}Protocols}{16}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}OpenFlow \cite {WhatIsOpenFlow}}{16}{subsection.4.2.1}
+\contentsline {subsubsection}{\nonumberline How does OpenFlow Work? \cite {OpenFlow_functionality}}{18}{section*.10}
+\contentsline {subsubsection}{\nonumberline OpenFlow Specification \cite {Openflow_protocol_spec}}{18}{section*.11}
+\contentsline {subsubsection}{\nonumberline OpenFlow Switch \cite {Opnflow_switch}}{20}{section*.13}
+\contentsline {subsubsection}{\nonumberline OpenFlow Switch Agent \cite {Opnflow_switch}}{20}{section*.15}
+\contentsline {subsubsection}{\nonumberline Data Plane \cite {Opnflow_switch}}{22}{section*.17}
+\contentsline {subsubsection}{\nonumberline Data Plane - Packet Lifecycle \cite {Opnflow_switch}}{22}{section*.19}
+\contentsline {subsection}{\numberline {4.2.2}RADIUS \cite {RADIUS_RFC2865}}{23}{subsection.4.2.2}
+\contentsline {subsubsection}{\nonumberline What is AAA Protocol? \cite {RADIUS_AAA}}{23}{section*.21}
+\contentsline {subsubsection}{\nonumberline Key Features of RADIUS: \cite {RADIUS_RFC2865}}{24}{section*.22}
+\contentsline {subsubsection}{\nonumberline RADIUS Components \cite {RADIUS_components}}{24}{section*.23}
+\contentsline {subsubsection}{\nonumberline RADIUS Operation \cite {RADIUS_components}}{26}{section*.25}
+\contentsline {subsubsection}{\nonumberline RADIUS Authentication Mechanism}{27}{section*.26}
+\contentsline {subsection}{\numberline {4.2.3}WLAN 802.1x Security \cite {WLAN_802.1x}}{28}{subsection.4.2.3}
+\contentsline {subsubsection}{\nonumberline 802.1x Authentication Process}{29}{section*.28}
+\contentsline {chapter}{\numberline {5}Build Environment}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}RYU in Python virtual environment \cite {Install_virtualenv}}{31}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Installation and Access \cite {Install_virtualenv} \cite {Install_RyuSDN}}{31}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}OpenWrt Build System \cite {OpenWrt_build_root}}{32}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Hardware Prerequisites}{32}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Installation steps on GNU/Linux}{33}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Designing the Application}{34}{chapter.6}
+\contentsline {section}{\numberline {6.1}The Design Objectives}{34}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}RADIUS Procedure}{34}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}RYU Control Procedure}{34}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}RYU Manager Process \cite {RYU_app_process}}{40}{section.6.2}
+\contentsline {section}{\numberline {6.3}Python Coding}{41}{section.6.3}
+\contentsline {chapter}{\numberline {7}Implementation}{44}{chapter.7}
+\contentsline {section}{\numberline {7.1}Building and Flashing Custom OpenWrt Firmware}{44}{section.7.1}
+\contentsline {section}{\numberline {7.2}Router Configuration}{46}{section.7.2}
+\contentsline {section}{\numberline {7.3}Configuring Open vSwitch}{49}{section.7.3}
+\contentsline {section}{\numberline {7.4}MySQL Setup}{50}{section.7.4}
+\contentsline {section}{\numberline {7.5}Installing Ubuntu Virtual Machine and Freeradius Server \cite {Freeradius_install}}{51}{section.7.5}
+\contentsline {chapter}{\numberline {8}Evaluation}{53}{chapter.8}
+\contentsline {section}{\numberline {8.1}Testbed Description}{53}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}IIS Setup on Windows}{55}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Associating Two Mobile Clients to Access Point}{56}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}RYU Controller Performance}{57}{section.8.2}
+\contentsline {section}{\numberline {8.3}Open vSwitch performance}{58}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Iperf result comparison}{58}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Ping tests}{62}{subsection.8.3.2}
+\contentsline {chapter}{\numberline {9}Conclusion}{64}{chapter.9}
+\contentsline {section}{\numberline {9.1}Discussion}{64}{section.9.1}
+\contentsline {section}{\numberline {9.2}Technology Demonstrator}{64}{section.9.2}
+\contentsline {section}{\numberline {9.3}Future Enhancements}{65}{section.9.3}
+\contentsline {chapter}{\nonumberline Bibliography}{66}{chapter*.43}
+\contentsline {chapter}{Appendix}{70}{section*.44}
+\contentsline {chapter}{\numberline {A}Router Configuration Content}{72}{appendix.A}
+\contentsline {section}{\numberline {A.1}Wireless configuration}{72}{section.A.1}
+\contentsline {section}{\numberline {A.2}Network configuration}{73}{section.A.2}
+\contentsline {section}{\numberline {A.3}DHCP configuration}{74}{section.A.3}
+\contentsline {chapter}{\numberline {B}RYU Verbose output}{76}{appendix.B}
+\contentsline {section}{\numberline {B.1}RYU log trace}{76}{section.B.1}
+\contentsline {chapter}{\numberline {C}User Segregation Application code}{80}{appendix.C}
+\contentsline {chapter}{\nonumberline Versicherung}{85}{chapter*.47}

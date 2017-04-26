@@ -12,34 +12,34 @@
 \chapter{Control and Authentication Mechanism}\label{ch:control_and_authentication}
 \sffamily{}
 
-In this chapter, the softwares and protocols used for providing authentication and for controlling the access point is discussed. A brief introduction to OpenWrt and the different protocols such as OpenFlow, RADIUS is described in the flowing topics.
+In this chapter, the softwares and protocols used for providing authentication and for controlling the access point is discussed. A brief introduction to OpenWrt and the protocols, OpenFlow and RADIUS is described in the flowing topics.
 \section{OpenWrt \cite{WhatIsOpenWrt}} \label{OpenWrt}
 
-OpenWrt is a Linux distribution that works like any other Linux distro designed for embedded devices. OpenWrt offers bult-in package manager that allows to install packages from its repository or manually build your own firmware file using your custom-built package. The packages range anything from an SSH server, VPN, traffic-shaping, enterprise wireless solutions, BitTorrent client, or even as a hotspot manager.
+OpenWrt is a Linux distribution that works like any other Linux distro designed for embedded devices. OpenWrt offers bult-in package manager that allows installing packages from its repository or manually build custom firmware file using custom-built package. The packages can contain many supported applications like an SSH server, VPN, traffic-shaping application, enterprise wireless solutions, BitTorrent client and even a hotspot manager.
 
-OpenWrt is designed for power users that wants customizability to the stock firmware provided by the manufacturer. There are many custom firmware’s such as DD-WRT available for most popular routers, for this thesis, OpenWrt is chosen because of its flexibility and more stable than most custom firmware’s or sometimes even the stock firmware.
+OpenWrt is designed for power users who require customizability over the stock firmware provided by the manufacturer. There are many custom firmwares such as DD-WRT available for most popular routers. For this thesis, OpenWrt is chosen because of its flexibility and stability than most custom firmwares that are available for many hardware vendors.
 
-OpenWrt has many features that can be mentioned but out of scope for this thesis, a run-down version of the most relevant features are listed below that are related to this thesis.
+OpenWrt has many features that can be mentioned but are out of scope for this thesis. A run-down version of the most relevant features are listed below that are related to this thesis.
 
 \begin{itemize}
-	\item \textbf{SSH server for terminal access:} Provides SSH server, which allows to connect directly to the routers terminal via SSH and when the router is configured to the internet, allows to remotely configure the router. 
-	\item \textbf{Capture and Analyse network Traffic:} Tcpdump tool is included in the build to analyze the packets that are traversing thru the router. The tool can also be used to create packet logs that can be open in packet analyzer tools such as Wireshark.
-	\item \textbf{GUI Interface:} OpenWrt also includes a GUI interface for managing most of the router’s configuration, the built in one is named as LuCi.
-	\item \textbf{OpenvSwitch:} The virtual switch is also available as a package on OpenWrt repository that is used in this thesis to be installed in the router for creating a virtual switch within the router that can also work along with the physical switched present.
-	\item \textbf{Wireless Utilities:} OpenWrt provides many different packages for managing wireless sockets in the router, for this thesis, Hostapd package is chosen because of its fully featured support for a wide range of authentication mechanisms such as IEEE 802.1x/WPA/EAP/RADIUS with EAP protocols. It can be configured in the file located at /etc/hostapd.conf in the routers folder.
-	\item \textbf{Freeradius:} The open source RADIUS server is also available as a package for the OpenWrt build but is not used in the firmware for this thesis because of memory unavailability of the TP Link WR-4300 router.
-	\item \textbf{MySQL:} The is a fully featured MySql server also available as the packages that can be installed on the router but again could not be used in this thesis due to memory restrictions of the router.
+	\item \textbf{SSH server for terminal access:} Provides SSH server, which allows to connect directly to the routers terminal via SSH and remote configuration is also possible when the router is configured to connect with the internet. 
+	\item \textbf{Capture and Analyse network Traffic:} Tcpdump tool is included in the build to analyze the packets that are traversing through the router. The tool can also be used to create packet logs that can be opened in packet analyzer tools such as Wireshark.
+	\item \textbf{GUI Interface:} OpenWrt also includes a GUI interface for managing most of the routers configuration, the built in one is named as LuCi.
+	\item \textbf{OpenvSwitch:} The virtual switch is also available as a package on OpenWrt repository that is used in this thesis to be installed in the router for creating a virtual switch within the router that can also work along with the physical switches present.
+	\item \textbf{Wireless Utilities:} OpenWrt provides many different packages for managing wireless sockets in the router. For this thesis, Hostapd package is chosen because of its fully featured support for a wide range of authentication mechanisms such as IEEE 802.1x/WPA/EAP/RADIUS with EAP protocol. It can be configured in the file located at /etc/hostapd.conf in the routers folder.
+	\item \textbf{Freeradius:} The open source RADIUS server is also available as a package for the OpenWrt build but is not used in the firmware for this thesis because of memory unavailability in the TP Link WDR-4300 router.
+	\item \textbf{MySQL:} The is a fully featured MySql server. It is also available as a package that can be installed on the router but again could not be used in this thesis due to memory restrictions in the router.
 	
 \end{itemize}
-The following figures below shows the SSH interface of OpenWrt terminal and the LuCi web interface.
-\begin{figure}[H]
+The figure \ref{fig:OpenWrt_terminal} shows the SSH interface of OpenWrt terminal and the figure \ref{fig:OpenWrt_gui} shows the LuCi web interface.
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{openwrt4-terminal}
 	\caption{OpenWrt Terminal View \cite{openwrt_terminal_img}} \label{fig:OpenWrt_terminal}
 	\vspace{-10pt}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{bootstrap-luci-theme}
 	\caption{OpenWrt GUI Interface \cite{openwrt_luci_img}} \label{fig:OpenWrt_gui}
@@ -51,22 +51,22 @@ For this thesis, protocols such as OpenFlow, RADIUS and 802.1x security are used
 
 It is a standard communication interface defined between the control and forwarding layers of the SDN architecture, allowing direct access for manipulating the forwarding plane of the network devices such as switches and routers, both physical and virtual (hypervisor based).
 
-OpenFlow, along with SDN technologies have helped IT to manage and address the high-bandwidth, and dynamic nature of today’s applications. It also has helped adapt the network to ever-changing business needs, and significantly reduce the complexity in maintenance and operations.
+OpenFlow, along with SDN technologies have helped IT to manage and address the high-bandwidth, and dynamic nature of today’s applications. It also has helped adapt the network to ever-changing business needs, and significantly reduce the complexity in maintenance and operations. The successful deployment \cite{of_depl} of OpenFlow in large organizations such as Google \cite{of_google}, Géant of Switzerland,ToulX France etc. shows what can be achieved with OpenFlow and the extent to which its features can be utilized.
 
-Some of the best features of OpenFlow is explained in the following figure.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.0\linewidth]{of-features}
-	\caption{OpenFlow features \cite{openflow_features}} \label{fig:OF_features}
-	\vspace{-10pt}
-\end{figure}
+%Some of the best features of OpenFlow obtained from its successful deployments  is explained in the figure \ref{fig:OF_features}.
+%
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=1.0\linewidth]{of-features}
+%	\caption{OpenFlow features \cite{openflow_features}} \label{fig:OF_features}
+%	\vspace{-10pt}
+%\end{figure}
 
 \subsubsection{How does OpenFlow Work? \cite{OpenFlow_functionality}} \label{OpenFlow_Functionality}
-In a traditional switch or a router, the packet forwarding and high level routing decisions occur on the same device. In an OpenFlow switch, the routing and forwarding functions are separated. The data path portion is still on the switch and the routing decisions are handled by a separate controller, typically it’s a standard server. The OpenFlow switch and controller communicate using the OpenFlow protocol, which defines messages such as packet-in, packet-out modify-forwarding path and get stats.
+In a traditional switch or a router, the packet forwarding and high level routing decisions occur on the same device. In an OpenFlow switch, the routing and forwarding functions are separated. The data path portion is still on the switch and the routing decisions are handled by a separate controller, typically it’s a standard server. The OpenFlow switch and controller communicate using the OpenFlow protocol, which defines messages such as packet-in, packet-out, modify-forwarding path and get stats.
 \subsubsection{OpenFlow Specification \cite{Openflow_protocol_spec}} \label{OpenFlow_Protocol_spec}
-The protocol can be split into 4 components namely: message layer, state machine, system interface and configuration. 
-\begin{figure}[H]
+The protocol can be split into 4 components as shown in the figure \ref{fig:Of_proto} namely: message layer, state machine, system interface and configuration. 
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{of-protocol}
 	\caption{OpenFlow Protocol \cite{of_protocol_spec_img}} \label{fig:Of_proto}
@@ -89,9 +89,9 @@ The protocol can be split into 4 components namely: message layer, state machine
 
 \subsubsection{OpenFlow Switch \cite{Opnflow_switch}} \label{OpenFlow_Switch}
 
- An OpenFlow switch is made up of two components namely the switch agent and the data plane. The switch agent takes care of the communication between two or more controllers and also with the data plane using the requisite internal protocol. The switch agent translates the commands into low-level instructions to send to the data plane and the data plane notifications to the OpenFlow messages that are forwarded to the controller. The data plane takes care of the packet manipulation and forwarding and sometimes sends packets to the switch agent for further handling based on its configuration.
+ An OpenFlow switch is made up of two components namely the switch agent and the data plane. The switch agent takes care of the communication between two or more controllers and also with the data plane using the requisite internal protocol. The switch agent translates the commands into low-level instructions to send to the data plane and the data plane information is translated to OpenFlow messages that are forwarded to the controller. The data plane takes care of the packet manipulation and forwarding and sometimes sends packets to the switch agent for further handling based on its configuration. The figure \ref{fig:Of_switch_anatomy} shows the functionality of the switch as explained above.
  
-\begin{figure}[H]
+\begin{figure}
  	\centering
  	\includegraphics[width=1.0\linewidth]{of-switch-anatomy}
  	\caption{OpenFlow Switch Anatomy \cite{Of_Switch_img}} \label{fig:Of_switch_anatomy}
@@ -99,9 +99,9 @@ The protocol can be split into 4 components namely: message layer, state machine
 \end{figure}
  
 \subsubsection{OpenFlow Switch Agent \cite{Opnflow_switch}} \label{Of_switch_agent}
- The following figure shows how the switch agent works, its components are explained the table following the figure.
+ The figure \ref{fig:Of_switch_agent} shows how the switch agent works, its components are explained as follows.
  
-\begin{figure}[H]
+\begin{figure}
  	\centering
  	\includegraphics[width=1.0\linewidth]{of-switch-agent-anatomy}
  	\caption{OpenFlow Switch Agent \cite{Of_Switch_agent_img}} \label{fig:Of_switch_agent}
@@ -129,7 +129,7 @@ The data plane consists of the ports, flow tables, flows, classifiers and action
 
 \subsubsection{Data Plane - Packet Lifecycle \cite{Opnflow_switch}} \label{of_data_plane_lifecycle}
 
-Each packet is processed in the following sequence as explained in the table below.
+Each packet is processed in the following sequence as explained below.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\linewidth]{Of-packet-lifecycle}
@@ -154,41 +154,54 @@ Each packet is processed in the following sequence as explained in the table bel
 \end{itemize}
 
 \subsection{RADIUS \cite{RADIUS_RFC2865}} \label{RADIUS}
-RADIUS stands for Remote Authentication Dial-In User Service, which is an access server for authentication and accounting protocol. RADIUS is an AAA protocol used for network access applications.
+RADIUS stands for Remote Authentication Dial-In User Service, which is an access control server for authentication and accounting protocol. RADIUS is an AAA protocol used for network access applications.
 \subsubsection{What is AAA Protocol? \cite{RADIUS_AAA}} \label{RADIUS_AAA}
-AAA stands for Authentication, Authorization and Accounting.
-\begin{itemize}
-	\item \textbf{Authentication:} It is the confirmation to the validation of the user who is requesting a service. It is normally done by providing some credentials such as username and password.
-	\item \textbf{Authorization:} Providing specific services based on the user’s authentication such as physical location restrictions, multiple login access restrictions etc.
-	\item \textbf{Accounting:} keeping track of all the users and their network resource consumption is provided by the accounting service, it’s like a log for every user who gained access to the network. Typical information includes user identity, nature of service delivered etc. This information may probably be used for billing, management purposes.
-	
-\end{itemize}
+AAA stands for Authentication, Authorization and Accounting. \textit{Authentication} is the validation of the user requesting access to a service.It is normally done by providing some credentials such as username and password. \textit{Authorization} provides specific services based on the user’s authentication such as physical location restrictions, multiple login access restrictions etc. \textit{Accounting} keeps track of all the users and their network resource consumption is provided by the accounting service, it’s like a log for every user who gained access to the network. Typical information includes user identity, nature of service delivered etc. This information may probably be used for billing, management purposes.  
+%\begin{itemize}
+%	\item \textbf{Authentication:} It is the confirmation to the validation of the user who is requesting a service. It is normally done by providing some credentials such as username and password.
+%	\item \textbf{Authorization:} Providing specific services based on the user’s authentication such as physical location restrictions, multiple login access restrictions etc.
+%	\item \textbf{Accounting:} keeping track of all the users and their network resource consumption is provided by the accounting service, it’s like a log for every user who gained access to the network. Typical information includes user identity, nature of service delivered etc. This information may probably be used for billing, management purposes.
+%	
+%\end{itemize}
 \subsubsection{Key Features of RADIUS: \cite{RADIUS_RFC2865}} \label{RADIUS_features}
-\begin{itemize}
-	\item \textbf{Client / Server Model:} 
-	\\	The network server acts as the client of RADIUS, which passes the user information to designated RADIUS server. The responsibilities of the radius server include receiving connection requests, authenticating users, providing all the configuration details necessary for the client to deliver service to the user.
-	\item \textbf{Network Security:}
-	\\ The communication between the client and the RADIUS server is encrypted so, any user password sent is encrypted. In addition, the client and the RADIUS server transactions are authenticated over a shared secret which is never sent over the network.
-	\item \textbf{Flexible Authentication Mechanisms:}
-	\\ The RADIUS server supports several method’s for a user to authenticate such as PPP, PAP or CHAP etc.
-	\item \textbf{Extensible Protocol:}
-	\\ All transactions are of variable length Attribute-value-length 3 tuples. Supports addition of new attribute values without disturbing the existing implementation of the protocol.
-	
-\end{itemize}
+
+The RADIUS works like a \textit{Client / Server} model. The network server acts as the client of RADIUS, which passes the user information to designated RADIUS server. The responsibilities of the radius server include receiving connection requests, authenticating users, providing all the configuration details necessary for the client to deliver service to the user.
+
+RADIUS also provides security by encrypting the communication between the client and the RADIUS server. So,  any users credentials sent over the network is encrypted. In addition, the client and the RADIUS server transactions are authenticated over a shared secret which is never sent over the network. The RADIUS server supports several method’s for a user to authenticate such as PPP, PAP or CHAP etc.
+
+The RADIUS is also an extensible protocol where all transactions are of variable length Attribute-value-length 3 tuples. Supports addition of new attribute values without disturbing the existing implementation of the protocol.
+
+
+%\begin{itemize}
+%	\item \textbf{Client / Server Model:} 
+%	\\	The network server acts as the client of RADIUS, which passes the user information to designated RADIUS server. The responsibilities of the radius server include receiving connection requests, authenticating users, providing all the configuration details necessary for the client to deliver service to the user.
+%	\item \textbf{Network Security:}
+%	\\ The communication between the client and the RADIUS server is encrypted so, any user password sent is encrypted. In addition, the client and the RADIUS server transactions are authenticated over a shared secret which is never sent over the network.
+%	\item \textbf{Flexible Authentication Mechanisms:}
+%	\\ The RADIUS server supports several method’s for a user to authenticate such as PPP, PAP or CHAP etc.
+%	\item \textbf{Extensible Protocol:}
+%	\\ All transactions are of variable length Attribute-value-length 3 tuples. Supports addition of new attribute values without disturbing the existing implementation of the protocol.
+%	
+%\end{itemize}
 
 \subsubsection{RADIUS Components \cite{RADIUS_components}} \label{RADIUS_components}
 The following components are part of the RADIUS infrastructure.
 \begin{itemize}
-	\item Access Clients
-	\item Access Servers (RADIUS clients)
-	\item RADIUS servers
+	\item Access Clients:
+	\\ These are the devices such as a mobile phone, laptop, desktop computer etc. that is requesting to gain access to the network 
+	\item Access Servers (RADIUS clients):
+	\\ They are network access servers such as access points, 802.1x capable switches etc. These devices communicate with the network access servers using the RADIUS protocol. They are the devices to which the clients are associated to for access to the network.
+	\item RADIUS servers:
+	\\ It is the network access server that manages the users and the services associated to each user or client.
 	\item RADIUS proxies
-	\item User account databases (Active Directory, any database such as MySQL)
+	\\ They are similar to the network access server except that, they do not process the AAA information received from the RADIUS clients. They simply forward the information to the RADIUS server or to another RADIUS proxy based on the information in the packet.
+	\item User account databases (Active Directory, any database such as MySQL):
+	\\ It is the database to which the RADIUS server refers to (When configured to work with database) for authenticating an user requesting network access. The database also contains other accounting information such as the session details for each user, the services active for each client. 
 	
 \end{itemize}
-The components are showing in the following figure.
+The components are showing in the figure \ref{fig:RADIUS_components_img}.
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{RADIUS-components}
 	\caption {RADIUS Components \cite{RADIUS_components_img}}
@@ -256,7 +269,7 @@ Wi-Fi or Wireless Local Area Networks (WLAN’s) have become increasingly more p
 \end{itemize}
 Both these mechanisms are proven to be severely vulnerable. To enhance the security in wireless networks, 802.11i standard was proposed. This 802.11i standard defines encryption and authentication improvements in addition to introducing protocols for key management and establishment. 802.11i also incorporates the IEEE 802.1x standard as its authentication enhancement. The IEEE 802.1x is a port based network access control used for authenticating and authorizing devices connected by various LAN’s.
 
-The IEEE 802.1x standard is based upon the Extensible Authentication Protocol (EAP), and can use a number of authentication mechanisms which is beyond the scope of the IEEE 802.1x standard. Many authentication mechanisms such as MD5, TLS, TTLS, and PEAP can be used. The IEEE 802.1x uses EAP over LAN (EAPoL) for encapsulating EAP messages between the authenticator and the supplicant. 
+The IEEE 802.1x standard is based upon the Extensible Authentication Protocol (EAP), and can use a number of authentication mechanisms which is beyond the scope of the IEEE 802.1x standard. Many authentication mechanisms such as EAP/MD5(port based) , TLS, TTLS, and PEAP can be used. The IEEE 802.1x uses EAP over LAN (EAPoL) for encapsulating EAP messages between the authenticator and the supplicant. 
 
 There are three main components in the IEEE 802.1x system namely, the supplicant, authenticator and the authentication server. In case of WLAN, the supplicant is usually the mobile device or node, the Access Point (AP) serves as the authenticator and the RADIUS server as the authentication server.  The Port Access Entity (PAE) authenticator relays all the messages between the authentication server and the supplicant. 802.1x is used in this place to enforce the specific authentication mechanism. 
 

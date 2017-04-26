@@ -8,11 +8,11 @@ This chapter delves into the design objectives of the application, the architect
 
 \section{The Design Objectives}
 
-The finished application should be compatible with the RYU controller and be able to handle packets in real time. The following timing diagram shows how the RADIUS control flow should happen in the application for authentication.
+The finished application should be compatible with the RYU controller and be able to handle packets in real time. The timing diagram\ref{fig:Radius-Timing} shows how the RADIUS control flow should happen in the application for authentication.
 
 \subsection{RADIUS Procedure} \label{RADIUS_Procedure}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{RADIUS-Timing}
 	\caption {RADIUS Authentication Procedure - Timing Diagram }
@@ -27,8 +27,8 @@ The finished application should be compatible with the RYU controller and be abl
 	\item Once the client is authenticated, it makes a DHCP request with the access point.   
 	
 \end{enumerate}
-The following flow chart shows the authentication procedure of the RADIUS server.It also shows the step by step actions that take place in authenticating a client.
-\begin{figure}[H]
+The flowchart \ref{fig:RYU-Flowchart} shows the authentication procedure of the RADIUS server. It also shows the step by step actions that take place in authenticating a client.
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{RADIUS-Flowchart}
 	\caption {RADIUS Authentication Procedure - Flowchart }
@@ -36,9 +36,9 @@ The following flow chart shows the authentication procedure of the RADIUS server
 	\vspace{-10pt}
 \end{figure}
 \subsection{RYU Control Procedure} \label{RYU Control Procedure}
-The following timing diagram shows how the RYU is supposed to listen to the MAC address of the client and parse the packet to assing the destination port id for the client.
+The timing diagram of RYU \ref{fig:RYU-Timing} shows how the RYU is supposed to listen to the MAC address of the client and parse the packet to assing the destination port id for the client.
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{RYU-Timing}
 	\caption {RYU Control Procedure - Timing Diagram }
@@ -46,18 +46,22 @@ The following timing diagram shows how the RYU is supposed to listen to the MAC 
 	\vspace{-10pt}
 \end{figure}
 
-\begin{enumerate}
-	\item When the client initiates a DHCP request to the access point, the RYU controller listens to the clients MAC address and checks if it exists in the OVS flow table.
-	\item If it exists, apply the corresponding rule associated with the MAC. If it doesn’t exist, check the MAC in the MySQL database.
-	\item In the first scenario, if the MAC address exists in the MySQL DB, get the port ID associated with the MAC.
-	\item Apply this out port id from the database to the MAC address and add the flow to the OVS flow table and complete the DHCP response.
-	\item In the second scenario, if the MAC address does not exist in MySQL DB, add the MAC to the table and set the port id to flood mode in the OVS flow table in the access point.
-	\item Complete the DHCP response by providing an IP to the client.
-	
-\end{enumerate}
-The following flow chart will provide an overview of the control flow that would take place in the RYU controller and the OVS. Starting from learning the MAC address to assigning the port id to the MAC.
+When the client initiates a DHCP request to the access point, the RYU controller listens to the clients MAC address and checks if it exists in the OVS flow table. If it exists, then apply the corresponding rule associated for the MAC address. If it doesn’t exist, then check for the MAC address in the MySQL database. In the first scenario, if the MAC address exists in the MySQL DB, the out port ID associated with the MAC address is retrieved. The retrieved out port id is assigned to the MAC address and an entry is created in the OVS flow table and completes the process with a DHCP response.
 
-\begin{figure}[H]
+In the second scenario after the authentication of the client is successful, if the MAC address does not exist in MySQL DB. The MAC address is added to the table and the out port id is set to flood mode in the OVS flow table in the access point. The process is completed with a DHCP response by providing an IP address to the client. In case of an attack, the system becomes vulnerable only when the fake MAC address used by the client matches with the user credential used for authentication. In such cases a firewall is used to further protect the system.
+
+%\begin{enumerate}
+%	\item When the client initiates a DHCP request to the access point, the RYU controller listens to the clients MAC address and checks if it exists in the OVS flow table.
+%	\item If it exists, apply the corresponding rule associated with the MAC. If it doesn’t exist, check the MAC in the MySQL database.
+%	\item In the first scenario, if the MAC address exists in the MySQL DB, get the port ID associated with the MAC.
+%	\item Apply this out port id from the database to the MAC address and add the flow to the OVS flow table and complete the DHCP response.
+%	\item In the second scenario, if the MAC address does not exist in MySQL DB, add the MAC to the table and set the port id to flood mode in the OVS flow table in the access point.
+%	\item Complete the DHCP response by providing an IP to the client.
+%	
+%\end{enumerate}
+The flowchart  \ref{fig:RYU-Flowchart} will provide an overview of the control flow that would take place in the RYU controller and the OVS. Starting from learning the MAC address to assigning the out port id to the MAC.
+
+\begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{RYU-Flowchart}
 	\caption {RYU Control Procedure - Flowchart}
@@ -65,9 +69,13 @@ The following flow chart will provide an overview of the control flow that would
 	\vspace{-10pt}
 \end{figure}
 
+From the flowchart \ref{fig:RYU-Flowchart}, it is clear that the initial DHCP request made by the mobile client to the AP is flooded to all ports in the AP. The RYU controller captures this request and retrieves the MAC address of the client. The packet passes through two conditions, the first condition is to check whether the client MAC address is already in the table. If the MAC address exists, then the packet passes to the second condition. The second condition is where the MAC address is checked if it is associated to a corresponding out port ID.  In case, the out port ID is found. Then the packet is converted to a unicast with the assigned out port through which all the packets coming from the client will pass through to its destination in future. If the packet fails in the first condition, then the packet is dropped else if it fails in the second condition. The packet is flooded to all the ports in the OVS and the MAC address is learnt to avoid flooding in future.
+
+Due to the current OpenFlow version (v1.3) used by the OVS, it is limited to assigning only one out port per user instead of multiple ports. This feature will be available in future versions of OpenFlow when supported by OVS.
+
 \section{RYU Manager Process \cite{RYU_app_process}} \label{RYU_Manager_Process}
- For designing the application, the RYU manager process is considered. This is explained using the following diagram.
- \begin{figure}[H]
+ For designing the application, the RYU manager process is considered. This is explained using the diagram \ref{fig:RYU-Event-Process}.
+ \begin{figure}
  	\centering
  	\includegraphics[width=1.0\linewidth]{RYU-event-process}
  	\caption {RYU Manager Event Process \cite{RYU_event_process_diag}}

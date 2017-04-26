@@ -73,12 +73,12 @@ option encryption 'wpa2'
 option network 'wifi'
 \end{lstlisting}
 
-The second step would be to modify the network configuration in order to bridge the first two ethernet ports Eth0.1 and Eth0.2 and separate the rest of the ports as individual interfaces which can be seen in the configuration below. A second network is created using a new switch\_vlan that hosts the network \textit{192.168.3.1}. The full configuration file is added in the appendix of this document \nameref{app:sec:Network_config}
+The second step would be to modify the network configuration in order to create two separate networks with bridge \textit{br-lan} for the interface eth0.1 hosting the network \textit{192.168.1.1} and the bridge \textit{br-wifi} for the interfaces eth0.2, wlan0, wlan1 hosting the second network \textit{192.168.3.1} for which the client is assigned a dhcp post authentication. Separating the rest of the ports as individual interfaces allow them to be configured with OVS bridge which can be seen in the configuration below. The full configuration file is added in the appendix of this document \nameref{app:sec:Network_config}
 
 \begin{lstlisting}
 config interface 'lan'
 option type 'bridge'
-option ifname 'eth0.2'
+option ifname 'eth0.1'
 option proto 'static'
 option ipaddr '192.168.1.1'
 option netmask '255.255.255.0'
@@ -86,11 +86,14 @@ option ip6assign '60'
 
 config interface 'wifi'
 option type 'bridge'
-option ifname 'eth0.3'
+option ifname 'eth0.2'
 option proto 'static'
 option ipaddr '192.168.3.1'
 option netmask '255.255.255.0'
 option ip6assign '60'
+
+config interface 'lan2'
+option ifname 'eth0.2'
 
 config interface 'lan3'
 option ifname 'eth0.3'
@@ -100,14 +103,6 @@ option ifname 'eth0.4'
 
 config interface 'lan5'
 option ifname 'eth0.5'
-
-config switch_vlan
-option device 'switch0'
-option vlan '2'
-option ports '2 0t'
-option ipaddr '192.168.3.1'
-option netmask '255.255.255.0'
-option ip6assign '60'
 
 \end{lstlisting}
 

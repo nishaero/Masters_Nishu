@@ -7,7 +7,11 @@ A level-1 auxiliary file: 05_Control_and_Authentication_Mechanism.aux
 A level-1 auxiliary file: 06_Build_Environment.aux
 A level-1 auxiliary file: 07_Designing_the_Application.aux
 A level-1 auxiliary file: 08_Implementation.aux
+A level-1 auxiliary file: 09_Evaluation.aux
+A level-1 auxiliary file: 10_Conclusion.aux
 The style file: unsrtnat.bst
+A level-1 auxiliary file: 90_anhang_01.aux
+A level-1 auxiliary file: 90_anhang_02.aux
 Database file #1: bib/literatur.bib
 Warning--empty year in BIC:IRAP
 Warning--empty year in SDN
@@ -44,11 +48,14 @@ Warning--empty year in RFC5412L97
 Warning--empty year in IEEE802.11u
 Warning--empty year in Passpoint
 Warning--empty year in What_is_SDN
+Warning--empty year in OpenStack
 Warning--empty year in jose2011online
 Warning--empty year in WhatisOVS
+Warning--empty year in of_depl
+Warning--empty year in of_google
 Warning--empty year in OpenFlow_functionality
 Warning--empty year in Openflow_protocol_spec
 Warning--empty year in Opnflow_switch
 Warning--empty year in RADIUS_AAA
 Warning--empty year in RADIUS_components
-(There were 42 warnings)
+(There were 45 warnings)

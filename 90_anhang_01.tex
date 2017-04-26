@@ -13,13 +13,13 @@ The Wireless configuration parameters set in the \verb|[OpenWrt]| are:
 \begin{lstlisting}[frame=single]
 config wifi-device 'radio0'
 option type 'mac80211'
-option channel '11'
 option hwmode '11g'
 option path 'platform/ar934x_wmac'
 option htmode 'HT20'
 option txpower '20'
 option country 'DE'
 option disabled '0'
+option channel '5'
 
 config wifi-iface
 option device 'radio0'
@@ -27,8 +27,8 @@ option mode 'ap'
 option ssid 'OpenWrt'
 option server '192.168.1.169'
 option key 'testing123'
-option encryption 'wpa2'
 option network 'wifi'
+option encryption 'wpa2'
 
 config wifi-device 'radio1'
 option type 'mac80211'
@@ -51,6 +51,7 @@ option network 'wifi'
 \section{Network configuration}\label{app:sec:Network_config}
 The Network configuration parameters set in the \verb|[OpenWrt]| are:
 \begin{lstlisting}[frame=single]
+
 config interface 'loopback'
 option ifname 'lo'
 option proto 'static'
@@ -60,17 +61,10 @@ option netmask '255.0.0.0'
 config globals 'globals'
 option ula_prefix 'fd04:beb4:615d::/48'
 
-config interface 'wan'
-option ifname 'eth0.1'
-option proto 'dhcp'
-
-config interface 'wan6'
-option ifname 'eth0.1'
-option proto 'dhcpv6'
 
 config interface 'lan'
 option type 'bridge'
-option ifname 'eth0.2'
+option ifname 'eth0.1'
 option proto 'static'
 option ipaddr '192.168.1.1'
 option netmask '255.255.255.0'
@@ -78,39 +72,14 @@ option ip6assign '60'
 
 config interface 'wifi'
 option type 'bridge'
-option ifname 'eth0.3'
+option ifname 'eth0.2'
 option proto 'static'
 option ipaddr '192.168.3.1'
 option netmask '255.255.255.0'
 option ip6assign '60'
 
-config interface 'lan3'
-option ifname 'eth0.3'
-
-config interface 'lan4'
-option ifname 'eth0.4'
-
-config interface 'lan5'
-option ifname 'eth0.5'
-
-config switch
-option name 'switch0'
-option reset '1'
-option enable_vlan '1'
-
-config switch_vlan
-option device 'switch0'
-option vlan '1'
-option ports '1 0t'
-option vid '1'
-
-config switch_vlan
-option device 'switch0'
-option vlan '2'
-option ports '2 0t'
-option ipaddr '192.168.3.1'
-option netmask '255.255.255.0'
-option ip6assign '60'
+config interface 'lan2'
+option ifname 'eth0.2'
 
 config interface 'lan3'
 option ifname 'eth0.3'

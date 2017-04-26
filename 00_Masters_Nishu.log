@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.9)  12 APR 2017 13:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.9)  26 APR 2017 17:40
 entering extended mode
 **./00_Masters_Nishu.tex
 (00_Masters_Nishu.tex
@@ -1748,7 +1748,7 @@ LaTeX Info: Redefining \nameref on input line 202.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (include/title.tex)
-<pictures/pdf/TUC_deutsch_einzeile_CMYK.pdf, id=263, 273.02pt x 24.09pt>
+<pictures/pdf/TUC_deutsch_einzeile_CMYK.pdf, id=259, 273.02pt x 24.09pt>
 File: pictures/pdf/TUC_deutsch_einzeile_CMYK.pdf Graphic file (type pdf)
 
 <use pictures/pdf/TUC_deutsch_einzeile_CMYK.pdf>
@@ -1813,11 +1813,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]) (00_Masters_Nishu.toc [1
 
 
-] [2])
+])
 \tf@toc=\write7
 \openout7 = `00_Masters_Nishu.toc'.
 
- [3]
+ [2] [3]
 (00_Masters_Nishu.lof)
 \tf@lof=\write8
 \openout8 = `00_Masters_Nishu.lof'.
@@ -1825,17 +1825,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [4
 
 
-] (00_Masters_Nishu.lot)
-\tf@lot=\write9
-\openout9 = `00_Masters_Nishu.lot'.
-
- [5
-
-
 ]
 No file 00_Masters_Nishu.gls.
 No file 00_Masters_Nishu.acr.
-[6
+[5
+
 
 
 
@@ -1930,8 +1924,12 @@ LaTeX Font Info:    Try loading font information for TS1+lmss on input line 22.
 
 ("E:\Install Files\MiKTeX 2.9\tex\latex\lm\ts1lmss.fd"
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-<pictures/png/sdn-architecture.png, id=511, 1306.8825pt x 861.2175pt>
+) [4
+
+
+
+]
+<pictures/png/sdn-architecture.png, id=503, 1306.8825pt x 861.2175pt>
 File: pictures/png/sdn-architecture.png Graphic file (type png)
 
 <use pictures/png/sdn-architecture.png>
@@ -1940,11 +1938,7 @@ Package pdftex.def Info: pictures/png/sdn-architecture.png used on input line 2
 (pdftex.def)             Requested size: 418.25368pt x 275.6215pt.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 30.
- [4
 
-
-
-]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\begingroup' on input line 34.
@@ -1976,39 +1970,39 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 [5 <./pictures/png/sdn-architecture.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 46.
+(hyperref)                removing `\begingroup' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 46.
+(hyperref)                removing `\<let>-command' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 46.
+(hyperref)                removing `\NAT@ctype' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 46.
+(hyperref)                removing `\z@' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 46.
+(hyperref)                removing `\let' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 46.
+(hyperref)                removing `\let' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 46.
+(hyperref)                removing `\new@ifnextchar' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 46.
+(hyperref)                removing `subscript' on input line 45.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 46.
+(hyperref)                removing `subscript' on input line 45.
 
 ) [6]
 \openout2 = `04_Software_Defined_Networking.aux'.
@@ -2063,115 +2057,115 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `subscript' on input line 22.
 
 
-<pictures/png/ryu-controller-sdn-framework.png, id=549, 903.375pt x 496.85625pt
+<pictures/png/ryu-controller-sdn-framework.png, id=537, 903.375pt x 496.85625pt
 >
 File: pictures/png/ryu-controller-sdn-framework.png Graphic file (type png)
  <use pictures/png/ryu-controller-sdn-framework.png>
 Package pdftex.def Info: pictures/png/ryu-controller-sdn-framework.png used on 
-input line 38.
+input line 41.
 (pdftex.def)             Requested size: 418.25368pt x 230.0426pt.
- [8]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 44.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 44.
+(hyperref)                removing `\begingroup' on input line 47.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 44.
+(hyperref)                removing `\<let>-command' on input line 47.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 44.
+(hyperref)                removing `\NAT@ctype' on input line 47.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 44.
+(hyperref)                removing `\z@' on input line 47.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 44.
+(hyperref)                removing `\let' on input line 47.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 44.
+(hyperref)                removing `\let' on input line 47.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 44.
+(hyperref)                removing `\new@ifnextchar' on input line 47.
 
 
-<pictures/jpg/floodlight-open-sdn-controller-diagram.jpg, id=557, 489.83pt x 79
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 47.
+
+[8]
+<pictures/jpg/floodlight-open-sdn-controller-diagram.jpg, id=548, 489.83pt x 79
 1.95876pt>
 File: pictures/jpg/floodlight-open-sdn-controller-diagram.jpg Graphic file (typ
 e jpg)
  <use pictures/jpg/floodlight-open-sdn-controller-diagram.jpg>
 Package pdftex.def Info: pictures/jpg/floodlight-open-sdn-controller-diagram.jp
-g used on input line 52.
+g used on input line 55.
 (pdftex.def)             Requested size: 418.26338pt x 591.53867pt.
 
-[9 <./pictures/png/ryu-controller-sdn-framework.png>]
-Overfull \vbox (13.60846pt too high) has occurred while \output is active []
 
+LaTeX Warning: Float too large for page by 13.60846pt on input line 58.
 
-[10 <./pictures/jpg/floodlight-open-sdn-controller-diagram.jpg>]
-<pictures/jpg/Architectural_Framework.jpg, id=569, 719.68875pt x 436.63126pt>
+[9 <./pictures/png/ryu-controller-sdn-framework.png>] [10 <./pictures/jpg/flood
+light-open-sdn-controller-diagram.jpg>]
+<pictures/jpg/Architectural_Framework.jpg, id=560, 719.68875pt x 436.63126pt>
 File: pictures/jpg/Architectural_Framework.jpg Graphic file (type jpg)
 
 <use pictures/jpg/Architectural_Framework.jpg>
 Package pdftex.def Info: pictures/jpg/Architectural_Framework.jpg used on input
- line 72.
+ line 77.
 (pdftex.def)             Requested size: 418.25368pt x 253.75931pt.
  [11 <./pictures/jpg/Architectural_Framework.jpg>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 87.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 86.
  [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 91.
+(hyperref)                removing `\begingroup' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 91.
+(hyperref)                removing `\<let>-command' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 91.
+(hyperref)                removing `\NAT@ctype' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 91.
+(hyperref)                removing `\z@' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 91.
+(hyperref)                removing `\let' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 91.
+(hyperref)                removing `\let' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 91.
+(hyperref)                removing `\new@ifnextchar' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 91.
+(hyperref)                removing `subscript' on input line 96.
 
-<pictures/jpg/ovs_schema.jpg, id=593, 716.6775pt x 596.2275pt>
+<pictures/jpg/ovs_schema.jpg, id=586, 716.6775pt x 596.2275pt>
 File: pictures/jpg/ovs_schema.jpg Graphic file (type jpg)
 
 <use pictures/jpg/ovs_schema.jpg>
-Package pdftex.def Info: pictures/jpg/ovs_schema.jpg used on input line 97.
+Package pdftex.def Info: pictures/jpg/ovs_schema.jpg used on input line 102.
 (pdftex.def)             Requested size: 418.25368pt x 347.96834pt.
- [13] [14 <./pictures/jpg/ovs_schema.jpg>])
-[15]
+) [13] [14 <./pictures/jpg/ovs_schema.jpg>]
 \openout2 = `05_Control_and_Authentication_Mechanism.aux'.
 
- (05_Control_and_Authentication_Mechanism.tex
+
+(05_Control_and_Authentication_Mechanism.tex
 chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -2201,26 +2195,32 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 16.
 
-[16
+
+Overfull \hbox (2.3516pt too wide) in paragraph at lines 20--21
+[]\T1/lmss/m/n/12 OpenWrt is de-signed for power users who re-quire cus-tomiz-a
+bil-ity over the stock firmware
+ []
+
+[15
 
 
 
-] <pictures/jpg/openwrt4-terminal.jpg, id=615, 417.05812pt x 371.13657pt>
+] <pictures/jpg/openwrt4-terminal.jpg, id=605, 417.05812pt x 371.13657pt>
 File: pictures/jpg/openwrt4-terminal.jpg Graphic file (type jpg)
 
 <use pictures/jpg/openwrt4-terminal.jpg>
 Package pdftex.def Info: pictures/jpg/openwrt4-terminal.jpg used on input line 
 37.
 (pdftex.def)             Requested size: 418.25368pt x 372.22296pt.
- [17]
-<pictures/png/bootstrap-luci-theme.png, id=622, 962.59625pt x 582.175pt>
+
+<pictures/png/bootstrap-luci-theme.png, id=608, 962.59625pt x 582.175pt>
 File: pictures/png/bootstrap-luci-theme.png Graphic file (type png)
 
 <use pictures/png/bootstrap-luci-theme.png>
 Package pdftex.def Info: pictures/png/bootstrap-luci-theme.png used on input li
 ne 44.
 (pdftex.def)             Requested size: 418.25368pt x 252.95093pt.
- [18 <./pictures/jpg/openwrt4-terminal.jpg>]
+
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\begingroup' on input line 50.
@@ -2249,39 +2249,33 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\new@ifnextchar' on input line 50.
 
-<pictures/png/of-features.png, id=630, 484.81125pt x 264.99pt>
-File: pictures/png/of-features.png Graphic file (type png)
-
-<use pictures/png/of-features.png>
-Package pdftex.def Info: pictures/png/of-features.png used on input line 60.
-(pdftex.def)             Requested size: 418.25368pt x 228.62285pt.
- [19 <./pictures/png/bootstrap-luci-theme.png>] <pictures/png/of-protocol.png, 
-id=641, 666.49pt x 726.715pt>
+[16] [17 <./pictures/jpg/openwrt4-terminal.jpg>]
+<pictures/png/of-protocol.png, id=628, 666.49pt x 726.715pt>
 File: pictures/png/of-protocol.png Graphic file (type png)
 
 <use pictures/png/of-protocol.png>
 Package pdftex.def Info: pictures/png/of-protocol.png used on input line 71.
 (pdftex.def)             Requested size: 418.25368pt x 456.05865pt.
- [20 <./pictures/png/of-features.png>]
-[21 <./pictures/png/of-protocol.png>]
-<pictures/png/of-switch-anatomy.png, id=659, 336.25626pt x 209.78375pt>
+ [18 <./pictures/png/bootstrap-luci-theme.png>] [19 <./pictures/png/of-protocol
+.png>]
+<pictures/png/of-switch-anatomy.png, id=648, 336.25626pt x 209.78375pt>
 File: pictures/png/of-switch-anatomy.png Graphic file (type png)
 
 <use pictures/png/of-switch-anatomy.png>
 Package pdftex.def Info: pictures/png/of-switch-anatomy.png used on input line 
 96.
 (pdftex.def)             Requested size: 418.25368pt x 260.9422pt.
- [22]
-<pictures/png/of-switch-agent-anatomy.png, id=670, 386.44376pt x 166.6225pt>
+
+<pictures/png/of-switch-agent-anatomy.png, id=653, 386.44376pt x 166.6225pt>
 File: pictures/png/of-switch-agent-anatomy.png Graphic file (type png)
 
 <use pictures/png/of-switch-agent-anatomy.png>
 Package pdftex.def Info: pictures/png/of-switch-agent-anatomy.png used on input
  line 106.
 (pdftex.def)             Requested size: 418.25368pt x 180.33861pt.
- [23 <./pictures/png/of-switch-anatomy.png> <./pictures/png/of-switch-agent-ana
-tomy.png>]
-<pictures/png/Of-data-plane-flow.png, id=681, 474.77374pt x 250.9375pt>
+ [20] [21 <./pictures/png/of-switch-anatomy.png> <./pictures/png/of-switch-agen
+t-anatomy.png>]
+<pictures/png/Of-data-plane-flow.png, id=670, 474.77374pt x 250.9375pt>
 File: pictures/png/Of-data-plane-flow.png Graphic file (type png)
 
 <use pictures/png/Of-data-plane-flow.png>
@@ -2289,14 +2283,14 @@ Package pdftex.def Info: pictures/png/Of-data-plane-flow.png used on input line
  125.
 (pdftex.def)             Requested size: 418.25368pt x 221.07455pt.
 
-<pictures/png/Of-packet-lifecycle.png, id=685, 712.6625pt x 138.5175pt>
+<pictures/png/Of-packet-lifecycle.png, id=674, 712.6625pt x 138.5175pt>
 File: pictures/png/Of-packet-lifecycle.png Graphic file (type png)
 
 <use pictures/png/Of-packet-lifecycle.png>
 Package pdftex.def Info: pictures/png/Of-packet-lifecycle.png used on input lin
 e 135.
 (pdftex.def)             Requested size: 418.25368pt x 81.29343pt.
- [24 <./pictures/png/Of-data-plane-flow.png>]
+ [22 <./pictures/png/Of-data-plane-flow.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\begingroup' on input line 156.
@@ -2329,73 +2323,72 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `subscript' on input line 156.
 
-[25 <./pictures/png/Of-packet-lifecycle.png>] [26]
-<pictures/jpg/RADIUS-components.jpg, id=713, 183.5658pt x 113.82526pt>
+[23 <./pictures/png/Of-packet-lifecycle.png>] [24]
+<pictures/jpg/RADIUS-components.jpg, id=704, 183.5658pt x 113.82526pt>
 File: pictures/jpg/RADIUS-components.jpg Graphic file (type jpg)
 
 <use pictures/jpg/RADIUS-components.jpg>
 Package pdftex.def Info: pictures/jpg/RADIUS-components.jpg used on input line 
-193.
+206.
 (pdftex.def)             Requested size: 418.25368pt x 259.35403pt.
+ [25 <./pictures/jpg/RADIUS-components.jpg>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 206.
+(Font)              <7> on input line 219.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 206.
- [27 <./pictures/jpg/RADIUS-components.jpg>] <pictures/jpg/radius-operation.jpg
-, id=732, 185.7339pt x 157.18726pt>
+(Font)              <5> on input line 219.
+ <pictures/jpg/radius-operation.jpg, id=712, 185.7339pt x 157.18726pt>
 File: pictures/jpg/radius-operation.jpg Graphic file (type jpg)
 
 <use pictures/jpg/radius-operation.jpg>
 Package pdftex.def Info: pictures/jpg/radius-operation.jpg used on input line 2
-35.
+48.
 (pdftex.def)             Requested size: 418.25368pt x 353.99661pt.
- [28]
-Overfull \hbox (18.3905pt too wide) in paragraph at lines 246--247
+ [26] [27 <./pictures/jpg/radius-operation.jpg>]
+Overfull \hbox (18.3905pt too wide) in paragraph at lines 259--260
 []\T1/lmss/bx/n/12 STEP 5:\T1/lmss/m/n/12 Upon suc-cess-fully es-tab-lish-ing a
  con-nec-tion, the client sends an Accounting-
  []
 
-[29 <./pictures/jpg/radius-operation.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 251.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 251.
+(hyperref)                removing `\begingroup' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 251.
+(hyperref)                removing `\<let>-command' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 251.
+(hyperref)                removing `\NAT@ctype' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 251.
+(hyperref)                removing `\z@' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 251.
+(hyperref)                removing `\let' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 251.
+(hyperref)                removing `\let' on input line 264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 251.
+(hyperref)                removing `\new@ifnextchar' on input line 264.
 
-[30] <pictures/png/WLAN_8021x_Auth.png, id=755, 514.92375pt x 394.47375pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 264.
+
+[28] <pictures/png/WLAN_8021x_Auth.png, id=745, 514.92375pt x 394.47375pt>
 File: pictures/png/WLAN_8021x_Auth.png Graphic file (type png)
 
 <use pictures/png/WLAN_8021x_Auth.png>
-Package pdftex.def Info: pictures/png/WLAN_8021x_Auth.png used on input line 26
-8.
+Package pdftex.def Info: pictures/png/WLAN_8021x_Auth.png used on input line 28
+1.
 (pdftex.def)             Requested size: 418.25368pt x 320.42485pt.
- [31 <./pictures/png/WLAN_8021x_Auth.png>]) [32]
+ [29 <./pictures/png/WLAN_8021x_Auth.png>]) [30]
 \openout2 = `06_Build_Environment.aux'.
 
  (06_Build_Environment.tex
@@ -2496,7 +2489,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `subscript' on input line 13.
 
-[33
+[31
 
 
 
@@ -2537,104 +2530,104 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `subscript' on input line 41.
 
-[34]) [35]
+[32]) [33]
 \openout2 = `07_Designing_the_Application.aux'.
 
  (07_Designing_the_Application.tex
 chapter 6.
-<pictures/png/RADIUS-Timing.png, id=826, 1168.365pt x 954.56625pt>
+<pictures/png/RADIUS-Timing.png, id=817, 1194.4625pt x 953.5625pt>
 File: pictures/png/RADIUS-Timing.png Graphic file (type png)
 
 <use pictures/png/RADIUS-Timing.png>
 Package pdftex.def Info: pictures/png/RADIUS-Timing.png used on input line 17.
-(pdftex.def)             Requested size: 418.25368pt x 341.72095pt.
- [36
+(pdftex.def)             Requested size: 418.25368pt x 333.89738pt.
 
-
-
-]
-<pictures/png/RADIUS-Flowchart.png, id=831, 935.495pt x 930.47626pt>
+<pictures/png/RADIUS-Flowchart.png, id=819, 831.105pt x 951.555pt>
 File: pictures/png/RADIUS-Flowchart.png Graphic file (type png)
 
 <use pictures/png/RADIUS-Flowchart.png>
 Package pdftex.def Info: pictures/png/RADIUS-Flowchart.png used on input line 3
 3.
-(pdftex.def)             Requested size: 418.25368pt x 416.01285pt.
- [37 <./pictures/png/RADIUS-Timing.png>] <pictures/png/RYU-Timing.png, id=841, 
-1153.30875pt x 954.56625pt>
+(pdftex.def)             Requested size: 418.25368pt x 478.86899pt.
+
+<pictures/png/RYU-Timing.png, id=821, 1194.4625pt x 953.5625pt>
 File: pictures/png/RYU-Timing.png Graphic file (type png)
 
 <use pictures/png/RYU-Timing.png>
 Package pdftex.def Info: pictures/png/RYU-Timing.png used on input line 43.
-(pdftex.def)             Requested size: 418.25368pt x 346.178pt.
- [38 <./pictures/png/RADIUS-Flowchart.png>]
-[39 <./pictures/png/RYU-Timing.png>]
-<pictures/png/RYU-Flowchart.png, id=858, 1153.30875pt x 1550.79375pt>
+(pdftex.def)             Requested size: 418.25368pt x 333.89738pt.
+ [34
+
+
+
+] [35 <./pictures/png/RADIUS-Timing.png>]
+[36 <./pictures/png/RADIUS-Flowchart.png>] [37 <./pictures/png/RYU-Timing.png>]
+<pictures/png/RYU-Flowchart.png, id=847, 1153.30875pt x 1550.79375pt>
 File: pictures/png/RYU-Flowchart.png Graphic file (type png)
 
 <use pictures/png/RYU-Flowchart.png>
-Package pdftex.def Info: pictures/png/RYU-Flowchart.png used on input line 62.
+Package pdftex.def Info: pictures/png/RYU-Flowchart.png used on input line 66.
 (pdftex.def)             Requested size: 418.25368pt x 562.40273pt.
- [40]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 68.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 68.
+(hyperref)                removing `\begingroup' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 68.
+(hyperref)                removing `\<let>-command' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 68.
+(hyperref)                removing `\NAT@ctype' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 68.
+(hyperref)                removing `\z@' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 68.
+(hyperref)                removing `\let' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 68.
+(hyperref)                removing `\let' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 68.
+(hyperref)                removing `\new@ifnextchar' on input line 76.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 68.
+(hyperref)                removing `subscript' on input line 76.
 
-<pictures/png/RYU-event-process.png, id=865, 792.561pt x 537.207pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 76.
+
+<pictures/png/RYU-event-process.png, id=851, 792.561pt x 537.207pt>
 File: pictures/png/RYU-event-process.png Graphic file (type png)
 
 <use pictures/png/RYU-event-process.png>
 Package pdftex.def Info: pictures/png/RYU-event-process.png used on input line 
-72.
+80.
 (pdftex.def)             Requested size: 418.25368pt x 283.50517pt.
- [41 <./pictures/png/RYU-Flowchart.png>] [42 <./pictures/png/RYU-event-process.
-png>]
+ [38] [39 <./pictures/png/RYU-Flowchart.png>] [40 <./pictures/png/RYU-event-pro
+cess.png>]
 ("E:\Install Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [43] [44]
-Overfull \hbox (13.93022pt too wide) in paragraph at lines 169--170
+) [41] [42]
+Overfull \hbox (13.93022pt too wide) in paragraph at lines 177--178
 []\T1/lmss/m/n/12 The vari-able \T1/lmss/m/sl/12 out_port \T1/lmss/m/n/12 is as
 -signed a FLOOD mode and the parser \T1/lmss/m/sl/12 parser.OFPActionOutput
  []
 
-) [45]
+) [43]
 \openout2 = `08_Implementation.aux'.
 
  (08_Implementation.tex
 chapter 7.
-[46
+[44
 
 
 
@@ -2650,99 +2643,99 @@ Overfull \hbox (39.7658pt too wide) in paragraph at lines 25--27
 lmss/m/sl/12 wdr4300v1_en_3_14_3_up_boot(150518).bin\T1/lmss/m/n/12 . 
  []
 
-<pictures/png/network-ovs.png, id=984, 836.12375pt x 486.81876pt>
+<pictures/png/network-ovs.png, id=974, 836.12375pt x 486.81876pt>
 File: pictures/png/network-ovs.png Graphic file (type png)
 
 <use pictures/png/network-ovs.png>
 Package pdftex.def Info: pictures/png/network-ovs.png used on input line 34.
 (pdftex.def)             Requested size: 418.25368pt x 243.52763pt.
 
-<pictures/png/network-hostapd.png, id=985, 838.13126pt x 486.81876pt>
+<pictures/png/network-hostapd.png, id=975, 838.13126pt x 486.81876pt>
 File: pictures/png/network-hostapd.png Graphic file (type png)
 
 <use pictures/png/network-hostapd.png>
 Package pdftex.def Info: pictures/png/network-hostapd.png used on input line 42
 .
 (pdftex.def)             Requested size: 418.25368pt x 242.93336pt.
- [47 <./pictures/png/network-ovs.png>]
-[48 <./pictures/png/network-hostapd.png>] [49]
-<pictures/png/two-ssid.png, id=1057, 1084.05pt x 1927.2pt>
+ [45 <./pictures/png/network-ovs.png>]
+[46 <./pictures/png/network-hostapd.png>] [47]
+<pictures/png/two-ssid.png, id=1046, 1084.05pt x 1927.2pt>
 File: pictures/png/two-ssid.png Graphic file (type png)
 
 <use pictures/png/two-ssid.png>
-Package pdftex.def Info: pictures/png/two-ssid.png used on input line 196.
+Package pdftex.def Info: pictures/png/two-ssid.png used on input line 191.
 (pdftex.def)             Requested size: 208.05583pt x 369.87704pt.
- [50]
-Overfull \hbox (65.35066pt too wide) in paragraph at lines 207--208
+ [48]
+Overfull \hbox (65.35066pt too wide) in paragraph at lines 202--203
 []\T1/lmss/m/n/12 To set the con-troller for OVS, the com-mand \T1/lmss/m/sl/12
  ovs-vsctl set-controller br0 tcp:192.168.1.207:6633
  []
 
-[51 <./pictures/png/two-ssid.png>] [52]
+[49 <./pictures/png/two-ssid.png>] [50]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\begingroup' on input line 235.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 235.
+(hyperref)                removing `\begingroup' on input line 230.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\NAT@ctype' on input line 235.
+(hyperref)                removing `\<let>-command' on input line 230.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 235.
+(hyperref)                removing `\NAT@ctype' on input line 230.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 235.
+(hyperref)                removing `\z@' on input line 230.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\let' on input line 235.
+(hyperref)                removing `\let' on input line 230.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 235.
+(hyperref)                removing `\let' on input line 230.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 235.
+(hyperref)                removing `\new@ifnextchar' on input line 230.
 
-[53]) [54]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 230.
+
+[51]) [52]
 \openout2 = `09_Evaluation.aux'.
 
  (09_Evaluation.tex
 chapter 8.
-<pictures/png/Physical-Layout.png, id=1143, 948.54375pt x 1082.0425pt>
+<pictures/png/Physical-Layout.png, id=1128, 948.54375pt x 1078.0275pt>
 File: pictures/png/Physical-Layout.png Graphic file (type png)
 
 <use pictures/png/Physical-Layout.png>
 Package pdftex.def Info: pictures/png/Physical-Layout.png used on input line 11
 .
-(pdftex.def)             Requested size: 418.25368pt x 477.12383pt.
- [55
+(pdftex.def)             Requested size: 418.25368pt x 475.35342pt.
+ [53
 
 
 
-] [56 <./pictures/png/Physical-Layout.png>] [57] <pictures/png/Enable-IIS.png, 
-id=1162, 570.33075pt x 317.988pt>
+] [54 <./pictures/png/Physical-Layout.png>] <pictures/png/Enable-IIS.png, id=11
+42, 570.33075pt x 317.988pt>
 File: pictures/png/Enable-IIS.png Graphic file (type png)
 
 <use pictures/png/Enable-IIS.png>
 Package pdftex.def Info: pictures/png/Enable-IIS.png used on input line 56.
 (pdftex.def)             Requested size: 418.25368pt x 233.20161pt.
 
-<pictures/png/IIS-www.png, id=1163, 616.704pt x 320.99925pt>
+<pictures/png/IIS-www.png, id=1143, 616.704pt x 320.99925pt>
 File: pictures/png/IIS-www.png Graphic file (type png)
 
 <use pictures/png/IIS-www.png>
 Package pdftex.def Info: pictures/png/IIS-www.png used on input line 63.
 (pdftex.def)             Requested size: 418.25368pt x 217.70842pt.
- [58 <./pictures/png/Enable-IIS.png>] [59 <./pictures/png/IIS-www.png>]
-<pictures/png/Bandwidth-without-ryu-server-server.jpg, id=1182, 481.8pt x 361.3
+ [55] [56 <./pictures/png/Enable-IIS.png> <./pictures/png/IIS-www.png>] [57]
+<pictures/png/Bandwidth-without-ryu-server-server.jpg, id=1167, 481.8pt x 361.3
 5pt>
 File: pictures/png/Bandwidth-without-ryu-server-server.jpg Graphic file (type j
 pg)
@@ -2751,7 +2744,7 @@ Package pdftex.def Info: pictures/png/Bandwidth-without-ryu-server-server.jpg u
 sed on input line 120.
 (pdftex.def)             Requested size: 284.53154pt x 213.39867pt.
 
-<pictures/png/Bandwidth-with-ryu-server-server.jpg, id=1183, 481.8pt x 361.35pt
+<pictures/png/Bandwidth-with-ryu-server-server.jpg, id=1168, 481.8pt x 361.35pt
 >
 File: pictures/png/Bandwidth-with-ryu-server-server.jpg Graphic file (type jpg)
 
@@ -2759,9 +2752,9 @@ File: pictures/png/Bandwidth-with-ryu-server-server.jpg Graphic file (type jpg)
 Package pdftex.def Info: pictures/png/Bandwidth-with-ryu-server-server.jpg used
  on input line 122.
 (pdftex.def)             Requested size: 284.53154pt x 213.39867pt.
- [60] [61 <./pictures/png/Bandwidth-without-ryu-server-server.jpg> <./pictures/
+ [58] [59 <./pictures/png/Bandwidth-without-ryu-server-server.jpg> <./pictures/
 png/Bandwidth-with-ryu-server-server.jpg>]
-<pictures/png/Bandwidth-without-ryu-server-client.jpg, id=1195, 481.8pt x 361.3
+<pictures/png/Bandwidth-without-ryu-server-client.jpg, id=1181, 481.8pt x 361.3
 5pt>
 File: pictures/png/Bandwidth-without-ryu-server-client.jpg Graphic file (type j
 pg)
@@ -2770,7 +2763,7 @@ Package pdftex.def Info: pictures/png/Bandwidth-without-ryu-server-client.jpg u
 sed on input line 136.
 (pdftex.def)             Requested size: 284.53154pt x 213.39867pt.
 
-<pictures/png/Bandwidth-with-ryu-server-client.jpg, id=1196, 481.8pt x 361.35pt
+<pictures/png/Bandwidth-with-ryu-server-client.jpg, id=1182, 481.8pt x 361.35pt
 >
 File: pictures/png/Bandwidth-with-ryu-server-client.jpg Graphic file (type jpg)
 
@@ -2778,17 +2771,17 @@ File: pictures/png/Bandwidth-with-ryu-server-client.jpg Graphic file (type jpg)
 Package pdftex.def Info: pictures/png/Bandwidth-with-ryu-server-client.jpg used
  on input line 138.
 (pdftex.def)             Requested size: 284.53154pt x 213.39867pt.
- [62] [63 <./pictures/png/Bandwidth-without-ryu-server-client.jpg> <./pictures/
-png/Bandwidth-with-ryu-server-client.jpg>] [64]) [65]
+ [60] [61 <./pictures/png/Bandwidth-without-ryu-server-client.jpg> <./pictures/
+png/Bandwidth-with-ryu-server-client.jpg>] [62]) [63]
 \openout2 = `10_Conclusion.aux'.
 
  (10_Conclusion.tex
 chapter 9.
-[66
+[64
 
 
 
-]) [67] (00_Masters_Nishu.bbl
+]) [65] (00_Masters_Nishu.bbl
 chapter without number
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 10.
 ("E:\Install Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
@@ -2823,7 +2816,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--59
 nd -[] why -[] should -[] i -[] use -[]
  []
 
-[68
+[66
 
 
 ]
@@ -2874,7 +2867,7 @@ Underfull \hbox (badness 2253) in paragraph at lines 161--165
 42).  [][]$\T1/lmtt/m/n/12 http : / / flowgrammable . org / static /
  []
 
-[69]
+[67]
 Underfull \hbox (badness 5431) in paragraph at lines 167--172
 []\T1/lmss/m/n/12 switch_anatomy.png (335\TS1/lmss/m/n/12 Ö\T1/lmss/m/n/12 209)
 .  [][]$\T1/lmtt/m/n/12 http : / / flowgrammable . org / static /
@@ -2946,48 +2939,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 237--242
 ] software -[] defined -[]
  []
 
-[70]
-Underfull \hbox (badness 2065) in paragraph at lines 285--288
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 290--295
+[]\T1/lmss/m/n/12 Special-report-openflow-and-sdn-state-of-the-union-b.pdf.  []
+[]$\T1/lmtt/m/n/12 https : / / www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--295
+\T1/lmtt/m/n/12 opennetworking . org / images / stories / downloads / sdn -[] r
+esources /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--295
+\T1/lmtt/m/n/12 special -[] reports / Special -[] Report -[] OpenFlow -[] and -
+[] SDN -[] State -[] of -[] the -[]
+ []
+
+
+Underfull \hbox (badness 5217) in paragraph at lines 297--302
+[]\T1/lmss/m/n/12 42948.pdf.  [][]$\T1/lmtt/m/n/12 http : / / static . googleus
+ercontent . com / media / research .
+ []
+
+
+Underfull \hbox (badness 2065) in paragraph at lines 304--307
 []\T1/lmss/m/n/12 Openflow  what is open-flow?  [][]$\T1/lmtt/m/n/12 http : / 
 / archive . openflow . org / wp /
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 290--294
+Underfull \hbox (badness 3803) in paragraph at lines 309--313
 []\T1/lmss/m/n/12 Sdn / open-flow | flow-grammable.  [][]$\T1/lmtt/m/n/12 http 
 : / / flowgrammable . org / sdn /
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 296--299
+Underfull \hbox (badness 3803) in paragraph at lines 315--318
 []\T1/lmss/m/n/12 Sdn / open-flow | flow-grammable.  [][]$\T1/lmtt/m/n/12 http 
 : / / flowgrammable . org / sdn /
  []
 
-) [71] [72
+[69]) [70] [71
 
 ]
 \openout2 = `90_anhang_01.aux'.
 
  (90_anhang_01.tex
 chapter A.
-[73
+[72
 
 
-] [74] [75] [76] [77]
+] [73] [74] [75]
 chapter B.
-[78
+[76
 
-] [79] [80]) [81]
+] [77] [78]) [79]
 \openout2 = `90_anhang_02.aux'.
 
  (90_anhang_02.tex
 chapter C.
-[82
+[80
 
 
 
-] [83] [84] [85]) [86]
+] [81] [82] [83]) [84]
 chapter without number
 
 Overfull \hbox (5.79388pt too wide) in paragraph at lines 292--302
@@ -2997,7 +3014,7 @@ Her-stel-lung des Manuskripts
 
 \us=\skip90
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 315.
-[87
+[85
 
 
 ]
@@ -3010,13 +3027,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 315.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 315.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 315.
 Package rerunfilecheck Info: File `00_Masters_Nishu.out' has not changed.
-(rerunfilecheck)             Checksum: 5C4DCD62E3F0B2C2B34DCFB9A8E87C78;4530.
+(rerunfilecheck)             Checksum: 1990B841E57942777E0C122B508F59C4;4478.
  ) 
 Here is how much of TeX's memory you used:
- 30453 strings out of 493333
- 527725 string characters out of 3139186
- 1011055 words of memory out of 3000000
- 32341 multiletter control sequences out of 15000+200000
+ 30403 strings out of 493333
+ 526922 string characters out of 3139186
+ 1012037 words of memory out of 3000000
+ 32339 multiletter control sequences out of 15000+200000
  94329 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,89p,10456b,1959s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3032,9 +3049,9 @@ TeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><E:/Install Files/MiKTeX 2.9/fonts/t
 ype1/public/lm/lmsso10.pfb><E:/Install Files/MiKTeX 2.9/fonts/type1/public/lm/l
 msso12.pfb><E:/Install Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><E:/In
 stall Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on 00_Masters_Nishu.pdf (96 pages, 2525324 bytes).
+Output written on 00_Masters_Nishu.pdf (93 pages, 2398211 bytes).
 PDF statistics:
- 2194 PDF objects out of 2487 (max. 8388607)
- 1058 named destinations out of 1200 (max. 500000)
- 681 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2148 PDF objects out of 2487 (max. 8388607)
+ 1014 named destinations out of 1200 (max. 500000)
+ 668 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{49}
+\begin{thebibliography}{52}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -240,6 +240,11 @@ What’s software-defined networking (sdn)?
   {\natexlab{c}}.
 \newblock (Accessed on 03/06/2017).
 
+\bibitem[Ope({\natexlab{a}})]{OpenStack}
+What is {OpenStack}?, {\natexlab{a}}.
+\newblock URL \url{http://www.openstack.org/software/}.
+\newblock Online; accessed 06-November-2016.
+
 \bibitem[Jose et~al.()Jose, Yu, and Rexford]{jose2011online}
 Lavanya Jose, Minlan Yu, and Jennifer Rexford.
 \newblock Online measurement of large traffic aggregates on commodity switches.
@@ -281,15 +286,29 @@ What is open vswitch (ovs)?
   {\natexlab{d}}.
 \newblock (Accessed on 03/14/2017).
 
-\bibitem[Ope({\natexlab{a}})]{OpenFlow_functionality}
+\bibitem[of_({\natexlab{a}})]{of_depl}
+Special-report-openflow-and-sdn-state-of-the-union-b.pdf.
+\newblock
+  \url{https://www.opennetworking.org/images/stories/downloads/sdn-resources/special-reports/Special-Report-OpenFlow-and-SDN-State-of-the-Union-B.pdf},
+  {\natexlab{a}}.
+\newblock (Accessed on 04/26/2017).
+
+\bibitem[of_({\natexlab{b}})]{of_google}
+42948.pdf.
+\newblock
+  \url{http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42948.pdf},
+  {\natexlab{b}}.
+\newblock (Accessed on 04/26/2017).
+
+\bibitem[Ope({\natexlab{b}})]{OpenFlow_functionality}
 Openflow » what is openflow?
-\newblock \url{http://archive.openflow.org/wp/learnmore/}, {\natexlab{a}}.
+\newblock \url{http://archive.openflow.org/wp/learnmore/}, {\natexlab{b}}.
 \newblock (Accessed on 03/16/2017).
 
-\bibitem[Ope({\natexlab{b}})]{Openflow_protocol_spec}
+\bibitem[Ope({\natexlab{c}})]{Openflow_protocol_spec}
 Sdn / openflow | flowgrammable.
 \newblock \url{http://flowgrammable.org/sdn/openflow/#tab_protocol},
-  {\natexlab{b}}.
+  {\natexlab{c}}.
 \newblock (Accessed on 03/16/2017).
 
 \bibitem[Opn()]{Opnflow_switch}
