@@ -150,13 +150,6 @@ bootstrap-luci-theme.png (959×580).
   {\natexlab{b}}.
 \newblock (Accessed on 03/16/2017).
 
-\bibitem[ope({\natexlab{c}})]{openflow_features}
-12-8-openflow-diagram.jpg (417×348).
-\newblock
-  \url{https://www.opennetworking.org/images/stories/sdn-resources/openflow/12-8-OpenFlow-Diagram.jpg},
-  {\natexlab{c}}.
-\newblock (Accessed on 03/16/2017).
-
 \bibitem[of_()]{of_protocol_spec_img}
 openflow-protocol.png (217×242).
 \newblock
@@ -328,5 +321,10 @@ Radius protocol and components.
   \url{https://technet.microsoft.com/en-us/library/cc726017(v=ws.10).aspx},
   {\natexlab{b}}.
 \newblock (Accessed on 03/17/2017).
+
+\bibitem[man()]{man_ofctl}
+openvswitch.org/support/dist-docs/ovs-ofctl.8.txt.
+\newblock \url{http://openvswitch.org/support/dist-docs/ovs-ofctl.8.txt}.
+\newblock (Accessed on 05/08/2017).
 
 \end{thebibliography}

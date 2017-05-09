@@ -6,7 +6,7 @@
 \chapter{Build Environment} \label{ch:build_environment}
 This chapter discusses on how the development environment is set up starting with the RYU controller from Git repository and OpenWrt to build firmware for the TP-Link WDR4300 test router.
 \section{RYU in Python virtual environment \cite{Install_virtualenv}} \label{virtualenv}
-Python by default stores all its packages in a global location accessible from any were within the system. Though this may sound advantageous, like many other programming language, uses its own way to store, download and retrieve its packages. Python uses same site packages directory to install 3rd-party packages and different versions of python also reside in the same location. 
+Python by default stores all its packages in a global location accessible from any were within the system. Though this may sound advantageous, like many other programming languages, uses its own way to store, download and retrieve its packages. Python uses same site-packages directory to install 3rd-party packages and different versions of python also reside in the same location. 
 
 Python couldn’t differentiate between different versions and thus creates dependency issues. To resolve this problem, a virtual environment is used for setting up an isolated location for Python projects. In a virtual environment, each project can have its own dependencies. There is also no limit to the number of environments that can be created since they are just directories containing scripts. 
 
@@ -39,7 +39,7 @@ To install the virtual environment in Linux, the following python package manage
 \end{enumerate}
 
 \section{OpenWrt Build System \cite{OpenWrt_build_root}} \label{OpenWrt_build}
-OpenWrt supports building custom firmware to any supported hardware. For this thesis, TP-Link WDR4300 is chosen because of its compatibility with OpenWrt, a larger RAM and ROM for adding more packages and functionality, and suppport for multiple SSIDs which is necessary for this thesis in order to simulate two different network.
+OpenWrt supports building the custom firmware to any supported hardware. For this thesis, TP-Link WDR4300 is chosen because of its compatibility with OpenWrt, a larger RAM and ROM for adding more packages and functionality and support for multiple SSIDs which is necessary for this thesis in order to simulate two different network.
 \subsection{Hardware Prerequisites}
 The following requisites must be met to generate an installable firmware on a supported hardware.
 \begin{itemize}

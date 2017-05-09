@@ -1,44 +1,50 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces SDN architecture diagram\cite {SDN:architecture}\relax }}{5}{figure.caption.3}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces SDN architecture diagram\cite {SDN:architecture}\relax }}{5}{figure.caption.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces RYU SDN Controller Framework \cite {ryu_framewrk_png}\relax }}{9}{figure.caption.4}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Floodlight Controller architecture \cite {Floodlight_arch}\relax }}{10}{figure.caption.5}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces OpenDaylight Architecture Framework \cite {OpenDaylight_framework}\relax }}{11}{figure.caption.6}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Open vSwitch features \cite {ovs_features}\relax }}{14}{figure.caption.7}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces RYU SDN Controller Framework \cite {ryu_framewrk_png}\relax }}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Floodlight Controller architecture \cite {Floodlight_arch}\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces OpenDaylight Architecture Framework \cite {OpenDaylight_framework}\relax }}{12}{figure.caption.9}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Open vSwitch features \cite {ovs_features}\relax }}{14}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces OpenWrt Terminal View \cite {openwrt_terminal_img}\relax }}{17}{figure.caption.8}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces OpenWrt GUI Interface \cite {openwrt_luci_img}\relax }}{18}{figure.caption.9}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces OpenFlow Protocol \cite {of_protocol_spec_img}\relax }}{19}{figure.caption.12}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces OpenFlow Switch Anatomy \cite {Of_Switch_img}\relax }}{21}{figure.caption.14}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces OpenFlow Switch Agent \cite {Of_Switch_agent_img}\relax }}{21}{figure.caption.16}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces OpenFlow Data Plane Schematic \cite {Of_data_plane_flow_img}\relax }}{22}{figure.caption.18}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Packet Lifecycle \cite {Of_packet_lifecycle}\relax }}{23}{figure.caption.20}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces RADIUS Components \cite {RADIUS_components_img}\relax }}{25}{figure.caption.24}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces RADIUS Architecture \cite {Radius_operation_img}\relax }}{27}{figure.caption.27}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces IEEE 802.1x WLAN authentication process \cite {WLAN_802.1x_img}\relax }}{29}{figure.caption.29}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces OpenWrt Terminal View \cite {openwrt_terminal_img}\relax }}{18}{figure.caption.11}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces OpenWrt GUI Interface \cite {openwrt_luci_img}\relax }}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces OpenFlow Protocol \cite {of_protocol_spec_img}\relax }}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces OpenFlow Switch Anatomy \cite {Of_Switch_img}\relax }}{22}{figure.caption.17}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces OpenFlow Switch Agent \cite {Of_Switch_agent_img}\relax }}{22}{figure.caption.19}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces OpenFlow Data Plane Schematic \cite {Of_data_plane_flow_img}\relax }}{23}{figure.caption.21}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Packet Lifecycle \cite {Of_packet_lifecycle}\relax }}{24}{figure.caption.23}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces RADIUS Components \cite {RADIUS_components_img}\relax }}{26}{figure.caption.27}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces RADIUS Architecture \cite {Radius_operation_img}\relax }}{28}{figure.caption.30}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces IEEE 802.1x WLAN authentication process \cite {WLAN_802.1x_img}\relax }}{30}{figure.caption.32}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces RADIUS Authentication Procedure - Timing Diagram \relax }}{35}{figure.caption.30}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces RADIUS Authentication Procedure - Flowchart \relax }}{36}{figure.caption.31}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces RYU Control Procedure - Timing Diagram \relax }}{37}{figure.caption.32}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces RYU Control Procedure - Flowchart\relax }}{39}{figure.caption.33}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces RYU Manager Event Process \cite {RYU_event_process_diag}\relax }}{40}{figure.caption.34}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces RADIUS Authentication Procedure - Timing Diagram \relax }}{36}{figure.caption.33}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces RADIUS Authentication Procedure - Flowchart \relax }}{37}{figure.caption.34}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces RYU Control Procedure - Timing Diagram \relax }}{38}{figure.caption.35}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces RYU Control Procedure - Flowchart\relax }}{40}{figure.caption.36}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces RYU Manager Event Process \cite {RYU_event_process_diag}\relax }}{41}{figure.caption.37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Open vSwitch option in OpenWrt build configuration menu\relax }}{45}{figure.caption.35}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Hostapd option in OpenWrt build configuration menu\relax }}{46}{figure.caption.36}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces SSID's OpenWrt and OpenWrt 5G Available on client device\relax }}{49}{figure.caption.37}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Open vSwitch option in OpenWrt build configuration menu\relax }}{46}{figure.caption.38}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Hostapd option in OpenWrt build configuration menu\relax }}{47}{figure.caption.39}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces SSID OpenWrt Available on client device\relax }}{50}{figure.caption.40}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Physical Layout of the Test Environment\relax }}{54}{figure.caption.38}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Enabling Internet Information Services (IIS) in Windows\relax }}{56}{figure.caption.39}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces IIS Server options and root directory\relax }}{56}{figure.caption.40}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Iperf Throughput between two IIS servers\relax }}{59}{figure.caption.41}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Bandwidth without RYU}}}{59}{subfigure.4.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bandwidth with RYU}}}{59}{subfigure.4.2}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Iperf Throughput between Mobile client and IIS servers\relax }}{61}{figure.caption.42}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Bandwidth without RYU}}}{61}{subfigure.5.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bandwidth throughput with RYU}}}{61}{subfigure.5.2}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Physical Layout of the Test Environment\relax }}{55}{figure.caption.41}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Enabling Internet Information Services (IIS) in Windows\relax }}{57}{figure.caption.42}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces IIS Server options and root directory\relax }}{57}{figure.caption.43}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Ping test from Mobile to Server\relax }}{59}{figure.caption.44}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Scenario 1: Standard Switch without Open vSwitch and OpenWrt\relax }}{60}{figure.caption.45}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Scenario 2: Open vSwitch running on OpenWrt and RYU\relax }}{61}{figure.caption.46}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Iperf Throughput between two IIS servers\relax }}{63}{figure.caption.47}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Bandwidth throughput without OVS (Standard Switch)}}}{63}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bandwidth with OVS}}}{63}{subfigure.7.2}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Iperf Throughput between Mobile client and IIS server\relax }}{64}{figure.caption.48}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Bandwidth throughput without OVS (Standard Switch)}}}{64}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bandwidth throughput with OVS}}}{64}{subfigure.8.2}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces ARP and Ping timing sequence\relax }}{67}{figure.caption.49}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

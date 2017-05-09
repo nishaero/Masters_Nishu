@@ -178,6 +178,392 @@ option ignore '1'
 
 \end{lstlisting}
 
+\chapter{Iperf Measurement Data}\label{app:ch:measurement}
+
+The following tables provide the measurement data obtained from the Iperf tests performed for the two scenarios as mentioned in section \nameref{sec:Iperf_result}
+
+\section{Iperf data between Server and Mobile Client}\label{sec:iperf_data_mob_server}
+
+\begin{sidewaystable}[]
+	\centering
+	\caption{Iperf Bandwidth data between server and mobile client Without OVS}
+	\label{tab:iperf_server_mob_no_ovs}
+	\begin{tabular}{llllll}
+		Interval    & Bandwidth Test 1 & Bandwidth Test 2 & Bandwidth Test 3 & Bandwidth Test 4 & Bandwidth Test 5 \\
+		0.00-2.00   & 46.2             & 48               & 49.3             & 48.7             & 46.8             \\
+		2.00-4.00   & 25.5             & 34.6             & 42.3             & 44.1             & 44.7             \\
+		4.00-6.00   & 15.7             & 39.2             & 45.4             & 44.3             & 47               \\
+		6.00-8.00   & 41.9             & 42.9             & 46.8             & 44.7             & 46.9             \\
+		8.00-10.00  & 43               & 45.1             & 46.4             & 46.1             & 47.1             \\
+		10.00-12.00 & 42.1             & 45               & 46.2             & 45.8             & 42               \\
+		12.00-14.00 & 45.9             & 45               & 46.5             & 46.9             & 46.4             \\
+		14.00-16.00 & 39               & 48.9             & 44.2             & 49               & 45.5             \\
+		16.00-18.00 & 40.8             & 46               & 44.5             & 25.3             & 47.9             \\
+		18.00-20.00 & 43.7             & 47.4             & 45.6             & 25.3             & 42.4             \\
+		20.00-22.00 & 40.1             & 44.9             & 45               & 23.6             & 11.5             \\
+		22.00-24.00 & 44.7             & 45.8             & 44.7             & 45.7             & 45.9             \\
+		24.00-26.00 & 43.4             & 46.2             & 43.9             & 44.9             & 41.9             \\
+		26.00-28.00 & 46               & 45.6             & 46.4             & 46               & 45.8             \\
+		28.00-30.00 & 42.3             & 47.2             & 36.1             & 44.3             & 38.5             \\
+		30.00-32.00 & 42.6             & 45.7             & 35.1             & 42.6             & 46.1             \\
+		32.00-34.00 & 38.6             & 43.2             & 41.2             & 44.7             & 43.3             \\
+		34.00-36.00 & 41.8             & 9.08             & 44.3             & 43               & 44.5             \\
+		36.00-38.00 & 44.6             & 11.8             & 44.2             & 45.8             & 44               \\
+		38.00-40.00 & 41.4             & 43.9             & 47               & 43.9             & 44.3             \\
+		40.00-42.00 & 46.5             & 42.7             & 43.9             & 47.3             & 46.7             \\
+		42.00-44.00 & 46.6             & 44.9             & 47               & 41.1             & 25.5             \\
+		44.00-46.00 & 42.5             & 45.3             & 39.8             & 42.8             & 47.3             \\
+		46.00-48.00 & 44.2             & 45.7             & 45.1             & 44.5             & 42.5             \\
+		48.00-50.00 & 43.8             & 42.9             & 45.8             & 45.3             & 44.1             \\
+		50.00-52.00 & 45.1             & 45.7             & 40.7             & 46.8             & 43.8             \\
+		52.00-54.00 & 44               & 43.7             & 46.9             & 43.2             & 45.7             \\
+		54.00-56.00 & 44.2             & 42.3             & 44.6             & 45.8             & 46.4             \\
+		56.00-58.00 & 41.7             & 39.3             & 41.3             & 43.7             & 44.9             \\
+		58.00-60.00 & 40.3             & 39.2             & 41.2             & 44.8             & 40.6            
+	\end{tabular}
+\end{sidewaystable}
+
+\begin{sidewaystable}[]
+	\centering
+	\caption{Iperf Bandwidth data between server and mobile client With OVS}
+	\label{tab:iperf_server_mob_with_ovs}
+	\begin{tabular}{llllll}
+		Interval    & Bandwidth Test 1 & Bandwidth Test 2 & Bandwidth Test 3 & Bandwidth Test 4 & Bandwidth Test 5 \\
+		0.00-2.00   & 54.2             & 50.4             & 45.8             & 48.3             & 53.4             \\
+		2.00-4.00   & 45.2             & 50.5             & 48.8             & 53.4             & 50.6             \\
+		4.00-6.00   & 15.5             & 48.1             & 49.2             & 54.6             & 55.9             \\
+		6.00-8.00   & 38.7             & 51.3             & 47.4             & 55.7             & 55.3             \\
+		8.00-10.00  & 54.9             & 48.1             & 47.4             & 54.9             & 53.1             \\
+		10.00-12.00 & 54.9             & 39.6             & 52.3             & 54.8             & 52.4             \\
+		12.00-14.00 & 53.9             & 13.1             & 49.2             & 51.1             & 51.4             \\
+		14.00-16.00 & 54.4             & 20.6             & 52.8             & 45.4             & 54.1             \\
+		16.00-18.00 & 54.4             & 48.8             & 49.2             & 54.1             & 48.2             \\
+		18.00-20.00 & 54               & 48.5             & 49.6             & 48.3             & 52.4             \\
+		20.00-22.00 & 56.4             & 47.9             & 46.6             & 53.1             & 51.3             \\
+		22.00-24.00 & 54.8             & 50.2             & 49.7             & 45.5             & 52.6             \\
+		24.00-26.00 & 55.2             & 50               & 47.6             & 47.7             & 51.8             \\
+		26.00-28.00 & 55.5             & 48.4             & 50.4             & 47.1             & 49.4             \\
+		28.00-30.00 & 55.1             & 50.2             & 48.3             & 51.5             & 37.4             \\
+		30.00-32.00 & 53.5             & 51               & 50.9             & 47.5             & 29               \\
+		32.00-34.00 & 55.4             & 47.4             & 46.4             & 49.9             & 45.9             \\
+		34.00-36.00 & 48.3             & 50.1             & 50.4             & 49.5             & 48.7             \\
+		36.00-38.00 & 47.1             & 48.9             & 45.6             & 49.3             & 50.2             \\
+		38.00-40.00 & 36               & 50.4             & 51.3             & 50.5             & 46.7             \\
+		40.00-42.00 & 52.3             & 49.8             & 51.4             & 49.2             & 50.3             \\
+		42.00-44.00 & 52.6             & 48.9             & 49.5             & 51.7             & 49.2             \\
+		44.00-46.00 & 52.9             & 48.6             & 47.8             & 48.2             & 50.2             \\
+		46.00-48.00 & 51.6             & 49.8             & 48.9             & 49.5             & 48               \\
+		48.00-50.00 & 52.4             & 50.8             & 50.1             & 51.1             & 52.2             \\
+		50.00-52.00 & 52.3             & 49.4             & 50.8             & 49.6             & 52.8             \\
+		52.00-54.00 & 53.7             & 50.3             & 52.2             & 47.7             & 50.1             \\
+		54.00-56.00 & 51.5             & 49.2             & 50.7             & 52.3             & 53.6             \\
+		56.00-58.00 & 52.2             & 49.1             & 47.1             & 47.8             & 51               \\
+		58.00-60.00 & 53.1             & 51.8             & 51.2             & 50.4             & 50.7            
+	\end{tabular}
+\end{sidewaystable}
+
+\section{Iperf data between Servers}\label{sec:iperf_server_server}
+
+\begin{table}[]
+	\centering
+	\caption{Iperf Bandwidth data between servers with Without OVS}
+	\label{tab:iperf_server_server_no_ovs}
+	\begin{tabular}{lll}
+		Interval    & Bandwidth Test 1 & Bandwidth Test 2 \\
+		0.00-2.00   & 940              & 939              \\
+		2.00-4.00   & 941              & 941              \\
+		4.00-6.00   & 941              & 940              \\
+		6.00-8.00   & 941              & 941              \\
+		8.00-10.00  & 941              & 941              \\
+		10.00-12.00 & 941              & 941              \\
+		12.00-14.00 & 941              & 941              \\
+		14.00-16.00 & 941              & 941              \\
+		16.00-18.00 & 941              & 941              \\
+		18.00-20.00 & 941              & 941              \\
+		20.00-22.00 & 941              & 941              \\
+		22.00-24.00 & 941              & 941              \\
+		24.00-26.00 & 941              & 941              \\
+		26.00-28.00 & 941              & 941              \\
+		28.00-30.00 & 941              & 940              \\
+		30.00-32.00 & 941              & 941              \\
+		32.00-34.00 & 941              & 941              \\
+		34.00-36.00 & 941              & 941              \\
+		36.00-38.00 & 941              & 941              \\
+		38.00-40.00 & 940              & 941              \\
+		40.00-42.00 & 941              & 941              \\
+		42.00-44.00 & 941              & 941              \\
+		44.00-46.00 & 941              & 941              \\
+		46.00-48.00 & 941              & 941              \\
+		48.00-50.00 & 941              & 941              \\
+		50.00-52.00 & 941              & 941              \\
+		52.00-54.00 & 941              & 941              \\
+		54.00-56.00 & 941              & 940              \\
+		56.00-58.00 & 940              & 941              \\
+		58.00-60.00 & 941              & 941             
+	\end{tabular}
+\end{table}
+
+\begin{table}[]
+	\centering
+	\caption{Iperf Bandwidth data between servers With OVS}
+	\label{tab:iperf_server_server_with_ovs}
+	\begin{tabular}{lllll}
+		Interval    & Bandwidth Test 1 & Bandwidth Test 2 & Bandwidth Test 3 & Bandwidth Test 4 \\
+		0.00-2.00   & 593              & 484              & 608              & 573              \\
+		2.00-4.00   & 503              & 597              & 468              & 501              \\
+		4.00-6.00   & 555              & 599              & 532              & 557              \\
+		6.00-8.00   & 580              & 534              & 568              & 499              \\
+		8.00-10.00  & 594              & 503              & 555              & 527              \\
+		10.00-12.00 & 540              & 532              & 547              & 582              \\
+		12.00-14.00 & 559              & 525              & 626              & 587              \\
+		14.00-16.00 & 576              & 551              & 593              & 601              \\
+		16.00-18.00 & 576              & 522              & 525              & 566              \\
+		18.00-20.00 & 534              & 483              & 492              & 506              \\
+		20.00-22.00 & 569              & 510              & 519              & 498              \\
+		22.00-24.00 & 499              & 495              & 590              & 548              \\
+		24.00-26.00 & 564              & 535              & 579              & 590              \\
+		26.00-28.00 & 600              & 511              & 578              & 499              \\
+		28.00-30.00 & 616              & 535              & 576              & 616              \\
+		30.00-32.00 & 547              & 496              & 562              & 534              \\
+		32.00-34.00 & 514              & 479              & 510              & 546              \\
+		34.00-36.00 & 607              & 533              & 516              & 513              \\
+		36.00-38.00 & 564              & 484              & 545              & 533              \\
+		38.00-40.00 & 525              & 540              & 549              & 561              \\
+		40.00-42.00 & 578              & 513              & 585              & 573              \\
+		42.00-44.00 & 569              & 478              & 612              & 519              \\
+		44.00-46.00 & 541              & 509              & 602              & 571              \\
+		46.00-48.00 & 570              & 470              & 543              & 539              \\
+		48.00-50.00 & 537              & 526              & 480              & 540              \\
+		50.00-52.00 & 535              & 552              & 546              & 609              \\
+		52.00-54.00 & 534              & 485              & 558              & 574              \\
+		54.00-56.00 & 535              & 491              & 557              & 591              \\
+		56.00-58.00 & 585              & 479              & 603              & 567              \\
+		58.00-60.00 & 513              & 473              & 563              & 495             
+	\end{tabular}
+\end{table}
+
+\chapter{Ping Test Results}\label{app:ch:Ping_results}
+
+This chapter provides the Ping measurement data collected during the tests conducted to check the latency in the switch. The results are based on the the two scenarios, the first is with the standard switch and the second when the OVS is running on the access point.
+\section{Ping Test with no OVS}\label{app:sec:Ping_test_no_ovs}
+\begin{lstlisting}[frame=single, caption={The Ping test without OVS}, label={lst:Pingtest_no_OVS}]
+PING 192.168.1.126 (192.168.1.126) 56(84) bytes of data.
+64 bytes from 192.168.1.126: icmp_seq=1 ttl=128 time=0.526 ms
+64 bytes from 192.168.1.126: icmp_seq=2 ttl=128 time=0.294 ms
+64 bytes from 192.168.1.126: icmp_seq=3 ttl=128 time=0.321 ms
+64 bytes from 192.168.1.126: icmp_seq=4 ttl=128 time=0.295 ms
+64 bytes from 192.168.1.126: icmp_seq=5 ttl=128 time=0.227 ms
+64 bytes from 192.168.1.126: icmp_seq=6 ttl=128 time=0.306 ms
+64 bytes from 192.168.1.126: icmp_seq=7 ttl=128 time=0.304 ms
+64 bytes from 192.168.1.126: icmp_seq=8 ttl=128 time=0.240 ms
+64 bytes from 192.168.1.126: icmp_seq=9 ttl=128 time=0.303 ms
+64 bytes from 192.168.1.126: icmp_seq=10 ttl=128 time=0.233 ms
+64 bytes from 192.168.1.126: icmp_seq=11 ttl=128 time=0.248 ms
+64 bytes from 192.168.1.126: icmp_seq=12 ttl=128 time=0.227 ms
+64 bytes from 192.168.1.126: icmp_seq=13 ttl=128 time=0.304 ms
+64 bytes from 192.168.1.126: icmp_seq=14 ttl=128 time=0.206 ms
+64 bytes from 192.168.1.126: icmp_seq=15 ttl=128 time=0.213 ms
+64 bytes from 192.168.1.126: icmp_seq=16 ttl=128 time=0.229 ms
+64 bytes from 192.168.1.126: icmp_seq=17 ttl=128 time=0.240 ms
+64 bytes from 192.168.1.126: icmp_seq=18 ttl=128 time=0.309 ms
+64 bytes from 192.168.1.126: icmp_seq=19 ttl=128 time=0.216 ms
+64 bytes from 192.168.1.126: icmp_seq=20 ttl=128 time=0.231 ms
+64 bytes from 192.168.1.126: icmp_seq=21 ttl=128 time=0.236 ms
+64 bytes from 192.168.1.126: icmp_seq=22 ttl=128 time=0.317 ms
+64 bytes from 192.168.1.126: icmp_seq=23 ttl=128 time=0.331 ms
+64 bytes from 192.168.1.126: icmp_seq=24 ttl=128 time=0.271 ms
+64 bytes from 192.168.1.126: icmp_seq=25 ttl=128 time=0.220 ms
+64 bytes from 192.168.1.126: icmp_seq=26 ttl=128 time=0.241 ms
+64 bytes from 192.168.1.126: icmp_seq=27 ttl=128 time=0.268 ms
+64 bytes from 192.168.1.126: icmp_seq=28 ttl=128 time=0.239 ms
+64 bytes from 192.168.1.126: icmp_seq=29 ttl=128 time=0.221 ms
+64 bytes from 192.168.1.126: icmp_seq=30 ttl=128 time=0.271 ms
+64 bytes from 192.168.1.126: icmp_seq=31 ttl=128 time=0.229 ms
+64 bytes from 192.168.1.126: icmp_seq=32 ttl=128 time=0.320 ms
+64 bytes from 192.168.1.126: icmp_seq=33 ttl=128 time=0.245 ms
+64 bytes from 192.168.1.126: icmp_seq=34 ttl=128 time=0.214 ms
+64 bytes from 192.168.1.126: icmp_seq=35 ttl=128 time=0.215 ms
+64 bytes from 192.168.1.126: icmp_seq=36 ttl=128 time=0.263 ms
+64 bytes from 192.168.1.126: icmp_seq=37 ttl=128 time=0.237 ms
+64 bytes from 192.168.1.126: icmp_seq=38 ttl=128 time=0.303 ms
+64 bytes from 192.168.1.126: icmp_seq=39 ttl=128 time=0.213 ms
+64 bytes from 192.168.1.126: icmp_seq=40 ttl=128 time=0.245 ms
+64 bytes from 192.168.1.126: icmp_seq=41 ttl=128 time=0.212 ms
+64 bytes from 192.168.1.126: icmp_seq=42 ttl=128 time=0.199 ms
+64 bytes from 192.168.1.126: icmp_seq=43 ttl=128 time=0.218 ms
+64 bytes from 192.168.1.126: icmp_seq=44 ttl=128 time=0.242 ms
+64 bytes from 192.168.1.126: icmp_seq=45 ttl=128 time=0.224 ms
+64 bytes from 192.168.1.126: icmp_seq=46 ttl=128 time=0.230 ms
+64 bytes from 192.168.1.126: icmp_seq=47 ttl=128 time=0.221 ms
+64 bytes from 192.168.1.126: icmp_seq=48 ttl=128 time=0.240 ms
+64 bytes from 192.168.1.126: icmp_seq=49 ttl=128 time=0.221 ms
+64 bytes from 192.168.1.126: icmp_seq=50 ttl=128 time=0.248 ms
+64 bytes from 192.168.1.126: icmp_seq=51 ttl=128 time=0.248 ms
+64 bytes from 192.168.1.126: icmp_seq=52 ttl=128 time=0.327 ms
+64 bytes from 192.168.1.126: icmp_seq=53 ttl=128 time=0.317 ms
+64 bytes from 192.168.1.126: icmp_seq=54 ttl=128 time=0.318 ms
+64 bytes from 192.168.1.126: icmp_seq=55 ttl=128 time=0.238 ms
+64 bytes from 192.168.1.126: icmp_seq=56 ttl=128 time=0.323 ms
+64 bytes from 192.168.1.126: icmp_seq=57 ttl=128 time=0.244 ms
+64 bytes from 192.168.1.126: icmp_seq=58 ttl=128 time=0.218 ms
+64 bytes from 192.168.1.126: icmp_seq=59 ttl=128 time=0.308 ms
+64 bytes from 192.168.1.126: icmp_seq=60 ttl=128 time=0.318 ms
+64 bytes from 192.168.1.126: icmp_seq=61 ttl=128 time=0.318 ms
+64 bytes from 192.168.1.126: icmp_seq=62 ttl=128 time=0.223 ms
+64 bytes from 192.168.1.126: icmp_seq=63 ttl=128 time=0.319 ms
+64 bytes from 192.168.1.126: icmp_seq=64 ttl=128 time=0.220 ms
+64 bytes from 192.168.1.126: icmp_seq=65 ttl=128 time=0.306 ms
+64 bytes from 192.168.1.126: icmp_seq=66 ttl=128 time=0.227 ms
+64 bytes from 192.168.1.126: icmp_seq=67 ttl=128 time=0.223 ms
+64 bytes from 192.168.1.126: icmp_seq=68 ttl=128 time=0.304 ms
+64 bytes from 192.168.1.126: icmp_seq=69 ttl=128 time=0.223 ms
+64 bytes from 192.168.1.126: icmp_seq=70 ttl=128 time=0.222 ms
+64 bytes from 192.168.1.126: icmp_seq=71 ttl=128 time=0.305 ms
+64 bytes from 192.168.1.126: icmp_seq=72 ttl=128 time=0.246 ms
+64 bytes from 192.168.1.126: icmp_seq=73 ttl=128 time=0.332 ms
+64 bytes from 192.168.1.126: icmp_seq=74 ttl=128 time=0.275 ms
+64 bytes from 192.168.1.126: icmp_seq=75 ttl=128 time=0.352 ms
+64 bytes from 192.168.1.126: icmp_seq=76 ttl=128 time=0.224 ms
+64 bytes from 192.168.1.126: icmp_seq=77 ttl=128 time=0.309 ms
+64 bytes from 192.168.1.126: icmp_seq=78 ttl=128 time=0.313 ms
+64 bytes from 192.168.1.126: icmp_seq=79 ttl=128 time=0.313 ms
+64 bytes from 192.168.1.126: icmp_seq=80 ttl=128 time=0.303 ms
+64 bytes from 192.168.1.126: icmp_seq=81 ttl=128 time=0.329 ms
+64 bytes from 192.168.1.126: icmp_seq=82 ttl=128 time=0.326 ms
+64 bytes from 192.168.1.126: icmp_seq=83 ttl=128 time=0.184 ms
+64 bytes from 192.168.1.126: icmp_seq=84 ttl=128 time=0.330 ms
+64 bytes from 192.168.1.126: icmp_seq=85 ttl=128 time=0.218 ms
+64 bytes from 192.168.1.126: icmp_seq=86 ttl=128 time=0.192 ms
+64 bytes from 192.168.1.126: icmp_seq=87 ttl=128 time=0.216 ms
+64 bytes from 192.168.1.126: icmp_seq=88 ttl=128 time=0.225 ms
+64 bytes from 192.168.1.126: icmp_seq=89 ttl=128 time=0.188 ms
+64 bytes from 192.168.1.126: icmp_seq=90 ttl=128 time=0.246 ms
+64 bytes from 192.168.1.126: icmp_seq=91 ttl=128 time=0.215 ms
+64 bytes from 192.168.1.126: icmp_seq=92 ttl=128 time=0.311 ms
+64 bytes from 192.168.1.126: icmp_seq=93 ttl=128 time=0.308 ms
+64 bytes from 192.168.1.126: icmp_seq=94 ttl=128 time=0.229 ms
+64 bytes from 192.168.1.126: icmp_seq=95 ttl=128 time=0.303 ms
+64 bytes from 192.168.1.126: icmp_seq=96 ttl=128 time=0.245 ms
+64 bytes from 192.168.1.126: icmp_seq=97 ttl=128 time=0.213 ms
+64 bytes from 192.168.1.126: icmp_seq=98 ttl=128 time=0.337 ms
+64 bytes from 192.168.1.126: icmp_seq=99 ttl=128 time=0.210 ms
+64 bytes from 192.168.1.126: icmp_seq=100 ttl=128 time=0.224 ms
+
+--- 192.168.1.126 ping statistics ---
+100 packets transmitted, 100 received, 0% packet loss, time 101375ms
+rtt min/avg/max/mdev = 0.184/0.262/0.526/0.056 ms
+
+\end{lstlisting}
+
+\section{Ping Test with OVS}\label{app:sec:Ping_test_with_ovs}
+\begin{lstlisting}[frame=single, caption={The Ping test with OVS}, label={lst:Pingtest_with_OVS}]
+PING 192.168.3.126 (192.168.3.126) 56(84) bytes of data.
+64 bytes from 192.168.3.126: icmp_seq=1 ttl=128 time=28.8 ms
+64 bytes from 192.168.3.126: icmp_seq=2 ttl=128 time=0.356 ms
+64 bytes from 192.168.3.126: icmp_seq=3 ttl=128 time=0.333 ms
+64 bytes from 192.168.3.126: icmp_seq=4 ttl=128 time=0.319 ms
+64 bytes from 192.168.3.126: icmp_seq=5 ttl=128 time=0.295 ms
+64 bytes from 192.168.3.126: icmp_seq=6 ttl=128 time=0.318 ms
+64 bytes from 192.168.3.126: icmp_seq=7 ttl=128 time=0.296 ms
+64 bytes from 192.168.3.126: icmp_seq=8 ttl=128 time=0.521 ms
+64 bytes from 192.168.3.126: icmp_seq=9 ttl=128 time=0.342 ms
+64 bytes from 192.168.3.126: icmp_seq=10 ttl=128 time=0.310 ms
+64 bytes from 192.168.3.126: icmp_seq=11 ttl=128 time=0.377 ms
+64 bytes from 192.168.3.126: icmp_seq=12 ttl=128 time=0.317 ms
+64 bytes from 192.168.3.126: icmp_seq=13 ttl=128 time=0.323 ms
+64 bytes from 192.168.3.126: icmp_seq=14 ttl=128 time=0.315 ms
+64 bytes from 192.168.3.126: icmp_seq=15 ttl=128 time=0.321 ms
+64 bytes from 192.168.3.126: icmp_seq=16 ttl=128 time=0.323 ms
+64 bytes from 192.168.3.126: icmp_seq=17 ttl=128 time=0.298 ms
+64 bytes from 192.168.3.126: icmp_seq=18 ttl=128 time=0.337 ms
+64 bytes from 192.168.3.126: icmp_seq=19 ttl=128 time=0.346 ms
+64 bytes from 192.168.3.126: icmp_seq=20 ttl=128 time=0.334 ms
+64 bytes from 192.168.3.126: icmp_seq=21 ttl=128 time=0.312 ms
+64 bytes from 192.168.3.126: icmp_seq=22 ttl=128 time=0.310 ms
+64 bytes from 192.168.3.126: icmp_seq=23 ttl=128 time=0.320 ms
+64 bytes from 192.168.3.126: icmp_seq=24 ttl=128 time=0.317 ms
+64 bytes from 192.168.3.126: icmp_seq=25 ttl=128 time=0.325 ms
+64 bytes from 192.168.3.126: icmp_seq=26 ttl=128 time=0.304 ms
+64 bytes from 192.168.3.126: icmp_seq=27 ttl=128 time=0.337 ms
+64 bytes from 192.168.3.126: icmp_seq=28 ttl=128 time=0.320 ms
+64 bytes from 192.168.3.126: icmp_seq=29 ttl=128 time=0.327 ms
+64 bytes from 192.168.3.126: icmp_seq=30 ttl=128 time=0.320 ms
+64 bytes from 192.168.3.126: icmp_seq=31 ttl=128 time=0.308 ms
+64 bytes from 192.168.3.126: icmp_seq=32 ttl=128 time=0.331 ms
+64 bytes from 192.168.3.126: icmp_seq=33 ttl=128 time=0.302 ms
+64 bytes from 192.168.3.126: icmp_seq=34 ttl=128 time=0.297 ms
+64 bytes from 192.168.3.126: icmp_seq=35 ttl=128 time=0.393 ms
+64 bytes from 192.168.3.126: icmp_seq=36 ttl=128 time=0.303 ms
+64 bytes from 192.168.3.126: icmp_seq=37 ttl=128 time=0.313 ms
+64 bytes from 192.168.3.126: icmp_seq=38 ttl=128 time=0.304 ms
+64 bytes from 192.168.3.126: icmp_seq=39 ttl=128 time=0.357 ms
+64 bytes from 192.168.3.126: icmp_seq=40 ttl=128 time=0.332 ms
+64 bytes from 192.168.3.126: icmp_seq=41 ttl=128 time=0.313 ms
+64 bytes from 192.168.3.126: icmp_seq=42 ttl=128 time=0.321 ms
+64 bytes from 192.168.3.126: icmp_seq=43 ttl=128 time=0.313 ms
+64 bytes from 192.168.3.126: icmp_seq=44 ttl=128 time=0.330 ms
+64 bytes from 192.168.3.126: icmp_seq=45 ttl=128 time=0.337 ms
+64 bytes from 192.168.3.126: icmp_seq=46 ttl=128 time=0.354 ms
+64 bytes from 192.168.3.126: icmp_seq=47 ttl=128 time=0.321 ms
+64 bytes from 192.168.3.126: icmp_seq=48 ttl=128 time=0.321 ms
+64 bytes from 192.168.3.126: icmp_seq=49 ttl=128 time=0.382 ms
+64 bytes from 192.168.3.126: icmp_seq=50 ttl=128 time=0.319 ms
+64 bytes from 192.168.3.126: icmp_seq=51 ttl=128 time=0.341 ms
+64 bytes from 192.168.3.126: icmp_seq=52 ttl=128 time=0.333 ms
+64 bytes from 192.168.3.126: icmp_seq=53 ttl=128 time=0.289 ms
+64 bytes from 192.168.3.126: icmp_seq=54 ttl=128 time=0.300 ms
+64 bytes from 192.168.3.126: icmp_seq=55 ttl=128 time=0.351 ms
+64 bytes from 192.168.3.126: icmp_seq=56 ttl=128 time=0.330 ms
+64 bytes from 192.168.3.126: icmp_seq=57 ttl=128 time=0.323 ms
+64 bytes from 192.168.3.126: icmp_seq=58 ttl=128 time=0.316 ms
+64 bytes from 192.168.3.126: icmp_seq=59 ttl=128 time=0.294 ms
+64 bytes from 192.168.3.126: icmp_seq=60 ttl=128 time=0.346 ms
+64 bytes from 192.168.3.126: icmp_seq=61 ttl=128 time=0.354 ms
+64 bytes from 192.168.3.126: icmp_seq=62 ttl=128 time=0.334 ms
+64 bytes from 192.168.3.126: icmp_seq=63 ttl=128 time=0.327 ms
+64 bytes from 192.168.3.126: icmp_seq=64 ttl=128 time=0.330 ms
+64 bytes from 192.168.3.126: icmp_seq=65 ttl=128 time=0.329 ms
+64 bytes from 192.168.3.126: icmp_seq=66 ttl=128 time=0.375 ms
+64 bytes from 192.168.3.126: icmp_seq=67 ttl=128 time=0.325 ms
+64 bytes from 192.168.3.126: icmp_seq=68 ttl=128 time=0.302 ms
+64 bytes from 192.168.3.126: icmp_seq=69 ttl=128 time=0.352 ms
+64 bytes from 192.168.3.126: icmp_seq=70 ttl=128 time=0.337 ms
+64 bytes from 192.168.3.126: icmp_seq=71 ttl=128 time=0.334 ms
+64 bytes from 192.168.3.126: icmp_seq=72 ttl=128 time=0.317 ms
+64 bytes from 192.168.3.126: icmp_seq=73 ttl=128 time=0.322 ms
+64 bytes from 192.168.3.126: icmp_seq=74 ttl=128 time=0.381 ms
+64 bytes from 192.168.3.126: icmp_seq=75 ttl=128 time=0.313 ms
+64 bytes from 192.168.3.126: icmp_seq=76 ttl=128 time=0.380 ms
+64 bytes from 192.168.3.126: icmp_seq=77 ttl=128 time=0.298 ms
+64 bytes from 192.168.3.126: icmp_seq=78 ttl=128 time=0.313 ms
+64 bytes from 192.168.3.126: icmp_seq=79 ttl=128 time=0.332 ms
+64 bytes from 192.168.3.126: icmp_seq=80 ttl=128 time=0.310 ms
+64 bytes from 192.168.3.126: icmp_seq=81 ttl=128 time=0.325 ms
+64 bytes from 192.168.3.126: icmp_seq=82 ttl=128 time=0.313 ms
+64 bytes from 192.168.3.126: icmp_seq=83 ttl=128 time=0.316 ms
+64 bytes from 192.168.3.126: icmp_seq=84 ttl=128 time=0.386 ms
+64 bytes from 192.168.3.126: icmp_seq=85 ttl=128 time=0.314 ms
+64 bytes from 192.168.3.126: icmp_seq=86 ttl=128 time=0.406 ms
+64 bytes from 192.168.3.126: icmp_seq=87 ttl=128 time=0.323 ms
+64 bytes from 192.168.3.126: icmp_seq=88 ttl=128 time=0.323 ms
+64 bytes from 192.168.3.126: icmp_seq=89 ttl=128 time=0.343 ms
+64 bytes from 192.168.3.126: icmp_seq=90 ttl=128 time=0.334 ms
+64 bytes from 192.168.3.126: icmp_seq=91 ttl=128 time=0.377 ms
+64 bytes from 192.168.3.126: icmp_seq=92 ttl=128 time=0.310 ms
+64 bytes from 192.168.3.126: icmp_seq=93 ttl=128 time=0.323 ms
+64 bytes from 192.168.3.126: icmp_seq=94 ttl=128 time=0.391 ms
+64 bytes from 192.168.3.126: icmp_seq=95 ttl=128 time=0.324 ms
+64 bytes from 192.168.3.126: icmp_seq=96 ttl=128 time=0.384 ms
+64 bytes from 192.168.3.126: icmp_seq=97 ttl=128 time=0.315 ms
+64 bytes from 192.168.3.126: icmp_seq=98 ttl=128 time=0.323 ms
+64 bytes from 192.168.3.126: icmp_seq=99 ttl=128 time=0.374 ms
+64 bytes from 192.168.3.126: icmp_seq=100 ttl=128 time=0.298 ms
+
+--- 192.168.3.126 ping statistics ---
+100 packets transmitted, 100 received, 0% packet loss, time 101348ms
+rtt min/avg/max/mdev = 0.289/0.617/28.897/2.842 ms
+
+\end{lstlisting}
 \chapter{RYU Verbose output}\label{app:ch:logs}
 
 In this Appendix, the logs from the \verb|/tmp/log| file have been provided for different log purpose.

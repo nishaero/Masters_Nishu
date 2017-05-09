@@ -60,25 +60,26 @@ class SimpleSwitch13(app_manager.RyuApp):
 		# truncated packet data. In that case, we cannot output packets
 		# correctly.  The bug has been fixed in OVS v2.1.0.
 		match = parser.OFPMatch()
-		actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER,
-		ofproto.OFPCML_NO_BUFFER)]
+		actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER, ofproto.OFPCML_NO_BUFFER)]
 		self.add_flow(datapath, 0, match, actions)
 
 	def add_flow(self, datapath, priority, match, actions, buffer_id=None):
 		ofproto = datapath.ofproto
 		parser = datapath.ofproto_parser
-		
+
 		inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS, actions)]
 		if buffer_id: 
-			mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_id, priority=priority, match=match, instructions=inst)
+			mod = parser.OFPFlowMod(datapath=datapath, buffer_id=buffer_i , priority=priority, match=match, instructions=inst)
 		else:
 			mod = parser.OFPFlowMod(datapath=datapath, priority=priority, match=match, instructions=inst)
+			
 		datapath.send_msg(mod)
 
 	@set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
 	def _packet_in_handler(self, ev):
-		# If you hit this you might want to increase
-		# the "miss_send_length" of your switch
+	# If you hit this you might want to increase
+	# the "miss_send_length" of your switch
+
 		if ev.msg.msg_len < ev.msg.total_len:
 			self.logger.debug("packet truncated: only %s of %s bytes", ev.msg.msg_len, ev.msg.total_len)
 		msg = ev.msg
@@ -86,87 +87,69 @@ class SimpleSwitch13(app_manager.RyuApp):
 		ofproto = datapath.ofproto
 		parser = datapath.ofproto_parser
 		in_port = msg.match['in_port']
-		
+
 		pkt = packet.Packet(msg.data)
 		eth = pkt.get_protocols(ethernet.ethernet)[0]
 		udp_payload = pkt.get_protocols(udp.udp)
-		
-		
+
+
 		if eth.ethertype == ether_types.ETH_TYPE_LLDP:
 			# ignore lldp packet
 			return
 		dst = eth.dst
 		src = eth.src
-		
+
 		dpid = datapath.id
 		self.mac_to_port.setdefault(dpid, {})
-	#self.logger.info ("Destination is %s", eth.dst)	
+	
 
 	#creating a mysql connection to database -last edit 17/11
 
 	connection = MySQLdb.connect(host = "192.168.1.169", user = "freerad", passwd = "pass", db = "radius")
 	cursor = connection.cursor ()
-
-	#cursor.execute ("select CallingStationId from radpostauth order by id desc LIMIT 1")
-	#data = cursor.fetchall ()
 	cursor.execute ("SELECT portid FROM radcheck WHERE username IN (SELECT user FROM radpostauth WHERE CallingStationId = %s AND id = (SELECT MAX(id) from radpostauth) )", src)
 	outport_for_src = cursor.fetchone ()
-	self.logger.info ("outport_for_src tuple is %s", outport_for_src)
-	#portid = outport_for_src[0]
-	self.logger.info ("Data is %s", src)	
+
 	cursor.close()
 	connection.close ()
 	# Mysql verification end
 
-		self.logger.info("packet in %s %s %s %s", dpid, src, dst, in_port)
-
 
 		# learn a mac address to avoid FLOOD next time.
 		self.mac_to_port[dpid][src] = in_port
-
-	#self.logger.info ("Mac to port in dst is %s ",self.mac_to_port[dpid] )
-	self.logger.info ("DST is %s", dst)
-		if dst in self.mac_to_port[dpid]:
+	
+	if dst in self.mac_to_port[dpid]:
 		test = self.mac_to_port[dpid][dst]
-		self.logger.info ("self.mac_to_port[dpid][dst] value %s", test)
-		self.logger.info ("Out_Port before condition %s", outport_for_src)
-		#try:		
-		#if portid in self.mac_to_port[dpid][dst]:
+		
 		if outport_for_src != None and all(outport_for_src):
 			if int(outport_for_src[0]) == self.mac_to_port[dpid][dst]:
 				out_port = self.mac_to_port[dpid][dst]
-				self.logger.info ("Out_Port is the same as in database table %s", out_port)
+
 			else:
-				self.logger.info ("Out_Port is not allowed, dropping packet")	
+
 				return
 
 		else:
 		#except (TypeError,UnboundLocalError):		
 			out_port = self.mac_to_port[dpid][dst]		
-			self.logger.info ("Out_Port not defined in database, using learned port")	
-			#return
-		else:
-		#try:
-		#if portid > 0 :
-		self.logger.info ("Out_Port before else flood condition %s", outport_for_src)
-		if outport_for_src != None and all(outport_for_src):
-			out_port = int(outport_for_src[0])
-			self.logger.info ("Setting Out_Port same as in table, changing flow %s", out_port)
+
+	else:
+
+		if outport_for_src != None and all(outport_for_src): out_port = int(outport_for_src[0])
+
 		else:
 		#except (TypeError,UnboundLocalError):
 
 			out_port = ofproto.OFPP_FLOOD
-		#out_port = 4
-			self.logger.info ("Out_Port is Flooded %s", out_port)
 
-	self.logger.info ("Above actions Out_Port %s", out_port)
 		actions = [parser.OFPActionOutput(out_port)]
-	self.logger.info ("Actions is %s", actions)
+
 
 		# install a flow to avoid packet_in next time
 		if out_port != ofproto.OFPP_FLOOD:
-		self.logger.info ("Out_Port not flooded adding flow ")	
+
 			match = parser.OFPMatch(in_port=in_port, eth_dst=dst)
+			#match = parser.OFPMatch(in_port=in_port, eth_dst='a0:f3:c1:77:d8:36')
 			# verify if we have a valid buffer_id, if yes avoid to send both
 			# flow_mod & packet_out
 			if msg.buffer_id != ofproto.OFP_NO_BUFFER:
@@ -175,12 +158,12 @@ class SimpleSwitch13(app_manager.RyuApp):
 			else:
 				self.add_flow(datapath, 1, match, actions)
 		data = None
+
 		if msg.buffer_id == ofproto.OFP_NO_BUFFER:
 			data = msg.data
 
 		out = parser.OFPPacketOut(datapath=datapath, buffer_id=msg.buffer_id, in_port=in_port, actions=actions, data=data)
 		datapath.send_msg(out)
-
 
 \end{lstlisting}
 

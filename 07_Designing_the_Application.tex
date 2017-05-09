@@ -21,7 +21,7 @@ The finished application should be compatible with the RYU controller and be abl
 \end{figure}
 
 \begin{enumerate}
-	\item The mobile client first initiates a radius authentication request with the Access Point.
+	\item The mobile client first initiates a radius authentication request with the access point.
 	\item The packet is verified and authenticated by the RADIUS request and response messages.
 	\item If the authentication is a success, the connection is setup with the access point with WPA2 enterprise keying.
 	\item Once the client is authenticated, it makes a DHCP request with the access point.   
@@ -36,7 +36,7 @@ The flowchart \ref{fig:RYU-Flowchart} shows the authentication procedure of the 
 	\vspace{-10pt}
 \end{figure}
 \subsection{RYU Control Procedure} \label{RYU Control Procedure}
-The timing diagram of RYU \ref{fig:RYU-Timing} shows how the RYU is supposed to listen to the MAC address of the client and parse the packet to assing the destination port id for the client.
+The timing diagram of RYU \ref{fig:RYU-Timing} shows how the RYU is supposed to listen to the MAC address of the client and parse the packet to assign the destination port id for the client.
 
 \begin{figure}
 	\centering
@@ -46,9 +46,9 @@ The timing diagram of RYU \ref{fig:RYU-Timing} shows how the RYU is supposed to 
 	\vspace{-10pt}
 \end{figure}
 
-When the client initiates a DHCP request to the access point, the RYU controller listens to the clients MAC address and checks if it exists in the OVS flow table. If it exists, then apply the corresponding rule associated for the MAC address. If it doesn’t exist, then check for the MAC address in the MySQL database. In the first scenario, if the MAC address exists in the MySQL DB, the out port ID associated with the MAC address is retrieved. The retrieved out port id is assigned to the MAC address and an entry is created in the OVS flow table and completes the process with a DHCP response.
+When the client initiates a DHCP request (Broadcast packet) to the access point, the RYU controller listens to the source and destination MAC address and checks if it already exists in the local table and if not then it checks in the MySQL DB if it exists. At the same time, it learns the MAC address for the source port and stores it in its local table. If the source MAC address exists in the DB but the destination address is a broadcast address, then the out port id is retrieved but ignored by the RYU. The RYU controller applies the default flooding implementation to those packets and floods them to all ports in the switch. The DHCP request from the mobile client is now received by the DHCP server and causes a unicast response.  The source MAC address of the response is again checked in the local RYU table and in the DB. If it exist in the MySQL DB, then the out port id is chosen from there. If it doesn't exist, it is chosen from the local table. In this case, the destination is only available in the local table, the RYU controller responds by setting the rule for this MAC address to be reached through this out port id. The out port id is learned from the source MAC address during the initial DHCP discovery sent by the Mobile client. Finally, the Mobile client receives the DHCP response with an IP address.
 
-In the second scenario after the authentication of the client is successful, if the MAC address does not exist in MySQL DB. The MAC address is added to the table and the out port id is set to flood mode in the OVS flow table in the access point. The process is completed with a DHCP response by providing an IP address to the client. In case of an attack, the system becomes vulnerable only when the fake MAC address used by the client matches with the user credential used for authentication. In such cases a firewall is used to further protect the system.
+In the second scenario after successful authentication of the Mobile client, it makes a unicast request to the IIS server. The RYU controller checks for the source and destination MAC in its local table and in the DB. The DB returns the out port id to the RYU controller. The source MAC address was learned during the authentication, and is now retrieved from the database. The out port set in the database overwrites the out port that might be known in the local table. The RYU controller sets this out port to the source MAC address of the Mobile client in the OVS table. The access point now forwards all the packets coming from the Mobile client through the out port set by the RYU which leads to the IIS server.
 
 %\begin{enumerate}
 %	\item When the client initiates a DHCP request to the access point, the RYU controller listens to the clients MAC address and checks if it exists in the OVS flow table.
@@ -82,22 +82,24 @@ Due to the current OpenFlow version (v1.3) used by the OVS, it is limited to ass
  	\label{fig:RYU-Event-Process}
  	\vspace{-10pt}
  \end{figure}
-To build the application in python, the following classes are mainly used which are explained below.
+To build the application in python, the following classes are mainly used. \textit{Application} is the user logic instructions that tells how the application should behave. It is a class that inherits the \textit{ryu.base.app\_manager.RyuApp}. \textit{Events} are class objects that are used in communication between applications. It inherits the class \textit{ryu.controller.event.EventBase}. \textit{Event queues} are the single queues that each application has for receiving events. 
 
-\begin{itemize}
-	\item Application is the user logic that explains how the application should behave. It is a class that inherits the \textit{ryu.base.app\_manager.RyuApp}.
-	\item Events are class objects that are used in communication between applications. It inherits the class \textit{ryu.controller.event.EventBase}.
-	\item Event queues are the single queues that each application has for receiving events.
-	\item RYU uses eventlets to run in multi-threaded environment. These threads are non-preemptive.
-	\item Event Loops: A thread that is created for each application runs an event loop. When there is an event in the queue, this loop will load the event and call the corresponding handler.
-	\item Event Handlers:  They are user defined handlers designed to handle when a specific type of event occurs. They reside in the event loop of an application. Event handlers can be defined by decorating the application class method with the \textit{ryu.controller.handler.set\_ev\_cls} decorator.
-	
-\end{itemize}
+RYU uses \textit{eventlets} to run in a multi-threaded environment. These threads are non-preemptive. \textit{Event Loops} are threads that are created for each application. When there is an event in the queue, this loop will load the event and call the corresponding handler.  \textit{Event handlers} are user defined handlers designed to handle when a specific type of event occurs. They reside in the event loop of an application. Event handlers can be defined by decorating the application class method with the \textit{ryu.controller.handler.set\_ev\_cls} decorator.
+
+%\begin{itemize}
+%	\item Application is the user logic that explains how the application should behave. It is a class that inherits the \textit{ryu.base.app\_manager.RyuApp}.
+%	\item Events are class objects that are used in communication between applications. It inherits the class \textit{ryu.controller.event.EventBase}.
+%	\item Event queues are the single queues that each application has for receiving events.
+%	\item RYU uses eventlets to run in multi-threaded environment. These threads are non-preemptive.
+%	\item Event Loops: A thread that is created for each application runs an event loop. When there is an event in the queue, this loop will load the event and call the corresponding handler.
+%	\item Event Handlers:  They are user defined handlers designed to handle when a specific type of event occurs. They reside in the event loop of an application. Event handlers can be defined by decorating the application class method with the \textit{ryu.controller.handler.set\_ev\_cls} decorator.
+%	
+%\end{itemize}
 
 \section{Python Coding}\label{Python_code}
-The code is built using an existing RYU MAC learning application and is modified for user segregation.
+The code is built using an existing RYU MAC learning switch and is modified for user segregation. Initially, the code was designed to listen to the packets that are passing through the OVS and learn the MAC address of the devices that are connected to the switch and install the flow in the OVS flow table if both the out\_port and the destination are the same. This thesis adds additional functionality to this application that is discussed in this section. 
 
-The \textit{set\_ev\_class} sets the event handler for packet-in event and passing it on to the method \textit{ \_packet\_in\_handler} to parse the incoming packet. The packet is parsed by the method and details about the packet are extracted such as the in-port, datapath, payload etc.
+The \textit{set\_ev\_class} sets the event handler for the packet-in event and passing it on to the method \textit{ \_packet\_in\_handler} to parse the incoming packets. The packets are parsed by the method and details about the packets are extracted such as the in-port, datapath, payload etc.
 
 \begin{lstlisting} [language=Python]
 	@set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
@@ -116,84 +118,66 @@ The \textit{set\_ev\_class} sets the event handler for packet-in event and passi
 		udp_payload = pkt.get_protocols(udp.udp)
 \end{lstlisting}
 
-Once the source and destination MAC address is retrieved from the packet, the source MAC address is then checked in the MySQL DB as shown in the figure above. The statement \textit{cursor.execute} also retrieves the port id from the database for the corresponding MAC if it is found as shown in the code snippet below.
+Once the source and destination MAC address is retrieved from the packet, the source MAC address is then checked in the MySQL DB as shown in the code snippet below. The statement \textit{cursor.execute} also retrieves the port id from the database for the corresponding MAC if it is found as shown in the code snippet below.
 
 \begin{lstlisting} [language=Python]
 	#creating a mysql connection to database
 		
 	connection = MySQLdb.connect(host = "192.168.1.169", user = "freerad", passwd = "pass", db = "radius")
 	cursor = connection.cursor ()
-	
-	#cursor.execute ("select CallingStationId from radpostauth order by id desc LIMIT 1")
-	#data = cursor.fetchall ()
 	cursor.execute ("SELECT portid FROM radcheck WHERE username IN (SELECT user FROM radpostauth WHERE CallingStationId = %s AND id = (SELECT MAX(id) from radpostauth) )", src)
-	outport_for_src = cursor.fetchone ()
-	self.logger.info ("outport_for_src tuple is %s", outport_for_src)
-	#portid = outport_for_src[0]
-	self.logger.info ("Data is %s", src)	
+	outport_for_src = cursor.fetchone ()	
 	cursor.close()
 	connection.close ()
 	# Mysql verification end
 \end{lstlisting}
 
-In this step, the incoming port id (\textit{in\_port}) is stored in the \textit{self.mac\_to\_port} array. The first \textit{if} condition then checks if the destination MAC address is in the array \textit{self.mac\_to\_port}, if it exists then the second condition checks if the out port retrieved form the database is not empty or null. Then the third condition checks if the retrieved out port id from the database is the same as the one retrieved from the packet coming from the client, then the port id in the array \textit{self.mac\_to\_port} is assigned to the \textit{out\_port} variable.
+In this step, the incoming port id (\textit{in\_port}) is stored in the \textit{self.mac\_to\_port} array. The first \textit{if} condition then checks if the destination MAC address is in the array \textit{self.mac\_to\_port}, if it exists then the second condition checks if the out port retrieved from the database is not empty or null. Then the third condition checks if the retrieved out port id from the database is the same as the one retrieved from the packet coming from the client, then the port id in the array \textit{self.mac\_to\_port} is assigned to the \textit{out\_port} variable.
 
 \begin{lstlisting}[language=Python]
 	    self.mac_to_port[dpid][src] = in_port
-
-	self.logger.info ("DST is %s", dst)
-		if dst in self.mac_to_port[dpid]:
-		test = self.mac_to_port[dpid][dst]
-		self.logger.info ("self.mac_to_port[dpid][dst] value %s", test)
-		self.logger.info ("Out_Port before condition %s", outport_for_src)
-		if outport_for_src != None and all(outport_for_src):
-			if int(outport_for_src[0]) == self.mac_to_port[dpid][dst]:
-				out_port = self.mac_to_port[dpid][dst]
-				self.logger.info ("Out_Port is the same as in database table %s", out_port)
-			else:
-				self.logger.info ("Out_Port is not allowed, dropping packet")	
-				return	
-		else:
-			#except (TypeError,UnboundLocalError):		
-			out_port = self.mac_to_port[dpid][dst]		
-			self.logger.info ("Out_Port not defined in database, using learned port")	
+if dst in self.mac_to_port[dpid]:
+	test = self.mac_to_port[dpid][dst]
+	if outport_for_src != None and all(outport_for_src):
+	    if int(outport_for_src[0]) == self.mac_to_port[dpid][dst]:
+	    	out_port = self.mac_to_port[dpid][dst]
+	    else:	
+	    	return
+    else:
+	    #except (TypeError,UnboundLocalError):		
+	    out_port = self.mac_to_port[dpid][dst]			
 \end{lstlisting}
 
 The flowing code snipped explains the scenario when there is no out-port id is mentioned in the database for the corresponding MAC address. 
 
 \begin{lstlisting}[language=Python]
+	if outport_for_src != None and all(outport_for_src):
+		out_port = int(outport_for_src[0])
 	else:
 	#except (TypeError,UnboundLocalError):
-
+	
 		out_port = ofproto.OFPP_FLOOD
-	#out_port = 4
-		self.logger.info ("Out_Port is Flooded %s", out_port)
-
-self.logger.info ("Above actions Out_Port %s", out_port)
 	actions = [parser.OFPActionOutput(out_port)]
-self.logger.info ("Actions is %s", actions)
 \end{lstlisting}
 
-The variable \textit{out\_port} is assigned a FLOOD mode and the parser \textit{parser.OFPActionOutput} is called to parse the \textit{out\_port} mode set in the previous conditions. 
+The variable \textit{out\_port} is assigned a FLOOD mode and the class \textit{parser.OFPActionOutput} is called to parse the \textit{out\_port} mode set in the previous conditions. 
 
 A new flow is then assigned to the OVS switch with the obtained \textit{out\_port} conditions. The code snipped below shows the usual procedure to add the flow by using \textit{add\_flow} method providing values such as datapath, match conditions, and actions like setting the out port and buffer id if it exists. The packet is updated with the new information and sent out using the \textit{send\_msg} method that sends it to the OVS switch and a new flow entry is created in the OVS flow table.
 
 \begin{lstlisting} [language=Python]
-		 # install a flow to avoid packet_in next time
-		if out_port != ofproto.OFPP_FLOOD:
-		self.logger.info ("Out_Port not flooded adding flow ")	
-			match = parser.OFPMatch(in_port=in_port, eth_dst=dst)
-			#match = parser.OFPMatch(in_port=in_port, eth_dst='a0:f3:c1:77:d8:36')
-			# verify if we have a valid buffer_id, if yes avoid to send both
-			# flow_mod & packet_out
-			if msg.buffer_id != ofproto.OFP_NO_BUFFER:
-				self.add_flow(datapath, 1, match, actions, msg.buffer_id)
-				return
-			else:
-				self.add_flow(datapath, 1, match, actions)
-		data = None
-		if msg.buffer_id == ofproto.OFP_NO_BUFFER:
-			data = msg.data	
-		out = parser.OFPPacketOut(datapath=datapath, buffer_id=msg.buffer_id, in_port=in_port, actions=actions, data=data)
-		datapath.send_msg(out)
+# install a flow to avoid packet_in next time
+if out_port != ofproto.OFPP_FLOOD:
+	match = parser.OFPMatch(in_port=in_port, eth_dst=dst)
+	# verify if we have a valid buffer_id, if yes avoid to send both
+	# flow_mod & packet_out
+	if msg.buffer_id != ofproto.OFP_NO_BUFFER:
+		self.add_flow(datapath, 1, match, actions, msg.buffer_id)
+		return
+	else:
+		self.add_flow(datapath, 1, match, actions)
+data = None
+	if msg.buffer_id == ofproto.OFP_NO_BUFFER:
+		data = msg.data
+	out = parser.OFPPacketOut(datapath=datapath, buffer_id=msg.buffer_id, in_port=in_port, actions=actions, data=data)
+	datapath.send_msg(out)
 \end{lstlisting}

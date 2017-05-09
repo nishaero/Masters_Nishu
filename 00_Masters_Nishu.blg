@@ -33,7 +33,6 @@ Warning--empty year in OpenDaylight_framework
 Warning--empty year in ovs_features
 Warning--empty year in openwrt_terminal_img
 Warning--empty year in openwrt_luci_img
-Warning--empty year in openflow_features
 Warning--empty year in of_protocol_spec_img
 Warning--empty year in Of_Switch_img
 Warning--empty year in Of_Switch_agent_img
@@ -58,4 +57,5 @@ Warning--empty year in Openflow_protocol_spec
 Warning--empty year in Opnflow_switch
 Warning--empty year in RADIUS_AAA
 Warning--empty year in RADIUS_components
+Warning--empty year in man_ofctl
 (There were 45 warnings)

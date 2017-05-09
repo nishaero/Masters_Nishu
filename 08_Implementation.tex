@@ -4,18 +4,18 @@
 % !TEX spellcheck = de_DE_frami
 %=======================================================================
 \chapter{Implementation} \label{ch:implementation}
-This chapter will discuss about the procedures involved such as flashing the router with OpenWrt, building the OpenWrt firmware with OVS modules, configuring OVS, setting up RADIUS server in a virtual machine and creating a MySQL database with custom table for access to out port id etc.
+This chapter will discuss the procedures involved such as flashing the router with OpenWrt, building the OpenWrt firmware with OVS modules, configuring OVS, setting up RADIUS server in a virtual machine and creating a MySQL database with a custom table for access to out port id etc.
 \section{Building and Flashing Custom OpenWrt Firmware}
 To build the custom firmware for the OpenWrt, we use the \textit{make menuconfig} command in terminal from the directory where the OpenWrt repository has been cloned. The following steps will explain which modules to choose from the Menu and to compile the custom build.
 \begin{enumerate}
-	\item Navigate to the directory \textit{<buildroot\_dir>} in terminal and then enter the command \textit{make menuconfig}.
+	\item Navigate to the directory \textit{<buildroot\_dir>} in the terminal and then enter the command \textit{make menuconfig}.
 	\item In the menu that appears, select the target system by using the arrows and enter key to navigate the menu.
 	\item In the target system, choose \textbf{Atheros AR7xxx/AR9xxx}.
-	\item Now, select target profile and choose \textbf{TP-Link WDR4300} from the list.
+	\item Now, select target profile and choose \textbf{TP-Link WDR4300} from the list. Since, it's the device used in this thesis.
 	\item In the main configuration menu, select the \textbf{Luci} menu and enable luci web interface.
 	\item Now, going back to the main menu, choose the Network option in the list.
-	\item	Within the Network menu, select the sub menu \textbf{Open Vswitch} as shown in figure\ref{fig:openvswitch} and enable all options using space key <*>.
-	\item	In the Network menu, first de-select the option \textbf{Wpad mini} and then select \textbf{Hostapd} as shown in figure\ref{fig:hostapd} with full features. This provides the necessary enterprise 802.1x authentication features.
+	\item	Within the Network menu, select the sub menu \textbf{Open Vswitch} as shown in figure  \ref{fig:openvswitch} and enable all options using space key <*>.
+	\item	In the Network menu, first, de-select the option \textbf{Wpad mini} and then select \textbf{Hostapd} as shown in figure \ref{fig:hostapd} with full features. This provides the necessary enterprise 802.1x authentication features.
 	\item	In the main configuration menu, navigate to \textbf{Utilities} option and select editors and choose either \textbf{vi} or \textbf{nano} as the text editor of choice.
 	\item	Exit the menu and select save to save the configuration.
 	\item	Back in the terminal, enter the command \textit{make world}. This will compile the changes made in the configuration and build the firmware for the selected hardware profile, in this case TP-Link WDR4300.
@@ -45,11 +45,11 @@ To build the custom firmware for the OpenWrt, we use the \textit{make menuconfig
 	\vspace{-10pt}
 \end{figure}
 \section{Router Configuration}
-The router has been freshly updated with the OpenWrt firmware. To configure the router, it is first connected via shell which will be discussed below.
+The router has been freshly updated with the OpenWrt firmware. To configure the router, it is first connected via SSH which will be discussed below.
 
-The router is first connected via the shell using the command \textit{sudo ssh 192.168.1.1} as seen in the test layout \ref{fig:test-layout}. This will open a OpenWrt configuration terminal that look like in the figure \ref{fig:OpenWrt_terminal}.
+The router is first connected via the shell using the command \textit{sudo ssh 192.168.1.1} as seen in the test layout \ref{fig:test-layout}. This will open an OpenWrt configuration terminal that looks like in figure \ref{fig:OpenWrt_terminal}.
 
-The wireless configuration has to be modified to create two ssid's, this can be accessed using the internal editor with the command \textit{nano /etc/config/wireless}. the configuration contains all the information related to the wireless module. In the configuration, there are two device names and only these two needs to be modified. The device configured to use a RADIUS server in the server option and the key, the ssid's are changed to OpenWrt and OpenWrt 5G respectively. The configuration will look like as shown below after modification. The complete configuration can be accessed from the appendix 
+The wireless configuration has to be modified to create two ssids, this can be accessed using the internal editor with the command \textit{vi /etc/config/wireless}. the configuration contains all the information related to the wireless module. In the configuration, there are two device names and only these two needs to be modified. The device configured to use a RADIUS server in the server option and the key, the ssids is changed to OpenWrt for both wireless interfaces. The configuration will look like as shown below after modification. The complete configuration can be accessed from the appendix 
 
 \nameref{app:sec:wireless_config}
 	\begin{lstlisting}
@@ -68,7 +68,7 @@ option device 'radio1'
 option mode 'ap'
 option server '192.168.1.169'
 option key 'testing123'
-option ssid 'OpenWrt 5G'
+option ssid 'OpenWrt'
 option encryption 'wpa2'
 option network 'wifi'
 \end{lstlisting}
@@ -106,7 +106,7 @@ option ifname 'eth0.5'
 
 \end{lstlisting}
 
-To enable the new network to provide DHCP to the devices that connects to the OVS bridge, the DHCP has to be modified to accomodate the new network. This can be easily access in the editor with the commans \textit{nano /etc/config/dhcp} and the configuration shown below  is added to the file and saved.
+To enable the new network to provide DHCP to the devices that connect to the OVS bridge, the DHCP config has to be modified to accomodate the new network. This can be easily accessed in the editor with the command \textit{vi /etc/config/dhcp} and the configuration shown below is added to the file and saved.
 
 \begin{lstlisting}
 config dhcp 'lan4'
@@ -114,7 +114,7 @@ option interface 'lan4'
 option ignore '1'
 \end{lstlisting}
 
-Once the configurations are complete, the router is restarted to apply the changes. It is verified by logging into the web interface with the ip \textit{192.168.1.1}. This will open a LuCi web interface in the browser and shows the routers status and reflects the changes that were made with the configuration.
+Once the configurations are complete, it is reloaded to apply the changes. It is done by issuing the command \textit{/etc/init.d/network restart} and \textit{wifi}. It is verified by logging into the web interface with the IP \textit{192.168.1.1}. This will open a LuCi web interface in the browser and shows the router's status and reflects the changes that were made to the configuration. Enable the wireless interfaces in the Networks menu as they are disabled by default. Now, the SSID OpenWrt should show in the available networks list on the client device like in figure \ref{fig:two-ssid}.
 
 %\begin{enumerate}
 %	\item Connect to the router using the command ssh 192.168.1.1 and accept the key signatures. It will now show the configuration window with \textit{root@openwrt}.
@@ -186,34 +186,34 @@ Once the configurations are complete, the router is restarted to apply the chang
 %	\item The web interface of OpenWrt can be opened using the ip \textbf{192.168.1.1}. Enable the wireless interfaces in the Networks menu as they are disabled by default. Now, there should be two network ssid openwrt and openwrt 5G available in the client device.
 %	
 %\end{enumerate}
-  \begin{figure}[H]
+  \begin{figure}
 	\centering
 	\includegraphics[width=10cm, height=13cm,keepaspectratio]{two-ssid}
-	\caption {SSID's OpenWrt and OpenWrt 5G Available on client device}
+	\caption {SSID OpenWrt Available on client device}
 	\label{fig:two-ssid}
 	\vspace{-10pt}
 \end{figure}
 \section{Configuring Open vSwitch}
 The Open vSwitch is configured to connect with the RYU controller and assign ports to be managed by the controller. The configuration is made by using the following commands in the OpenWrt shell terminal.
 \begin{enumerate}
-	\item Login to OpenWrt router using shell via the command \textit{sudo ssh 192.168.1.1}.
-	\item The installation of OVS is checked using the following command \textit{ovs-vsctl show}, if it says there is no such command, then there is no OVS installed. Instead if it shows an empty entry then OVS is installed but not configured.
-	\item The OVS bridge is created using the command \textit{ovs-vsctl add-br br0}
-	\item To set the controller for OVS, the command \textit{ovs-vsctl set-controller br0 tcp:192.168.1.207:6633} is used, where 6633 is the standard OpenFlow port.
-	\item The failsafe mode in a OVS switch tell the switch how to function in case of a connection failure with the controller. There are two modes, \textbf{secure} and \textbf{stand\_alone}. The \textbf{secure} mode will not allow any packets to pass through whereas the \textbf{stand\_alone} mode will function as a normal switch. For this project, the failsafe mode is set to secure to isolate the network using the following command \textit{ovs-vsctl set-fail-mode br0 secure}.
+	\item Login to OpenWrt router using shell via the command: \textit{sudo ssh 192.168.1.1}.
+	\item The installation of OVS is checked using the following command: \textit{ovs-vsctl show}, if it throws an error, then there is no OVS installed. Instead, if it shows an empty entry then OVS is installed but not configured.
+	\item The OVS bridge is created using the command: \textit{ovs-vsctl add-br br0}
+	\item To set the controller for OVS, the command: \textit{ovs-vsctl set-controller br0 tcp:192.168.1.207:6633} is used, where 6633 is the standard OpenFlow port.
+	\item The failsafe mode in the OVS switch tells the switch how to function in case of a connection failure with the controller. There are two modes, \textbf{secure} and \textbf{stand\_alone}. The \textbf{secure} mode will not allow any packets to pass through whereas the \textbf{stand\_alone} mode will function as a normal switch. For this project, the failsafe mode is set to secure to isolate the network using the following command: \textit{ovs-vsctl set-fail-mode br0 secure}.
 	\item The ports that needs to be managed are added to the bridge using the commands
 	\begin{lstlisting}
 		ovs-vsctl add-port br0 eth0.3
 		ovs-vsctl add-port br0 eth0.4
 		ovs-vsctl add-port br0 eth0.5
 	\end{lstlisting}
-	\item The configuration is verified by the command ovs-vsctl show, this will show the configuration that was made in the OVS.
+	\item The configuration is verified by the command: \textit{ovs-vsctl show}, this will show the configuration that was made in the OVS.
 	
 \end{enumerate}
 \section{MySQL Setup}
-The following steps explain the procedure to install and configure MySQL server and populate its database to work with Freeradius server on the ubuntu virtual machine.
+The following steps explain the procedure to install and configure the MySQL server and populate its database to work with the Freeradius server on the ubuntu virtual machine.
 \begin{enumerate}
-	\item MySQL is downloaded and installed on the Linux PC using the following command in terminal \textit{sudo apt-get install mysql-server}
+	\item MySQL is downloaded and installed on the Linux PC using the following command in terminal: \textit{sudo apt-get install mysql-server}
 	\item Once the server is installed, a database called radius is created using the following command. 
 	\begin{lstlisting}
 	mysql -uroot -p
@@ -223,14 +223,14 @@ The following steps explain the procedure to install and configure MySQL server 
 	\end{lstlisting}
 	
 	\item The schema for \textbf{Freeradius} is added to the database using the following command: \textit{mysql -u root -p radius < /etc/freeradius/sql/mysql/schema.sql}
-	\item	To manage the database a\textbf{ PHPMyadmin} tool is installed and configured to connect with the MySQL database. It provides a web interface to manipulate the complete database.
-	\item	\textbf{Radcheck} table contains the user credentials, it was modified to add a port id column where a port id is manually assigned to each user.
+	\item	To manage the database a\textbf{ PHPMyadmin} tool is installed and configured to connect to the MySQL database. It provides a web interface to manipulate the complete database.
+	\item	\textbf{Radcheck} table contains the user credentials, it was modified to add a port id column where a port id belonging to the ports eth0.4 and eth0.5 is manually assigned to each user. This can be clearly seen from the figure \nameref{fig:test-layout}
 	
 \end{enumerate}
 \section{Installing Ubuntu Virtual Machine and Freeradius Server \cite{Freeradius_install}}
-The initial method to configure the Freeradius and MySQL server within the OpenWrt router failed due to memory restrictions. Therefore, the Freeradius is installed in an Ubuntu virtual machine configured in a Virtual Box environment. The steps involved is discussed as follows.
+The initial method to configure the Freeradius and MySQL server within the OpenWrt router failed due to memory restrictions. Therefore, the Freeradius is installed in an Ubuntu virtual machine configured in a Virtual Box environment. The steps involved are discussed as follows.
 \begin{enumerate}
-	\item A new virtual machine is created using the latest \textit{Ubuntu 16.10 iso} image in Virtual Box with 2GB RAM and the network is bridged with eth1 which is connected to the internet, initially to download and install Freeradius.
+	\item A new virtual machine is created using the latest \textit{Ubuntu 16.10 iso} image in VirtualBox with 2GB RAM and the network is bridged with eth1 which is connected to the internet, initially to download and install Freeradius.
 	\item Freeradius is downloaded and installed using the following command \textit{sudo apt-get install freeradius}.
 	\item The radius service is started using the command \textit{freeradius -x} if it throws an error, then error shown is debugged and fixed.
 	\item Edit the \textbf{clients.config} file in \textit{/etc/freeradius/} directory and add the following line in the file 

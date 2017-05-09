@@ -100,7 +100,7 @@ xcdraw
 %=======================================================================
 %:glossaries
 %=======================================================================
-\usepackage[%
+\usepackage[
 acronym,
 shortcuts,
 nonumberlist,
@@ -110,9 +110,9 @@ hyperfirst=true,
 %  xindy={language=german-duden,codepage=utf8}
 xindy={language=english-duden,codepage=utf8}
 ]{glossaries}
-\makeglossaries{}
 \setlength{\glslistdottedwidth}{.3\linewidth}
-\loadglsentries{glossaries/glossaries.tex}
+\loadglsentries{glossaries/glossaries}
+\makeglossaries{}
 
 %=======================================================================
 % to have clickable links in the .pdf
@@ -128,7 +128,8 @@ xindy={language=english-duden,codepage=utf8}
 %=======================================================================
 %\usepackage[german]{cleveref}
 \usepackage[paper=a4paper]{geometry}
-
+%: Rotating Table
+\usepackage{rotating}
 %=======================================================================
 %:blindtext package (FIXME remove, it's only for testing)
 %=======================================================================
@@ -225,13 +226,15 @@ xindy={language=english-duden,codepage=utf8}
 	\clearpage{}
 	
 	\markboth{Tabellenverzeichnis}{Tabellenverzeichnis}
-%	\listoftables{}
+	\listoftables{}
 	\clearpage{}
 	\cleardoublepage
 	\pagebreak
 	\newpage
 	
-	\printglossary[style=long]{}
+
+%	\printglossary[style=long]{}
+
 	\printglossary[style=listdotted,type=\acronymtype]{}
 	\cleardoublepage
 	

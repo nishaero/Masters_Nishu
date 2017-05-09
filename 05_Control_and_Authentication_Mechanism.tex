@@ -12,22 +12,22 @@
 \chapter{Control and Authentication Mechanism}\label{ch:control_and_authentication}
 \sffamily{}
 
-In this chapter, the softwares and protocols used for providing authentication and for controlling the access point is discussed. A brief introduction to OpenWrt and the protocols, OpenFlow and RADIUS is described in the flowing topics.
+In this chapter, the software and protocols used for providing authentication and for controlling the access point are discussed. A brief introduction to OpenWrt and the protocols, OpenFlow and RADIUS is described in the flowing topics.
 \section{OpenWrt \cite{WhatIsOpenWrt}} \label{OpenWrt}
 
-OpenWrt is a Linux distribution that works like any other Linux distro designed for embedded devices. OpenWrt offers bult-in package manager that allows installing packages from its repository or manually build custom firmware file using custom-built package. The packages can contain many supported applications like an SSH server, VPN, traffic-shaping application, enterprise wireless solutions, BitTorrent client and even a hotspot manager.
+OpenWrt is a Linux distribution that works like any other Linux distro designed for embedded devices. OpenWrt offers built-in package manager that allows installing packages from its repository or manually build custom firmware file using custom-built package. The packages can contain many supported applications like the \gls{SSH} server, VPN, traffic-shaping application, enterprise wireless solutions, BitTorrent client and even a hotspot manager.
 
 OpenWrt is designed for power users who require customizability over the stock firmware provided by the manufacturer. There are many custom firmwares such as DD-WRT available for most popular routers. For this thesis, OpenWrt is chosen because of its flexibility and stability than most custom firmwares that are available for many hardware vendors.
 
 OpenWrt has many features that can be mentioned but are out of scope for this thesis. A run-down version of the most relevant features are listed below that are related to this thesis.
 
 \begin{itemize}
-	\item \textbf{SSH server for terminal access:} Provides SSH server, which allows to connect directly to the routers terminal via SSH and remote configuration is also possible when the router is configured to connect with the internet. 
+	\item \textbf{SSH server for terminal access:} Provides SSH server, which allows connecting directly to the routers terminal via SSH and remote configuration is also possible when the router is configured to connect to the internet. 
 	\item \textbf{Capture and Analyse network Traffic:} Tcpdump tool is included in the build to analyze the packets that are traversing through the router. The tool can also be used to create packet logs that can be opened in packet analyzer tools such as Wireshark.
-	\item \textbf{GUI Interface:} OpenWrt also includes a GUI interface for managing most of the routers configuration, the built in one is named as LuCi.
+	\item \textbf{GUI Interface:} OpenWrt also includes a GUI interface for managing most of the router's configuration, the built in one is named as LuCi.
 	\item \textbf{OpenvSwitch:} The virtual switch is also available as a package on OpenWrt repository that is used in this thesis to be installed in the router for creating a virtual switch within the router that can also work along with the physical switches present.
 	\item \textbf{Wireless Utilities:} OpenWrt provides many different packages for managing wireless sockets in the router. For this thesis, Hostapd package is chosen because of its fully featured support for a wide range of authentication mechanisms such as IEEE 802.1x/WPA/EAP/RADIUS with EAP protocol. It can be configured in the file located at /etc/hostapd.conf in the routers folder.
-	\item \textbf{Freeradius:} The open source RADIUS server is also available as a package for the OpenWrt build but is not used in the firmware for this thesis because of memory unavailability in the TP Link WDR-4300 router.
+	\item \textbf{Freeradius:} The open source RADIUS server is also available as a package for the OpenWrt build but is not used in the firmware for this thesis because of memory unavailability in the TP-Link WDR-4300 router.
 	\item \textbf{MySQL:} The is a fully featured MySql server. It is also available as a package that can be installed on the router but again could not be used in this thesis due to memory restrictions in the router.
 	
 \end{itemize}
@@ -49,11 +49,11 @@ The figure \ref{fig:OpenWrt_terminal} shows the SSH interface of OpenWrt termina
 For this thesis, protocols such as OpenFlow, RADIUS and 802.1x security are used extensively and are discussed in detail below, explaining their use cases and features.
 \subsection{OpenFlow \cite{WhatIsOpenFlow}} \label{OpenFlow}
 
-It is a standard communication interface defined between the control and forwarding layers of the SDN architecture, allowing direct access for manipulating the forwarding plane of the network devices such as switches and routers, both physical and virtual (hypervisor based).
+It is a standard communication interface defined between the control and forwarding layers of the SDN architecture, allowing direct access for manipulating the forwarding plane of the network devices such as switches and routers, both physical and virtual (hypervisor-based).
 
-OpenFlow, along with SDN technologies have helped IT to manage and address the high-bandwidth, and dynamic nature of today’s applications. It also has helped adapt the network to ever-changing business needs, and significantly reduce the complexity in maintenance and operations. The successful deployment \cite{of_depl} of OpenFlow in large organizations such as Google \cite{of_google}, Géant of Switzerland,ToulX France etc. shows what can be achieved with OpenFlow and the extent to which its features can be utilized.
+OpenFlow, along with SDN technologies has helped IT to manage and address the high-bandwidth, and dynamic nature of today’s applications. It also has helped adapt the network to ever-changing business needs, and significantly reduce the complexity in maintenance and operations. The successful deployment \cite{of_depl} of OpenFlow in large organizations such as Google \cite{of_google}, Géant of Switzerland, ToulX France etc. shows what can be achieved with OpenFlow and the extent to which its features can be utilized.
 
-%Some of the best features of OpenFlow obtained from its successful deployments  is explained in the figure \ref{fig:OF_features}.
+%Some of the best features of OpenFlow obtained from its successful deployments  is explained in figure \ref{fig:OF_features}.
 %
 %\begin{figure}
 %	\centering
@@ -63,9 +63,9 @@ OpenFlow, along with SDN technologies have helped IT to manage and address the h
 %\end{figure}
 
 \subsubsection{How does OpenFlow Work? \cite{OpenFlow_functionality}} \label{OpenFlow_Functionality}
-In a traditional switch or a router, the packet forwarding and high level routing decisions occur on the same device. In an OpenFlow switch, the routing and forwarding functions are separated. The data path portion is still on the switch and the routing decisions are handled by a separate controller, typically it’s a standard server. The OpenFlow switch and controller communicate using the OpenFlow protocol, which defines messages such as packet-in, packet-out, modify-forwarding path and get stats.
+In a traditional switch or a router, the packet forwarding and high-level routing decisions occur on the same device. In an OpenFlow switch, the routing and forwarding functions are separated. The data path portion is still on the switch and the routing decisions are handled by a separate controller, typically it’s a standard server. The OpenFlow switch and controller communicate using the OpenFlow protocol, which defines messages such as packet-in, packet-out, modify-forwarding path and get stats as shown in figure \ref{fig:Of_proto}.
 \subsubsection{OpenFlow Specification \cite{Openflow_protocol_spec}} \label{OpenFlow_Protocol_spec}
-The protocol can be split into 4 components as shown in the figure \ref{fig:Of_proto} namely: message layer, state machine, system interface and configuration. 
+The protocol can be split into 4 components as shown in figure \ref{fig:Of_proto} namely: message layer, state machine, system interface and configuration. 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\linewidth]{of-protocol}
@@ -77,13 +77,13 @@ The protocol can be split into 4 components as shown in the figure \ref{fig:Of_p
 	\item \textbf{Message Layer:} 
 	\\ It is the core of the protocol stack. It also supports the ability to construct, copy, compare, manipulate and print the messages. The message layer defines the valid structure and semantics for all messages.   
 	\item \textbf{State Machine:}
-	\\ It defines the core level behaviour of the protocol. It is typically used to describe the actions such as: flow control, negotiations, delivery, capability discovery etc.
+	\\ It defines the core level behavior of the protocol. It is typically used to describe the actions such as flow control, negotiations, delivery, capability discovery etc.
 	\item \textbf{System Interface:}
 	\\ It typically defines how the protocol interacts with the other protocols in the outside world. The system interface identifies the necessary and optional interfaces along with its intended use such as TLS and TCP as transport channels.
 	\item \textbf{Configuration:}
 	\\ Almost every protocol has its own configuration or initial values. It can cover anything from buffer size, reply intervals to X.509 certificates.
 	\item \textbf{Data Model:}
-	\\ Each switch maintains the attributes of each OpenFlow abstration in a relational data model.  The attributes either describe its configuration state, or some set of current statistics or the abstraction capability. 
+	\\ Each switch maintains the attributes of each OpenFlow abstraction in a relational data model.  The attributes either describe its configuration state or some set of current statistics or the abstraction capability. 
 
 \end{itemize}
 
@@ -142,7 +142,7 @@ Each packet is processed in the following sequence as explained below.
 	\item \textbf{Step 1: Packet Arrival}
 	\\ Packets arrive in either a physical or virtual port, it is necessary to make note of the arrival port for source-based processing later.
 	\item \textbf{Step 2: Key Extraction}
-	\\ When each packet arrive on the port, a small meta data is built called the key. This key contains information about the packet such as header values, buffered packet, arrival port, arrival time etc. 
+	\\ When each packet arrives on the port, a small metadata is built called the key. This key contains information about the packet such as header values, buffered packet, arrival port, arrival time etc. 
 
 	\item \textbf{Step 3: Table Selection}
 	\\ When a packet goes through the pipeline, the packet is matched with the first table by default and if multiple tables exist then subsequent tables will be selected through hit or miss actions.
@@ -167,7 +167,7 @@ AAA stands for Authentication, Authorization and Accounting. \textit{Authenticat
 
 The RADIUS works like a \textit{Client / Server} model. The network server acts as the client of RADIUS, which passes the user information to designated RADIUS server. The responsibilities of the radius server include receiving connection requests, authenticating users, providing all the configuration details necessary for the client to deliver service to the user.
 
-RADIUS also provides security by encrypting the communication between the client and the RADIUS server. So,  any users credentials sent over the network is encrypted. In addition, the client and the RADIUS server transactions are authenticated over a shared secret which is never sent over the network. The RADIUS server supports several method’s for a user to authenticate such as PPP, PAP or CHAP etc.
+RADIUS also provides security by encrypting the communication between the client and the RADIUS server. So,  any users credentials sent over the network is encrypted. In addition, the client and the RADIUS server transactions are authenticated over a shared secret which is never sent over the network. The RADIUS server supports several methods for a user to authenticate such as PPP, PAP or CHAP etc.
 
 The RADIUS is also an extensible protocol where all transactions are of variable length Attribute-value-length 3 tuples. Supports addition of new attribute values without disturbing the existing implementation of the protocol.
 
@@ -192,14 +192,14 @@ The following components are part of the RADIUS infrastructure.
 	\item Access Servers (RADIUS clients):
 	\\ They are network access servers such as access points, 802.1x capable switches etc. These devices communicate with the network access servers using the RADIUS protocol. They are the devices to which the clients are associated to for access to the network.
 	\item RADIUS servers:
-	\\ It is the network access server that manages the users and the services associated to each user or client.
+	\\ It is the network access server that manages the users and the services associated with each user or client.
 	\item RADIUS proxies
 	\\ They are similar to the network access server except that, they do not process the AAA information received from the RADIUS clients. They simply forward the information to the RADIUS server or to another RADIUS proxy based on the information in the packet.
 	\item User account databases (Active Directory, any database such as MySQL):
-	\\ It is the database to which the RADIUS server refers to (When configured to work with database) for authenticating an user requesting network access. The database also contains other accounting information such as the session details for each user, the services active for each client. 
+	\\ It is the database to which the RADIUS server refers to (When configured to work with the database) for authenticating a user requesting network access. The database also contains other accounting information such as the session details for each user, the services active for each client. 
 	
 \end{itemize}
-The components are showing in the figure \ref{fig:RADIUS_components_img}.
+The components are showing in figure \ref{fig:RADIUS_components_img}.
 
 \begin{figure}
 	\centering
@@ -229,19 +229,19 @@ A RADIUS data format looks as shown below where the fields are transmitted from 
 
 \end{lstlisting}
 
-The code field as shown in the data frame above uses one octet which help identify the type of RADIUS packet.
+The code field as shown in the data frame above uses one octet which helps identify the type of RADIUS packet.
 \begin{itemize}
 	\item \textbf{Access-Request:} Sent by the RADIUS client requesting authentication and authorization for a connection.
 	\item \textbf{Access-Accept:} It’s the response from the RADIUS server to the client stating that the connection was authenticated and authorized.
 	\item \textbf{Access-Reject:} It’s a response from the RADIUS server to the client that the connection attempt failed in authentication.
 	\item \textbf{Access-Challenge:} Sometimes the RADIUS server requires more information from the client and sends a challenge as a response the Access-Request message.
 	\item \textbf{Accounting-Request:} Sent by the RADIUS client to specify accounting information for an accepted connection.
-	\item \textbf{Accounting-Response:} The RADIUS server sends the acknowledgement for the successful receipt and processing of the Accounting-Request message.
+	\item \textbf{Accounting-Response:} The RADIUS server sends the acknowledgment for the successful receipt and processing of the Accounting-Request message.
 	
 \end{itemize}
 
 \subsubsection{RADIUS Authentication Mechanism} \label{RADIUS_auth_mechanism}
-RADIUS uses the following message codes when communicating between the RADIUS client and server as shown in the figure below.
+RADIUS uses the following message codes when communicating between the RADIUS client and server as shown in figure below.
 
 \begin{figure}[H]
 	\centering
@@ -252,29 +252,29 @@ RADIUS uses the following message codes when communicating between the RADIUS cl
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{STEP 1:}When a user makes a connection request, the NAS client sends an Access-Request message to the AAA server, in this case a RADIUS server.
-	\item \textbf{STEP 2:}The RADIUS sever responds by sending an Access-Challenge message requesting more information from the user.
-	\item \textbf{STEP 3:}The client responds with an Access-Request message with the requested information back to the RADIUS server. The response is typically a username and password information in the form of PPP, PAP or CHAP authentication mechanisms.
-	\item \textbf{STEP 4:}The RADIUS server once after validating the received information sends back an Access-Accept information. If not validated, then it sends a Access-Reject message back to the client.
-	\item \textbf{STEP 5:}Upon successfully establishing a connection, the client sends an Accounting-Request message to request to start accounting the user.
-	\item \textbf{STEP 6:}The RADIUS server responds by sending an Accounting-Response message after successfully starting an accounting session for the connection. Thus, concludes the connection process of the user to the network.
+	\item \textbf{STEP 1:} When a user makes a connection request, the NAS client sends an Access-Request message to the AAA server, in this case, a RADIUS server.
+	\item \textbf{STEP 2:} The RADIUS sever responds by sending an Access-Challenge message requesting more information from the user.
+	\item \textbf{STEP 3:} The client responds with an Access-Request message with the requested information back to the RADIUS server. The response is typically a username and password information in the form of PPP, PAP or CHAP authentication mechanisms.
+	\item \textbf{STEP 4:} The RADIUS server once after validating the received information sends back an Access-Accept information. If not validated, then it sends a Access-Reject message back to the client.
+	\item \textbf{STEP 5:} Upon successfully establishing a connection, the client sends an Accounting-Request message to request to start accounting the user.
+	\item \textbf{STEP 6:} The RADIUS server responds by sending an Accounting-Response message after successfully starting an accounting session for the connection. Thus, concludes the connection process of the user to the network.
 	
 \end{itemize}
 
 \subsection{WLAN 802.1x Security \cite{WLAN_802.1x}} \label{802.1x}
-Wi-Fi or Wireless Local Area Networks (WLAN’s) have become increasingly more popular in the recent years. The wireless standard IEEE 802.11 has become the most widely adopted standards for wireless broadband internet access. The security considerations however are more complicated in the wireless environment compared to the wired ones. IEEE 802.11 has defined the following two basic security mechanisms for secure access to wireless network.
+Wi-Fi or Wireless Local Area Networks (WLAN’s) have become increasingly more popular in the recent years. The wireless standard IEEE 802.11 has become the most widely adopted standards for wireless broadband internet access. The security considerations, however, are more complicated in the wireless environment compared to the wired ones. IEEE 802.11 has defined the following two basic security mechanisms for secure access to wireless network.
 \begin{itemize}
 	\item Entity authentication including shared key and open-system.
 	\item Wired Equivalent Privacy (WEP)
 \end{itemize}
 Both these mechanisms are proven to be severely vulnerable. To enhance the security in wireless networks, 802.11i standard was proposed. This 802.11i standard defines encryption and authentication improvements in addition to introducing protocols for key management and establishment. 802.11i also incorporates the IEEE 802.1x standard as its authentication enhancement. The IEEE 802.1x is a port based network access control used for authenticating and authorizing devices connected by various LAN’s.
 
-The IEEE 802.1x standard is based upon the Extensible Authentication Protocol (EAP), and can use a number of authentication mechanisms which is beyond the scope of the IEEE 802.1x standard. Many authentication mechanisms such as EAP/MD5(port based) , TLS, TTLS, and PEAP can be used. The IEEE 802.1x uses EAP over LAN (EAPoL) for encapsulating EAP messages between the authenticator and the supplicant. 
+The IEEE 802.1x standard is based on the Extensible Authentication Protocol (EAP), and can use a number of authentication mechanisms which is beyond the scope of the IEEE 802.1x standard. Many authentication mechanisms such as EAP/MD5(port based) , TLS, TTLS, and PEAP can be used. The IEEE 802.1x uses EAP over LAN (EAPoL) for encapsulating EAP messages between the authenticator and the supplicant. 
 
-There are three main components in the IEEE 802.1x system namely, the supplicant, authenticator and the authentication server. In case of WLAN, the supplicant is usually the mobile device or node, the Access Point (AP) serves as the authenticator and the RADIUS server as the authentication server.  The Port Access Entity (PAE) authenticator relays all the messages between the authentication server and the supplicant. 802.1x is used in this place to enforce the specific authentication mechanism. 
+There are three main components in the IEEE 802.1x system namely, the supplicant, authenticator and the authentication server. In case of WLAN, the supplicant is usually the mobile device or node, the access point (AP) serves as the authenticator and the RADIUS server as the authentication server.  The Port Access Entity (PAE) authenticator relays all the messages between the authentication server and the supplicant. 802.1x is used in this place to enforce the specific authentication mechanism. 
 
 \subsubsection{802.1x Authentication Process} \label{WLAN_802.1x_auth}
-Authentication methods of 802.1x include PEAP, MD5 etc. Each method has its own authentication process. The following figure shows the basic EAP based authentication process in Eduroam networks. 
+Authentication methods of 802.1x include PEAP, MD5 etc. Each method has its own authentication process. The following figure shows the basic EAP-based authentication process in Eduroam networks. 
 
 \begin{figure}[H]
 	\centering
@@ -288,15 +288,15 @@ Authentication methods of 802.1x include PEAP, MD5 etc. Each method has its own 
 	\item \textbf{Step 1:} 
 	\\ After the association of the supplicant with the authenticator or AP via WPA or WPA2 enterprise, the 802.1x application initiates the EAPOL start message with the authenticator. 
 	\item \textbf{Step 2:} 
-	\\ The authenticator responds by send a EAP-Request identity message from the supplicant. 
+	\\ The authenticator responds by send an EAP-Request identity message from the supplicant. 
 	\item \textbf{Step 3:}
-	\\ Once receiving the username as a EAP response from the supplicant, the authenticator then initiates a RADIUS Access-request message with the authentication server. 
+	\\ Once receiving the username as an EAP response from the supplicant, the authenticator then initiates a RADIUS Access-request message with the authentication server. 
 	\item \textbf{Step 4:}
-	\\ The authenticator receives the RADIUS access challenge from the authentication server and forwards that via a secure SSL/TLS tunnel to the supplicant by encapsulating the EAP-Request credentials message with TTLS/PEAP.
+	\\ The authenticator receives the RADIUS access-challenge from the authentication server and forwards that via a secure SSL/TLS tunnel to the supplicant by encapsulating the EAP-Request credentials message with TTLS/PEAP.
 	\item \textbf{Step 5:}
-	\\ The supplicant responds with a EAP-Response Credentials message which is typically a username and password to the authenticator via the same secure tunnel, the authenticator forwards the received information as a RADIUS Access-Request message with encapsulation to the authentication server. 
+	\\ The supplicant responds with an EAP-Response Credentials message which is typically a username and password to the authenticator via the same secure tunnel, the authenticator forwards the received information as a RADIUS Access-Request message with encapsulation to the authentication server. 
 	\item \textbf{Step 6:}
-	\\ The authentication server responds with a RADIUS Access-Accept/Reject message to the authenticator. The Authenticator sends this information as a EAP Success/Failure message to the supplicant. 
+	\\ The authentication server responds with a RADIUS Access-Accept/Reject message to the authenticator. The Authenticator sends this information as an EAP Success/Failure message to the supplicant. 
 	\item \textbf{Step 7:}
 	\\ The supplicant is now fully associated with the network.
 	
